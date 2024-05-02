@@ -3,7 +3,7 @@ import { RiBarChartLine } from "react-icons/ri";
 
 const Sidebar = () => {
   return (
-    <div className="flex flex-col items-center w-[15vw] lg:w-58 h-[100vh] bg-white">
+    <div className="hidden md:flex flex-col items-center w-[15vw] lg:w-58 h-[100vh] bg-white">
       <div className="flex items-center lg:w-42 mt-8 space-x-4">
         <div className="flex items-center justify-center h-[40px] w-[10vw] lg:h-[38px] lg:w-[38px] p-[6px] bg-blue-250 text-white rounded-md">
           <Image

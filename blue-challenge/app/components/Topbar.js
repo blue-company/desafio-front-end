@@ -3,22 +3,28 @@ import { IoIosArrowDown } from "react-icons/io";
 import { TfiBell } from "react-icons/tfi";
 import { IoSearch } from "react-icons/io5";
 
+import DropdownMobile from "./DropdownMobile";
+
 const Topbar = () => {
   return (
-    <div className="flex items-center w-[100%] sm:h-[20%] bg-white">
+    <div className="flex items-center w-[100%] h-[100%] bg-white">
       <h1 className="hidden lg:flex ml-7 text-2xl text-black-title font-bold">
         Dashboard
       </h1>
 
-      <div className="flex items-center w-[100%] ml-4 lg:ml-40 lg:space-x-10">
-        <div className="flex items-center w-[80%] sm:w-[80%] lg:w-80 px-5 py-2.5 bg-gray-50 rounded-xl">
-          <button type="submit" className="text-lg text-blue-250">
+      <div>
+        <DropdownMobile />
+      </div>
+
+      <div className="flex items-center w-[100%] sm:ml-4 lg:ml-40 sm:space-x-10">
+        <div className="flex items-center w-[50%] sm:w-[30%] lg:w-80 px-5 py-2.5 bg-gray-50 rounded-xl">
+          <button type="submit" className=" text-xs sm:text-lg text-blue-250">
             <IoSearch />
           </button>
           <input
             type="text"
             placeholder="Pesquisar informações"
-            className="ml-1.5 bg-transparent placeholder:text-[10px] sm:placeholder:text-13 text-13 outline-none"
+            className="w-full ml-1.5 bg-transparent placeholder:text-[8px] sm:placeholder:text-13 text-13 outline-none"
           ></input>
         </div>
 

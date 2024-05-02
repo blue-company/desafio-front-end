@@ -11,7 +11,7 @@ import TopProductsChart from "../charts-data/charts-components/TopProductsChart"
 
 const Main = () => {
   return (
-    <div className="flex p-6 flex-wrap gap-6 overflow-auto">
+    <div className="flex justify-center p-6 flex-wrap gap-6 overflow-auto">
       <DashboardCard
         width={"min-[1420px]:w-[600px]"}
         children={<SalesChart />}
