@@ -1,0 +1,56 @@
+import { faker } from "@faker-js/faker";
+
+export const Data = {
+  data: {
+    datasets: [
+      {
+        label: "#",
+        index: "01",
+        product: "blue start enf sc",
+        percentage: faker.datatype.number({ min: 0, max: 100 }),
+        graphBarColor: "bg-[#0080ff]",
+        graphPercentageBorder: "border-[#0080ff]",
+        graphBarBackground: "bg-[#cbe6ff]",
+        graphPercentageBackground: "bg-[#f0f9ff]",
+        percentageTextColor: "text-[#0080ff]",
+        customPadding: "py-3",
+      },
+      {
+        label: "Produto",
+        index: "02",
+        product: "blue start enf co",
+        percentage: faker.datatype.number({ min: 0, max: 100 }),
+        graphBarColor: "bg-[#00e096]",
+        graphPercentageBorder: "border-[#00e096]",
+        graphBarBackground: "bg-[#8afac6]",
+        graphPercentageBackground: "bg-[#f0fdf4]",
+        percentageTextColor: "text-[#00e096]",
+        customPadding: "py-3",
+      },
+      {
+        label: "Alavancagem",
+        index: "03",
+        product: "blue start apt co",
+        percentage: faker.datatype.number({ min: 0, max: 100 }),
+        graphBarColor: "bg-[#884eff]",
+        graphPercentageBorder: "border-[#884eff]",
+        graphBarBackground: "bg-[#bf9eff]",
+        graphPercentageBackground: "bg-[#fbf1ff]",
+        percentageTextColor: "text-[#884eff]",
+        customPadding: "py-3",
+      },
+      {
+        label: "%",
+        index: "04",
+        product: "blue start apt sc",
+        percentage: faker.datatype.number({ min: 0, max: 100 }),
+        graphBarColor: "bg-[#FF947A]",
+        graphPercentageBorder: "border-[#FF947A]",
+        graphBarBackground: "bg-[#ffd4a1]",
+        graphPercentageBackground: "bg-[#fef6e6]",
+        percentageTextColor: "text-[#FF947A]",
+        customPadding: "pt-3",
+      },
+    ],
+  },
+};
