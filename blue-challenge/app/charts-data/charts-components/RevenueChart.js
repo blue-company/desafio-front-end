@@ -23,7 +23,10 @@ ChartJS.register(
 
 const RevenueChart = () => {
   return (
-    <div className="relative flex flex-col items-center w-[98%] h-full">
+    <div
+      data-testid="RevenueChart"
+      className="relative flex flex-col items-center w-[98%] h-full"
+    >
       <div className="flex w-full mb-5 text-13 font-bold">
         <h1>Rendimento Total</h1>
       </div>

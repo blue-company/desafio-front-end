@@ -21,7 +21,10 @@ const Main = () => {
   return (
     <>
       {hydrated && (
-        <div className="flex justify-center flex-wrap p-6 gap-6 overflow-auto">
+        <div
+          data-testid="mainDashboard"
+          className="flex justify-center flex-wrap p-6 gap-6 overflow-auto"
+        >
           <DashboardCard
             width={"min-[1420px]:w-[600px]"}
             children={<SalesChart />}
