@@ -22,7 +22,7 @@ const Sidebar = () => {
     <div className="hidden md:flex flex-col items-center w-[15vw] lg:w-58 h-[100vh] bg-white">
       <Link href="/">
         <div className="flex items-center lg:w-42 mt-8 space-x-4 cursor-pointer">
-          <div className="flex items-center justify-center h-[40px] w-[10vw] lg:h-[38px] lg:w-[38px] p-[6px] bg-blue-250 text-white rounded-md transition-all duration-500 hover:w-[45px] hover:h-[45px]">
+          <div className="flex items-center justify-center w-[10vw] lg:w-[38px] h-[40px] lg:h-[38px] p-[6px] bg-blue-250 rounded-md text-white transition-all duration-500 hover:w-[45px] hover:h-[45px]">
             <Image
               src="/assets/LogoBlue.png"
               alt="Logo Icon"
@@ -30,18 +30,18 @@ const Sidebar = () => {
               height={25}
             />
           </div>
-          <h1 className="hidden lg:flex text-xl text-black-title font-bold">
+          <h1 className="hidden lg:flex text-xl font-bold text-black-title">
             Blue
           </h1>
         </div>
       </Link>
 
       <div
-        className={`flex items-center justify-center lg:justify-start w-[10vw] lg:w-42 mt-8 px-4 py-3 space-x-4 rounded-xl cursor-pointer bg-${
+        className={`flex items-center justify-center lg:justify-start w-[10vw] lg:w-42 mt-8 px-4 py-3 space-x-4 rounded-xl cursor-pointer transition-all duration-500 bg-${
           dashboardSelected ? "blue" : "transparent"
         }-250 text-${dashboardSelected ? "white" : "zinc-500"} font-${
           dashboardSelected ? "bold" : "normal"
-        } transition-all duration-500`}
+        }`}
         onClick={handleClickDashboard}
       >
         <Image
@@ -54,18 +54,18 @@ const Sidebar = () => {
       </div>
 
       <div
-        className={`flex items-center justify-center lg:justify-start w-[10vw] lg:w-42 mt-5 px-4 py-3 space-x-4 rounded-xl cursor-pointer bg-${
+        className={`flex items-center justify-center lg:justify-start w-[10vw] lg:w-42 mt-5 px-4 py-3 space-x-4 rounded-xl cursor-pointer transition-all duration-500 bg-${
           leaderboardSelected ? "blue" : "transparent"
         }-250 text-${leaderboardSelected ? "white" : "zinc-500"} font-${
           leaderboardSelected ? "bold" : "normal"
-        } transition-all duration-500`}
+        }`}
         onClick={handleClickLeaderboard}
       >
         <RiBarChartLine className=" text-xl" />
         <h2 className="hidden lg:flex text-13">Leaderboard</h2>
       </div>
 
-      <div className="relative flex flex-col items-center w-[80%] h-[100px] lg:w-40 lg:h-48 mt-auto mb-5 lg:mb-16 px-xxs py-1 space-y-1.5">
+      <div className="relative flex flex-col items-center w-[80%] lg:w-40 h-[100px] lg:h-48 mt-auto mb-5 lg:mb-16 px-xxs py-1 space-y-1.5">
         <Image
           src="/assets/Background.png"
           alt="Background"

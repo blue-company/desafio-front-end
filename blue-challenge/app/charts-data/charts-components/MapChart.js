@@ -6,8 +6,8 @@ import { Data, Options } from "../charts/MapChartData";
 const MapChart = () => {
   return (
     <div className="flex flex-col items-center w-[98%] h-full">
-      <div className="flex w-full mb-5">
-        <h1 className="text-13 font-bold">Mapeamento de vendas por UF</h1>
+      <div className="flex w-full mb-5 text-13 font-bold">
+        <h1>Mapeamento de vendas por UF</h1>
       </div>
       <Chart
         width={"100%"}

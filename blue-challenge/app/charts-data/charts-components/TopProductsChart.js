@@ -7,8 +7,8 @@ import { Data } from "../charts/TopProductsChartData";
 const TopProductsChart = () => {
   return (
     <div className="relative flex flex-col items-center w-[98%] h-full">
-      <div className="flex w-full mb-2">
-        <h1 className="text-13 font-bold">Top produtos</h1>
+      <div className="flex w-full mb-2 text-13 font-bold">
+        <h1>Top produtos</h1>
       </div>
       <div className="w-full h-[90] overflow-x-auto">
         <table className="w-full table-auto border-collapse text-[10px]">

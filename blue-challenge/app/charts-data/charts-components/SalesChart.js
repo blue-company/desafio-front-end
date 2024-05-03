@@ -4,7 +4,7 @@ import { BiExport } from "react-icons/bi";
 
 const SalesChart = () => {
   return (
-    <div className="flex flex-col w-[98%] h-full items-center">
+    <div className="flex flex-col items-center w-[98%] h-full">
       <div className="flex w-full">
         <div>
           <h1 className="text-13 font-bold">Vendas hoje</h1>

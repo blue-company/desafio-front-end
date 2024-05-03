@@ -10,7 +10,7 @@ function SalesComponentCard({
 }) {
   return (
     <div
-      className={`flex flex-col flex-wrap items-start w-120 p-3 ${backgroundColor} rounded-xl gap-1`}
+      className={`flex flex-col flex-wrap items-start w-120 gap-1 p-3 ${backgroundColor} rounded-xl`}
     >
       <Image src={imageSrc} alt={imageAlt} width={30} height={30} />
       <span className="font-bold text-base">{spanFirst}</span>

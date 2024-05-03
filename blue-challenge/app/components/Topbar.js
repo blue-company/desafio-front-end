@@ -24,7 +24,7 @@ const Topbar = () => {
           <input
             type="text"
             placeholder="Pesquisar informações"
-            className="w-full ml-1.5 bg-transparent placeholder:text-[8px] sm:placeholder:text-13 text-13 outline-none"
+            className="w-full ml-1.5 bg-transparent text-13 outline-none placeholder:text-[8px] sm:placeholder:text-13"
           ></input>
         </div>
 
@@ -40,7 +40,7 @@ const Topbar = () => {
           </a>
         </div>
 
-        <div className="flex ml-[25%] sm:ml-0 items-center sm:space-x-4">
+        <div className="flex items-center ml-[25%] sm:ml-0 sm:space-x-4">
           <div className="flex items-center justify-center h-8 w-8 sm:bg-orange-50 rounded-md text-orange-400 cursor-pointer">
             <TfiBell />
           </div>

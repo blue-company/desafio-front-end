@@ -19,7 +19,7 @@ const DropdownMobile = () => {
         <TiThMenu />
       </button>
       {isOpen && (
-        <ul className="absolute top-11 left-0 flex flex-col items-center w-[11vw] h-[100vh] bg-white  rounded shadow-lg">
+        <ul className="absolute top-11 left-0 flex flex-col items-center w-[11vw] h-[100vh] bg-white rounded shadow-lg">
           <li className="flex items-center justify-center w-10 h-10 my-2 mx-2 bg-blue-250 rounded-full">
             <Image
               src="/assets/ChartIcon.png"

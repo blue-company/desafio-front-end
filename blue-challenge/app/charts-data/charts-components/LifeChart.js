@@ -26,13 +26,11 @@ ChartJS.register(
   Legend
 );
 
-import React from "react";
-
 const LifeChart = () => {
   return (
     <div className="relative flex flex-col items-center w-[98%] h-full">
-      <div className="flex w-full mb-5">
-        <h1 className="text-13 font-bold">Vidas</h1>
+      <div className="flex w-full mb-5 text-13 font-bold">
+        <h1>Vidas</h1>
       </div>
 
       <Line
@@ -41,7 +39,7 @@ const LifeChart = () => {
         width={"400px"}
         height={"150px"}
       />
-      <div className="flex text-[10px] gap-2">
+      <div className="flex gap-2 text-[10px]">
         <div className="flex flex-col items-center">
           <span className="flex items-center gap-x-1 text-slate-400">
             <Image

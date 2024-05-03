@@ -24,8 +24,8 @@ ChartJS.register(
 const ServiceChart = () => {
   return (
     <div className="relative flex flex-col items-center w-[98%] h-full">
-      <div className="flex w-full mb-5">
-        <h1 className="text-13 font-bold">Nível de serviço</h1>
+      <div className="flex w-full mb-5 text-13 font-bold">
+        <h1>Nível de serviço</h1>
       </div>
 
       <Bar
