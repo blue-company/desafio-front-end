@@ -4,22 +4,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { RiBarChartLine } from "react-icons/ri";
 
-const Sidebar = () => {
+const Sidebar = ({ showDashboard, setShowDashboard }) => {
   const [dashboardSelected, setDashboardSelected] = useState(true);
   const [leaderboardSelected, setLeaderboardSelected] = useState(false);
 
   const handleClickDashboard = () => {
     setDashboardSelected(true);
     setLeaderboardSelected(false);
+    setShowDashboard(true);
   };
 
   const handleClickLeaderboard = () => {
     setLeaderboardSelected(true);
     setDashboardSelected(false);
+    setShowDashboard(false);
   };
 
   return (
-    <div className="hidden md:flex flex-col items-center w-[15vw] lg:w-58 h-[100vh] bg-white">
+    <div
+      data-testid="sidebar"
+      className="hidden md:flex flex-col items-center w-[15vw] lg:w-58 h-[100vh] bg-white"
+    >
       <Link href="/">
         <div className="flex items-center lg:w-42 mt-8 space-x-4 cursor-pointer">
           <div className="flex items-center justify-center w-[10vw] lg:w-[38px] h-[40px] lg:h-[38px] p-[6px] bg-blue-250 rounded-md text-white transition-all duration-500 hover:w-[45px] hover:h-[45px]">
@@ -37,6 +42,7 @@ const Sidebar = () => {
       </Link>
 
       <div
+        data-testid="dashboardSection"
         className={`flex items-center justify-center lg:justify-start w-[10vw] lg:w-42 mt-8 px-4 py-3 space-x-4 rounded-xl cursor-pointer transition-all duration-500 bg-${
           dashboardSelected ? "blue" : "transparent"
         }-250 text-${dashboardSelected ? "white" : "zinc-500"} font-${
@@ -54,6 +60,7 @@ const Sidebar = () => {
       </div>
 
       <div
+        data-testid="leaderboardSection"
         className={`flex items-center justify-center lg:justify-start w-[10vw] lg:w-42 mt-5 px-4 py-3 space-x-4 rounded-xl cursor-pointer transition-all duration-500 bg-${
           leaderboardSelected ? "blue" : "transparent"
         }-250 text-${leaderboardSelected ? "white" : "zinc-500"} font-${

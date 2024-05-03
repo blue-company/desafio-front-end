@@ -15,14 +15,17 @@ const TopProductsChart = () => {
           <thead className="">
             <tr>
               {Data.data.datasets.map((dataset) => (
-                <th className="px-4 py-2 font-normal text-[#94A3B8] text-left">
+                <th
+                  key={dataset.label}
+                  className="px-4 py-2 font-normal text-[#94A3B8] text-left"
+                >
                   {dataset.label}
                 </th>
               ))}
             </tr>
           </thead>
-          {Data.data.datasets.map((dataset) => (
-            <tbody>
+          {Data.data.datasets.map((dataset, index) => (
+            <tbody key={index}>
               <tr>
                 <td
                   className={`px-4 ${dataset.customPadding} border-t border-gray-200 text-[#3F3F3F]`}
