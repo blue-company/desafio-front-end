@@ -10,7 +10,7 @@ const SalesChart = () => {
           <h1 className="text-13 font-bold">Vendas hoje</h1>
           <h2 className="mt-1 text-[11px] text-zinc-400">Resumo de vendas</h2>
         </div>
-        <button className="flex items-center h-8 ml-auto px-3 border-2 rounded-lg text-[10px] ">
+        <button className="flex items-center h-8 ml-auto px-3 border-2 rounded-lg text-[10px] cursor-pointer hover:bg-blue-250 hover:text-white hover:border-0">
           <BiExport /> Exportar
         </button>
       </div>

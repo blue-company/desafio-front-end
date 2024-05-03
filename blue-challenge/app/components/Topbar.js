@@ -45,7 +45,7 @@ const Topbar = () => {
             <TfiBell />
           </div>
 
-          <div className="flex items-center">
+          <div className="flex items-center cursor-pointer">
             <div className="w-10 h-10 mr-4 overflow-hidden rounded-md">
               <Image
                 src="/assets/foto.jpg"

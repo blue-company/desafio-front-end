@@ -1,34 +1,66 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { RiBarChartLine } from "react-icons/ri";
 
 const Sidebar = () => {
+  const [dashboardSelected, setDashboardSelected] = useState(true);
+  const [leaderboardSelected, setLeaderboardSelected] = useState(false);
+
+  const handleClickDashboard = () => {
+    setDashboardSelected(true);
+    setLeaderboardSelected(false);
+  };
+
+  const handleClickLeaderboard = () => {
+    setLeaderboardSelected(true);
+    setDashboardSelected(false);
+  };
+
   return (
     <div className="hidden md:flex flex-col items-center w-[15vw] lg:w-58 h-[100vh] bg-white">
-      <div className="flex items-center lg:w-42 mt-8 space-x-4">
-        <div className="flex items-center justify-center h-[40px] w-[10vw] lg:h-[38px] lg:w-[38px] p-[6px] bg-blue-250 text-white rounded-md">
-          <Image
-            src="/assets/LogoBlue.png"
-            alt="Logo Icon"
-            width={25}
-            height={25}
-          />
+      <Link href="/">
+        <div className="flex items-center lg:w-42 mt-8 space-x-4 cursor-pointer">
+          <div className="flex items-center justify-center h-[40px] w-[10vw] lg:h-[38px] lg:w-[38px] p-[6px] bg-blue-250 text-white rounded-md transition-all duration-500 hover:w-[45px] hover:h-[45px]">
+            <Image
+              src="/assets/LogoBlue.png"
+              alt="Logo Icon"
+              width={25}
+              height={25}
+            />
+          </div>
+          <h1 className="hidden lg:flex text-xl text-black-title font-bold">
+            Blue
+          </h1>
         </div>
-        <h1 className="hidden lg:flex text-xl text-black-title font-bold">
-          Blue
-        </h1>
-      </div>
+      </Link>
 
-      <div className="flex items-center justify-center lg:justify-start w-[10vw] lg:w-42 mt-8 px-4 py-3 space-x-4 bg-blue-250 rounded-xl text-white">
+      <div
+        className={`flex items-center justify-center lg:justify-start w-[10vw] lg:w-42 mt-8 px-4 py-3 space-x-4 rounded-xl cursor-pointer bg-${
+          dashboardSelected ? "blue" : "transparent"
+        }-250 text-${dashboardSelected ? "white" : "zinc-500"} font-${
+          dashboardSelected ? "bold" : "normal"
+        } transition-all duration-500`}
+        onClick={handleClickDashboard}
+      >
         <Image
           src="/assets/ChartIcon.png"
           alt="Chart Icon"
           width={20}
           height={20}
         />
-        <h2 className="hidden lg:flex text-13 font-bold">Dashboard</h2>
+        <h2 className="hidden lg:flex text-13">Dashboard</h2>
       </div>
 
-      <div className="flex items-center justify-center lg:justify-start w-[10vw] lg:w-42 mt-5 px-4 py-3 space-x-4 rounded-xl text-zinc-500">
+      <div
+        className={`flex items-center justify-center lg:justify-start w-[10vw] lg:w-42 mt-5 px-4 py-3 space-x-4 rounded-xl cursor-pointer bg-${
+          leaderboardSelected ? "blue" : "transparent"
+        }-250 text-${leaderboardSelected ? "white" : "zinc-500"} font-${
+          leaderboardSelected ? "bold" : "normal"
+        } transition-all duration-500`}
+        onClick={handleClickLeaderboard}
+      >
         <RiBarChartLine className=" text-xl" />
         <h2 className="hidden lg:flex text-13">Leaderboard</h2>
       </div>
@@ -57,7 +89,7 @@ const Sidebar = () => {
           Tech
         </p>
         <div className="hidden lg:flex z-10">
-          <button className="mt-4 px-5 py-1.5 bg-white rounded text-[10px] font-bold text-blue-700 ">
+          <button className="mt-4 px-5 py-1.5 bg-white rounded text-[10px] font-bold text-blue-700 transition-all duration-500 hover:bg-blue-250 hover:text-white hover:border hover:border-white">
             Conhecer
           </button>
         </div>
