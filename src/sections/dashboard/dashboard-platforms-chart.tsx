@@ -47,7 +47,7 @@ export default function PlatformsChatInfo({ title, subheader, chart, ...other }:
 
   const popover = usePopover();
 
-  const [seriesData, setSeriesData] = useState('2022');
+  const [seriesData, setSeriesData] = useState('2023');
 
   const chartOptions = useChart({
     colors: colors.map((colr) => colr[1]),
@@ -105,7 +105,7 @@ export default function PlatformsChatInfo({ title, subheader, chart, ...other }:
         />
 
         {series.map((item) => (
-          <Box key={item.year} sx={{ height: '100%' }}>
+          <Box key={item.year} sx={{ mt: 3, mx: 3 }}>
             {item.year === seriesData && (
               <Chart
                 dir="ltr"
@@ -113,7 +113,7 @@ export default function PlatformsChatInfo({ title, subheader, chart, ...other }:
                 series={item.data}
                 options={chartOptions}
                 width="100%"
-                height="100%"
+                height={264}
               />
             )}
           </Box>
