@@ -39,18 +39,21 @@ export default function RealityChart({ title, subheader, series }: Props) {
     switch (name) {
       case 'Aguardando':
         return {
+          caption: 'Comercial',
           icon: 'solar:ticket-linear',
           bgColor: theme.palette.warning.lighter,
           iconColor: theme.palette.warning.main,
         };
       case 'Contratos finalizados':
         return {
+          caption: 'Global',
           icon: 'solar:bag-4-linear',
           bgColor: theme.palette.success.lighter,
           iconColor: theme.palette.success.main,
         };
       default:
         return {
+          caption: 'Info',
           icon: 'solar:info-circle-linear',
           bgColor: theme.palette.info.lighter,
           iconColor: theme.palette.info.main,
@@ -78,13 +81,6 @@ export default function RealityChart({ title, subheader, series }: Props) {
         width="100%"
         height={240}
       />
-      {/* <InfoRow
-        bgColor={theme.palette.success.lighter}
-        iconColor={theme.palette.success.main}
-        title="Contratos finalizados"
-        caption="Global"
-        value={8000}
-      /> */}
       {sums.map((item) => (
         <InfoRow
           key={item.name}
@@ -92,7 +88,7 @@ export default function RealityChart({ title, subheader, series }: Props) {
           iconColor={item.iconColor}
           icon={item.icon}
           title={item.name}
-          caption="Total"
+          caption={item.caption}
           value={item.sum}
         />
       ))}
