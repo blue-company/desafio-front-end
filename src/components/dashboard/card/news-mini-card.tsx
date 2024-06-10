@@ -1,0 +1,36 @@
+import React from "react";
+
+type NewsMiniCardProps = {
+  className?: string;
+  icon: JSX.Element;
+  results: string | number;
+  description: string;
+  percentageText: string;
+};
+
+const NewsMiniCard: React.FC<NewsMiniCardProps> = ({
+  className,
+  icon,
+  results,
+  description,
+  percentageText,
+}) => {
+  return (
+    <div
+      className={`flex flex-col w-1/2 h-[20vh] rounded-2xl p-4  flex-grow ${className}`}
+    >
+      <div className="flex flex-col ">
+        <div className="py-2 w-fit rounded-full flex justify-center text-white">
+          {icon}
+        </div>
+        <h1 className="text-xl font-bold text-blue-950">{`${results}`}</h1>
+      </div>
+      <p className="text-md font-semibold mt-2 text-gray-600">{description}</p>
+      <p className="text-sm font-semibold text-blue-400 mt-auto">
+        {percentageText}
+      </p>
+    </div>
+  );
+};
+
+export default NewsMiniCard;

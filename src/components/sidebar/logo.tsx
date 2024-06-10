@@ -1,9 +1,9 @@
-import { Heart } from "lucide-react";
+import { HeartPulse } from "lucide-react";
 
 const Logo = () => {
   return (
     <>
-      <Heart
+      <HeartPulse
         size={28}
         className="bg-blue-700 w-12 h-12 p-3 text-white rounded-md"
       />
