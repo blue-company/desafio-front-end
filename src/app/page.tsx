@@ -1,10 +1,18 @@
-import Image from "next/image";
+import React from "react";
+import SideBar from "@/components/sideMenu";
+import NavBar from "@/components/navbar";
+import Dashboard from "@/screen/dashboard";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-      <Image src="/image.jpg" alt="image" width={500} height={500} />
-    </div>
+    <main className="flex">
+      <SideBar />
+      <div className="flex flex-col w-full">
+        <NavBar />
+        <Dashboard />
+      </div>
+    </main>
   );
 };
+
+export default Home;
