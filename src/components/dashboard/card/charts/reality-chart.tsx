@@ -22,7 +22,7 @@ export default function RealityChart() {
   return (
     <BarChart
       width={340}
-      height={340}
+      height={230}
       data={data}
       barGap={8}
       barCategoryGap={10}

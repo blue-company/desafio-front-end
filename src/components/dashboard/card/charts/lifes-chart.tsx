@@ -74,7 +74,7 @@ const data = [
 
 export default function LifesChart() {
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={230}>
       <LineChart data={data}>
         <CartesianGrid horizontal={true} vertical={false} />
         <XAxis dataKey="month" axisLine={{ strokeWidth: 0 }} tickLine={false} />

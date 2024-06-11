@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import {
   BarChart,
   Bar,
@@ -9,6 +10,20 @@ import {
 } from "recharts";
 
 export default function IncomesChart() {
+  const [chartWidth, setChartWidth] = useState(525);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newWidth = window.innerWidth < 768 ? 430 : 525; // 768px é um breakpoint comum para dispositivos sm
+      setChartWidth(newWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Chama na montagem para definir o tamanho inicial
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const data = [
     { day: "Segunda", Aguardando: 14000, Implantadas: 13000 },
     { day: "Terça", Aguardando: 16000, Implantadas: 12000 },
@@ -21,8 +36,8 @@ export default function IncomesChart() {
 
   return (
     <BarChart
-      width={530}
-      height={350}
+      width={chartWidth}
+      height={230}
       data={data}
       barGap={8}
       barCategoryGap={10}

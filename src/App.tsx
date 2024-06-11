@@ -21,9 +21,12 @@ function App() {
         <Sidebar />
         <div className="flex w-screen flex-col">
           <Header />
-          <main className="flex p-5 flex-col gap-4">
-            <div className="lg:grid lg:grid-cols-[60%_40%] space-x-3">
-              <DashboardCard title="Vendas hoje" className="w-full">
+          <main className="flex p-5 flex-col gap-2 ">
+            <div className="flex xl:flex-row flex-col gap-4">
+              <DashboardCard
+                title="Vendas hoje"
+                className="xl:w-[40vw] xl:h-[30vh] h-fit"
+              >
                 <div className="flex justify-between">
                   <span className="text-gray-400 font-semibold">
                     Resumo de vendas
@@ -35,7 +38,7 @@ function App() {
                   </button>
                 </div>
 
-                <div className="flex gap-2 justify-around mt-10 mb-5">
+                <div className="flex xl:flex-row flex-col items-center  gap-2 justify-around mt-10 mb-5">
                   <NewsMiniCard
                     icon={
                       <BarChart className="bg-pink-700 w-9 h-9 p-1 rounded-full" />
@@ -75,20 +78,23 @@ function App() {
                 </div>
               </DashboardCard>
 
-              <DashboardCard title="Plataformas" className="ml-3">
+              <DashboardCard
+                title="Plataformas"
+                className="h-[30vh] xl:w-[35vw]"
+              >
                 <ChartCard />
               </DashboardCard>
             </div>
-            <div className="lg:grid lg:grid-cols-[40%_27%_27%] gap-4">
-              <DashboardCard title="Rendimento total">
+            <div className="lg:grid lg:grid-cols-[40%_27%_27%] flex flex-col lg:gap-8 gap-4">
+              <DashboardCard title="Rendimento total" className="h-[30vh]">
                 <IncomesChart />
               </DashboardCard>
 
-              <DashboardCard title="Vidas">
+              <DashboardCard title="Vidas" className="h-[30vh]">
                 <LifesChart />
               </DashboardCard>
 
-              <DashboardCard title="Realidade">
+              <DashboardCard title="Realidade" className="h-[30vh]">
                 <RealityChart />
               </DashboardCard>
             </div>
