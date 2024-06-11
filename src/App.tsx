@@ -9,6 +9,8 @@ import DashboardCard from "./components/dashboard/card/card";
 import Header from "./components/header/header";
 import Sidebar from "./components/sidebar/sidebar";
 import NewsMiniCard from "./components/dashboard/card/news-mini-card";
+import { LineChart } from "@mui/x-charts/LineChart";
+import ChartCard from "./components/dashboard/card/chart-card";
 
 function App() {
   return (
@@ -71,7 +73,9 @@ function App() {
                 </div>
               </DashboardCard>
 
-              <DashboardCard title="Plataformas" />
+              <DashboardCard title="Plataformas">
+                <ChartCard />
+              </DashboardCard>
             </div>
             <DashboardCard title="Rendimento total" />
           </main>

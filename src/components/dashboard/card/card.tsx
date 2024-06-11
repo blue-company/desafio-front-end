@@ -12,7 +12,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
   title,
 }) => {
   return (
-    <div className={`shadow-xl p-4 flex flex-col ${className}`}>
+    <div className={`shadow-md rounded-xl p-4 flex flex-col ${className}`}>
       <h1 className="text-lg font-bold text-blue-950">{title}</h1>
       {children}
     </div>

@@ -9,7 +9,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="shadow-xl p-4 flex w-full items-center flex-col lg:flex-row h-fit">
+    <div className="shadow-md p-4 flex w-full items-center flex-col lg:flex-row h-fit">
       <h1 className="text-3xl font-bold text-blue-950">Dashboard</h1>
       <button className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
         <ChevronDown />

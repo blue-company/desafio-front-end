@@ -12,7 +12,9 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@mui/docs": "^5.15.19",
     "@mui/material": "^5.15.19",
+    "@mui/x-charts": "^7.6.2",
     "lucide-react": "^0.394.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
