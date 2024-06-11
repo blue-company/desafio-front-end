@@ -11,6 +11,8 @@ import Sidebar from "./components/sidebar/sidebar";
 import NewsMiniCard from "./components/dashboard/card/news-mini-card";
 import ChartCard from "./components/dashboard/card/charts/platforms-chart";
 import IncomesChart from "./components/dashboard/card/charts/incoming-chart";
+import LifesChart from "./components/dashboard/card/charts/lifes-chart";
+import RealityChart from "./components/dashboard/card/charts/reality-chart";
 
 function App() {
   return (
@@ -82,9 +84,13 @@ function App() {
                 <IncomesChart />
               </DashboardCard>
 
-              <DashboardCard title="Vidas"></DashboardCard>
+              <DashboardCard title="Vidas">
+                <LifesChart />
+              </DashboardCard>
 
-              <DashboardCard title="Realidade"></DashboardCard>
+              <DashboardCard title="Realidade">
+                <RealityChart />
+              </DashboardCard>
             </div>
           </main>
         </div>
