@@ -20,7 +20,7 @@ function App() {
         <div className="flex w-screen flex-col">
           <Header />
           <main className="flex p-5 flex-col gap-4">
-            <div className="lg:grid lg:grid-cols-[60%_40%] space-x-8">
+            <div className="lg:grid lg:grid-cols-[60%_40%] space-x-3">
               <DashboardCard title="Vendas hoje" className="w-full">
                 <div className="flex justify-between">
                   <span className="text-gray-400 font-semibold">
@@ -73,11 +73,11 @@ function App() {
                 </div>
               </DashboardCard>
 
-              <DashboardCard title="Plataformas">
+              <DashboardCard title="Plataformas" className="ml-3">
                 <ChartCard />
               </DashboardCard>
             </div>
-            <div className="lg:grid lg:grid-cols-[45%_25%_25%] gap-4">
+            <div className="lg:grid lg:grid-cols-[40%_27%_27%] gap-4">
               <DashboardCard title="Rendimento total">
                 <IncomesChart />
               </DashboardCard>

@@ -1,65 +1,124 @@
-import Stack from "@mui/material/Stack";
-import Box from "@mui/material/Box";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
-import { LineChart } from "@mui/x-charts/LineChart";
-
-const lineChartsParams = {
-  series: [
-    {
-      id: "td",
-      data: [320, 300, 260, 200, 190, 220, 280, 310, 300, 280, 180, 140],
-      label: "TD Consultoria",
-      showMark: false,
-      color: "#9C27B0",
-    },
-    {
-      id: "riko",
-      data: [250, 220, 180, 130, 180, 280, 350, 340, 320, 280, 200, 140],
-      label: "RIKO Plataforma",
-      showMark: false,
-      color: "#F44336",
-    },
-    {
-      id: "blue",
-      data: [280, 360, 350, 300, 210, 200, 240, 290, 310, 300, 240, 200],
-      label: "Blue Serviços",
-      showMark: false,
-      color: "#4CAF50",
-    },
-  ],
-  xAxis: [
-    {
-      data: [
-        "Jan",
-        "Fev",
-        "Mar",
-        "Abr",
-        "Mai",
-        "Jun",
-        "Jul",
-        "Ago",
-        "Set",
-        "Out",
-        "Nov",
-        "Dez",
-      ],
-      scaleType: "point" as const,
-      id: "axis1",
-    },
-  ],
-  height: 300,
-};
+const data = [
+  {
+    month: "Jan",
+    "TD Consultoria": 320,
+    "RIKO Plataforma": 250,
+    "Blue Serviços": 280,
+  },
+  {
+    month: "Fev",
+    "TD Consultoria": 300,
+    "RIKO Plataforma": 220,
+    "Blue Serviços": 360,
+  },
+  {
+    month: "Mar",
+    "TD Consultoria": 260,
+    "RIKO Plataforma": 180,
+    "Blue Serviços": 350,
+  },
+  {
+    month: "Abr",
+    "TD Consultoria": 200,
+    "RIKO Plataforma": 130,
+    "Blue Serviços": 300,
+  },
+  {
+    month: "Mai",
+    "TD Consultoria": 190,
+    "RIKO Plataforma": 180,
+    "Blue Serviços": 210,
+  },
+  {
+    month: "Jun",
+    "TD Consultoria": 220,
+    "RIKO Plataforma": 280,
+    "Blue Serviços": 200,
+  },
+  {
+    month: "Jul",
+    "TD Consultoria": 280,
+    "RIKO Plataforma": 350,
+    "Blue Serviços": 240,
+  },
+  {
+    month: "Ago",
+    "TD Consultoria": 310,
+    "RIKO Plataforma": 340,
+    "Blue Serviços": 290,
+  },
+  {
+    month: "Set",
+    "TD Consultoria": 300,
+    "RIKO Plataforma": 320,
+    "Blue Serviços": 310,
+  },
+  {
+    month: "Out",
+    "TD Consultoria": 280,
+    "RIKO Plataforma": 280,
+    "Blue Serviços": 300,
+  },
+  {
+    month: "Nov",
+    "TD Consultoria": 180,
+    "RIKO Plataforma": 200,
+    "Blue Serviços": 240,
+  },
+  {
+    month: "Dez",
+    "TD Consultoria": 140,
+    "RIKO Plataforma": 140,
+    "Blue Serviços": 200,
+  },
+];
 
 export default function PlatformsChart() {
   return (
-    <Stack
-      direction={{ xs: "column", md: "row" }}
-      spacing={{ xs: 0, md: 4 }}
-      sx={{ width: "100%" }}
-    >
-      <Box sx={{ flexGrow: 1 }}>
-        <LineChart {...lineChartsParams} />
-      </Box>
-    </Stack>
+    <ResponsiveContainer width="100%" height={300}>
+      <LineChart data={data}>
+        <CartesianGrid horizontal={true} vertical={false} />
+        <XAxis dataKey="month" axisLine={{ strokeWidth: 0 }} tickLine={false} />
+        <YAxis
+          axisLine={false}
+          ticks={[0, 100, 200, 300, 400]}
+          tickFormatter={(value) => `${value}`}
+        />
+        <Tooltip />
+        <Legend iconType="square" iconSize={10} />
+        <Line
+          type="monotone"
+          dataKey="TD Consultoria"
+          stroke="#9C27B0"
+          strokeWidth={3}
+          dot={false}
+        />
+        <Line
+          type="monotone"
+          dataKey="RIKO Plataforma"
+          stroke="#F44336"
+          strokeWidth={3}
+          dot={false}
+        />
+        <Line
+          type="monotone"
+          dataKey="Blue Serviços"
+          stroke="#4CAF50"
+          strokeWidth={3}
+          dot={false}
+        />
+      </LineChart>
+    </ResponsiveContainer>
   );
 }
