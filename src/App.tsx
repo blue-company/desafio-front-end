@@ -9,8 +9,8 @@ import DashboardCard from "./components/dashboard/card/card";
 import Header from "./components/header/header";
 import Sidebar from "./components/sidebar/sidebar";
 import NewsMiniCard from "./components/dashboard/card/news-mini-card";
-import { LineChart } from "@mui/x-charts/LineChart";
-import ChartCard from "./components/dashboard/card/chart-card";
+import ChartCard from "./components/dashboard/card/charts/platforms-chart";
+import IncomesChart from "./components/dashboard/card/charts/incoming-chart";
 
 function App() {
   return (
@@ -77,7 +77,15 @@ function App() {
                 <ChartCard />
               </DashboardCard>
             </div>
-            <DashboardCard title="Rendimento total" />
+            <div className="lg:grid lg:grid-cols-[45%_25%_25%] gap-4">
+              <DashboardCard title="Rendimento total">
+                <IncomesChart />
+              </DashboardCard>
+
+              <DashboardCard title="Vidas"></DashboardCard>
+
+              <DashboardCard title="Realidade"></DashboardCard>
+            </div>
           </main>
         </div>
       </div>

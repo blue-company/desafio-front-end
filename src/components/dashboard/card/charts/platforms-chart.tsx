@@ -43,14 +43,14 @@ const lineChartsParams = {
         "Nov",
         "Dez",
       ],
-      scaleType: "point",
+      scaleType: "point" as const,
       id: "axis1",
     },
   ],
   height: 300,
 };
 
-export default function ChartCard() {
+export default function PlatformsChart() {
   return (
     <Stack
       direction={{ xs: "column", md: "row" }}
