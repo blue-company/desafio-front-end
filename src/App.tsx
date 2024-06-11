@@ -98,6 +98,20 @@ function App() {
                 <RealityChart />
               </DashboardCard>
             </div>
+
+            <div className="lg:grid lg:grid-cols-[40%_27%_27%] flex flex-col lg:gap-8 gap-4">
+              <DashboardCard title="Rendimento total" className="h-[30vh]">
+                <IncomesChart />
+              </DashboardCard>
+
+              <DashboardCard title="Vidas" className="h-[30vh]">
+                <LifesChart />
+              </DashboardCard>
+
+              <DashboardCard title="Realidade" className="h-[30vh]">
+                <RealityChart />
+              </DashboardCard>
+            </div>
           </main>
         </div>
       </div>

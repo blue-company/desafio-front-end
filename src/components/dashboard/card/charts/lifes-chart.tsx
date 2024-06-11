@@ -1,105 +1,97 @@
 import {
-  LineChart,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
   ResponsiveContainer,
+  AreaChart,
+  Area,
 } from "recharts";
 
 const data = [
   {
-    month: "Jan",
-    "Ultimo mês": 320,
-    "Este mês": 250,
+    uv: 2000,
+    pv: 4300,
+    amt: 2400,
   },
   {
-    month: "Fev",
-    "Ultimo mês": 300,
-    "Este mês": 220,
+    uv: 2800,
+    pv: 3800,
+    amt: 2210,
   },
   {
-    month: "Mar",
-    "Ultimo mês": 260,
-    "Este mês": 180,
+    uv: 1500,
+    pv: 4000,
+    amt: 2210,
   },
   {
-    month: "Abr",
-    "Ultimo mês": 200,
-    "Este mês": 130,
+    uv: 1600,
+    pv: 3000,
+    amt: 2210,
   },
   {
-    month: "Mai",
-    "Ultimo mês": 190,
-    "Este mês": 180,
+    uv: 1900,
+    pv: 4000,
+    amt: 2210,
   },
   {
-    month: "Jun",
-    "Ultimo mês": 220,
-    "Este mês": 280,
+    uv: 1800,
+    pv: 2700,
+    amt: 2210,
   },
   {
-    month: "Jul",
-    "Ultimo mês": 280,
-    "Este mês": 350,
-  },
-  {
-    month: "Ago",
-    "Ultimo mês": 310,
-    "Este mês": 340,
-  },
-  {
-    month: "Set",
-    "Ultimo mês": 300,
-    "Este mês": 320,
-  },
-  {
-    month: "Out",
-    "Ultimo mês": 280,
-    "Este mês": 280,
-  },
-  {
-    month: "Nov",
-    "Ultimo mês": 180,
-    "Este mês": 200,
-  },
-  {
-    month: "Dez",
-    "Ultimo mês": 140,
-    "Este mês": 140,
+    uv: 3000,
+    pv: 5000,
+    amt: 2210,
   },
 ];
 
 export default function LifesChart() {
   return (
-    <ResponsiveContainer width="100%" height={230}>
-      <LineChart data={data}>
-        <CartesianGrid horizontal={true} vertical={false} />
-        <XAxis dataKey="month" axisLine={{ strokeWidth: 0 }} tickLine={false} />
-        <YAxis
-          axisLine={false}
-          ticks={[0, 100, 200, 300, 400]}
-          tickFormatter={(value) => `${value}`}
-        />
+    <ResponsiveContainer width="108%" height={230}>
+      <AreaChart
+        width={830}
+        height={250}
+        data={data}
+        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+      >
+        <defs>
+          <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#6698de" stopOpacity={0.8} />
+            <stop offset="95%" stopColor="#FFFF" stopOpacity={0} />
+          </linearGradient>
+          <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#66de90" stopOpacity={0.8} />
+            <stop offset="200%" stopColor="#FFFF" stopOpacity={0} />
+          </linearGradient>
+        </defs>
+        <XAxis hide dataKey="name" />
+        <Legend />
+        <YAxis hide />
+        <CartesianGrid horizontal={false} vertical={false} />
         <Tooltip />
-        <Legend iconType="square" iconSize={10} />
-        <Line
+        <Area
           type="monotone"
-          dataKey="Ultimo mês"
-          stroke="#9C27B0"
+          dataKey="uv"
+          name="Último mês"
+          stroke="#1898de"
+          fillOpacity={1}
           strokeWidth={3}
-          dot={false}
+          fill="url(#colorUv)"
+          dot
         />
-        <Line
+        <Area
           type="monotone"
-          dataKey="Este mês"
-          stroke="#F44336"
+          dataKey="pv"
+          name="Este mês"
+          stroke="#82ca9d"
+          fillOpacity={1}
           strokeWidth={3}
-          dot={false}
+          fill="url(#colorPv)"
+          dot
         />
-      </LineChart>
+      </AreaChart>
     </ResponsiveContainer>
   );
 }

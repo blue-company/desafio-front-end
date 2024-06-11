@@ -19,7 +19,7 @@ export default function IncomesChart() {
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Chama na montagem para definir o tamanho inicial
+    handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);

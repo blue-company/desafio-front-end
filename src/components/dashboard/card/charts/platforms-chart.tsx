@@ -101,21 +101,21 @@ export default function PlatformsChart() {
           type="monotone"
           dataKey="TD Consultoria"
           stroke="#9C27B0"
-          strokeWidth={3}
+          strokeWidth={5}
           dot={false}
         />
         <Line
           type="monotone"
           dataKey="RIKO Plataforma"
           stroke="#F44336"
-          strokeWidth={3}
+          strokeWidth={5}
           dot={false}
         />
         <Line
           type="monotone"
           dataKey="Blue Serviços"
           stroke="#4CAF50"
-          strokeWidth={3}
+          strokeWidth={5}
           dot={false}
         />
       </LineChart>
