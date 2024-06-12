@@ -16,7 +16,7 @@ const NavBar = () => {
       >
         <Typography
           variant="h5"
-          className="text-3xl text-black p-5 font-semibold "
+          sx={{fontWeight: 'bold', fontFamily: 'Poppins'}}
         >
           Dashboard
         </Typography>

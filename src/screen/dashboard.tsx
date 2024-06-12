@@ -7,7 +7,7 @@ import LifesCharts from "@/components/charts/lifesCharts";
 import RealChart from "@/components/charts/realCharts";
 import MapChart from "@/components/charts/mapChart";
 import ServicesChart from "@/components/charts/servicesChart";
-import SalesCard from '@/components/salesCard'
+import SalesCard from "@/components/salesCard";
 const Dashboard = () => {
   return (
     <Grid
@@ -29,7 +29,7 @@ const Dashboard = () => {
         </Grid>
         <Grid item xl={4}>
           <GenericCard
-            title="teste"
+            title="Plataformas"
             height="auto"
             width="100%"
             chart={<PlataformChart />}
@@ -37,14 +37,14 @@ const Dashboard = () => {
         </Grid>
       </Grid>
 
-      {/* <Grid
+      <Grid
         container
         className="flex"
         sx={{ gap: 3, justifyContent: "center" }}
       >
         <Grid item xl={4}>
           <GenericCard
-            title="teste"
+            title="Rendimento total"
             height="auto"
             width="100%"
             chart={<PerformanceChart />}
@@ -53,7 +53,7 @@ const Dashboard = () => {
 
         <Grid item xl={3}>
           <GenericCard
-            title="teste"
+            title="Vidas"
             height="auto"
             width="100%"
             chart={<LifesCharts />}
@@ -62,7 +62,7 @@ const Dashboard = () => {
 
         <Grid item xl={3}>
           <GenericCard
-            title="teste"
+            title="Realidade"
             height="auto"
             width="100%"
             chart={<RealChart />}
@@ -76,7 +76,7 @@ const Dashboard = () => {
       >
         <Grid xl={4}>
           <GenericCard
-            title="teste"
+            title="Mapeamento de vendas por uf"
             height="auto"
             width="100%"
             chart={<LifesCharts />}
@@ -85,7 +85,7 @@ const Dashboard = () => {
 
         <Grid xl={3}>
           <GenericCard
-            title="teste"
+            title="nivel de serviço"
             height="auto"
             width="100%"
             chart={<MapChart />}
@@ -100,7 +100,7 @@ const Dashboard = () => {
             chart={<MapChart />}
           />
         </Grid>
-      </Grid> */}
+      </Grid>
     </Grid>
   );
 };

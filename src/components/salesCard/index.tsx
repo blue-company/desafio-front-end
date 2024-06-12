@@ -1,69 +1,83 @@
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import React from "react";
+import { Grid, Paper, Button, Typography, Box } from "@mui/material";
 import { CiExport } from "react-icons/ci";
 import chart from "@/assets/icons/chart.png";
 import tag from "@/assets/icons/tag.png";
 import profileIcon from "@/assets/icons/profileIcon.png";
 import contracts from "@/assets/icons/contracts.png";
-import React from "react";
 import CardsSeller from "./cards";
 
-function SalesCard() {
+const SalesCard = () => {
   return (
-    <Grid>
-      <Paper sx={{ borderRadius: 7, padding: 3, width: "100%", height: '420px' }}>
-        <Grid className="flex justify-between py-2 px-3 items-center">
-          <Typography variant="h4" className="pt-6 pl-6 pb-2 text-3xl">
-            Vendas Hoje <br />{" "}
+    <Grid container justifyContent="center">
+      <Paper
+        sx={{ borderRadius: 7, padding: 2, width: "100%", height: "420px" }}
+      >
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          p={3}
+        >
+          <Box>
+            <Typography variant="h4" sx={{ fontFamily: "Poppins", mb: 1 }}>
+              Vendas Hoje
+            </Typography>
             <Typography variant="body1">Resumo de vendas</Typography>
-          </Typography>
+          </Box>
           <Button
             variant="outlined"
-            className="h-10 border-[#424141a2] text-[#292929]"
+            sx={{
+              height: 30,
+              border: "1px solid #424141a2",
+              color: "#292929",
+            }}
           >
             <CiExport className="text-gray-800 mr-1" />
             Exportar
           </Button>
-        </Grid>
-
-        <Grid className="flex gap-4 justify-around">
-          <CardsSeller
-            color="#FFE2E5"
-            img={chart}
-            value="R$ 1.000"
-            text="Total de vendas"
-            porcentage="8% a mais que ontem"
-          />
-
-          <CardsSeller
-            color="#FFF4DE"
-            img={contracts}
-            value="300"
-            text="Total de contratos"
-            porcentage="5% a mais que ontem"
-          />
-
-          <CardsSeller
-            color="#DCFCE7"
-            img={tag}
-            value="5"
-            text="Implantados"
-            porcentage="1.2% a mais que ontem"
-          />
-
-          <CardsSeller
-            color="#F3E8FF"
-            img={profileIcon}
-            value="8"
-            text="Novos contratos"
-            porcentage="0.5% a mais que ontem"
-          />
+        </Box>
+        <Grid container spacing={2} justifyContent="space-around" mt={3}>
+          <Grid item>
+            <CardsSeller
+              color="#FFE2E5"
+              img={chart}
+              value="R$ 1.000"
+              text="Total de vendas"
+              porcentage="8% a mais que ontem"
+            />
+          </Grid>
+          <Grid item>
+            <CardsSeller
+              color="#FFF4DE"
+              img={contracts}
+              value="300"
+              text="Total de contratos"
+              porcentage="5% a mais que ontem"
+            />
+          </Grid>
+          <Grid item>
+            <CardsSeller
+              color="#DCFCE7"
+              img={tag}
+              value="5"
+              text="Implantados"
+              porcentage="1.2% a mais que ontem"
+            />
+          </Grid>
+          <Grid item>
+            <CardsSeller
+              color="#F3E8FF"
+              img={profileIcon}
+              value="8"
+              text="Novos contratos"
+              porcentage="0.5% a mais que ontem"
+            />
+          </Grid>
         </Grid>
       </Paper>
     </Grid>
   );
-}
+};
 
 export default SalesCard;
