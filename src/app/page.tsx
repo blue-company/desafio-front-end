@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <main className="flex font-Poppins">
       <SideBar />
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full bg-[#DDD]">
         <NavBar />
         <Dashboard />
       </div>

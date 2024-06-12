@@ -12,18 +12,10 @@ import {
 import styles from "./SideBar.module.css";
 
 const SideBar = () => {
-  const [openMenu, setOpenMenu] = useState(false);
-  const [buttonPosition, setButtonPosition] = useState({
-    top: "2.5rem",
-    left: "1rem",
-  });
+  const [openMenu, setOpenMenu] = useState(true);
 
   const handleToggleMenu = () => {
     setOpenMenu(!openMenu);
-    setButtonPosition((prevPosition) => ({
-      ...prevPosition,
-      left: openMenu ? "1rem" : "19rem",
-    }));
   };
 
   return (
@@ -31,7 +23,7 @@ const SideBar = () => {
       <button
         onClick={handleToggleMenu}
         className={styles.toggleButton}
-        style={buttonPosition}
+        style={{ left: openMenu ? "19rem" : "1rem" }}
       >
         {openMenu ? (
           <FaArrowRightFromBracket className="rotate-180 text-[#2500FF]" />
@@ -40,45 +32,58 @@ const SideBar = () => {
         )}
       </button>
 
-      {openMenu && (
-        <div className={styles.sidebar}>
-          <main className={styles.logoContainer}>
-            <span className={styles.logoBackground}>
-              <Image src={logo} alt="Logo" width={40} height={50} />
-            </span>
-            <p className={styles.logoText}>Blue</p>
-          </main>
+      <div
+        className={styles.sidebar}
+        style={{ transform: openMenu ? "translateX(0)" : "translateX(-100%)" }}
+      >
+        <main className={styles.logoContainer}>
+          <span className={styles.logoBackground}>
+            <Image src={logo} alt="Logo" width={40} height={50} />
+          </span>
+          <p className={styles.logoText}>Blue</p>
+        </main>
 
-          <ul className={styles.menuList}>
-            <li className={styles.menuItem}>
-              <Image
-                src={DashBoard}
-                width={30}
-                height={30}
-                alt="Dashboard Icon"
-              />
-              Dashboard
-            </li>
+        <ul className={styles.menuList}>
+          <li className={styles.menuItem}>
+            <Image
+              src={DashBoard}
+              width={30}
+              height={30}
+              alt="Dashboard Icon"
+            />
+            Dashboard
+          </li>
 
-            <li className={styles.menuItem}>
-              <RiBarChartLine className="text-xl" />
-              LeaderBoard
-            </li>
-          </ul>
+          <li className={styles.menuItem}>
+            <RiBarChartLine className="text-xl" />
+            LeaderBoard
+          </li>
 
-          <div className={styles.infoBox}>
-            <Image src={know} alt="Know Icon" width={50} />
-            <h2 className="text-xl text-center font-bold">
-              Conheça a <br /> blue
-            </h2>
-            <p className="text-sm text-center">
-              Saiba mais informações sobre a Blue, uma operadora de saúde Health
-              Tech
-            </p>
-            <button className={styles.infoButton}>conhecer</button>
-          </div>
+          <li className={styles.menuItem}>
+            <RiBarChartLine className="text-xl" />
+            Profile
+          </li>
+        </ul>
+
+        <div className={styles.infoBox}>
+          <Image src={know} alt="Know Icon" width={50} />
+          <h2 className="text-xl text-center font-bold">
+            Conheça a <br /> blue
+          </h2>
+          <p className="text-sm text-center">
+            Saiba mais informações sobre a Blue, uma operadora de saúde Health
+            Tech
+          </p>
+          <button className={styles.infoButton}>conhecer</button>
         </div>
-      )}
+      </div>
+      <div
+        style={{
+          marginLeft: openMenu ? "20rem" : "0",
+          transition: "margin-left 0.3s ease",
+        }}
+      >
+      </div>
     </div>
   );
 };

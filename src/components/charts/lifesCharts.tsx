@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import ApexCharts from "apexcharts";
 
 const LifesCharts: React.FC = () => {
   const chartRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  const renderChart = useCallback(() => {
     const options = {
       series: [
         {
@@ -57,6 +57,14 @@ const LifesCharts: React.FC = () => {
       chart.destroy();
     };
   }, []);
+
+  useEffect(() => {
+    const cleanup = renderChart();
+
+    return () => {
+      cleanup();
+    };
+  }, [renderChart]);
 
   return <div id="chart" ref={chartRef}></div>;
 };

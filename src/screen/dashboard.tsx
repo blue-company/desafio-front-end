@@ -1,13 +1,19 @@
 "use client";
+import React, { Suspense, lazy } from "react";
+import { Grid, Box, CircularProgress } from "@mui/material";
 import GenericCard from "@/components/genericCard";
-import { Grid } from "@mui/material";
-import PlataformChart from "@/components/charts/plataformChart";
-import PerformanceChart from "@/components/charts/performanceChart";
-import LifesCharts from "@/components/charts/lifesCharts";
-import RealChart from "@/components/charts/realCharts";
-import MapChart from "@/components/charts/mapChart";
-import ServicesChart from "@/components/charts/servicesChart";
 import SalesCard from "@/components/salesCard";
+import styles from "./DashBoard.module.css";
+
+const PlataformChart = lazy(() => import("@/components/charts/plataformChart"));
+const PerformanceChart = lazy(
+  () => import("@/components/charts/performanceChart")
+);
+const LifesCharts = lazy(() => import("@/components/charts/lifesCharts"));
+const RealChart = lazy(() => import("@/components/charts/realCharts"));
+const MapChart = lazy(() => import("@/components/charts/mapChart"));
+const ServicesChart = lazy(() => import("@/components/charts/servicesChart"));
+
 const Dashboard = () => {
   return (
     <Grid
@@ -16,8 +22,7 @@ const Dashboard = () => {
         display: "flex",
         gap: 6,
         justifyContent: "center",
-        margin: "5rem 0",
-        padding: "1rem",
+        margin: "4rem 0",
       }}
     >
       <Grid
@@ -32,7 +37,17 @@ const Dashboard = () => {
             title="Plataformas"
             height="auto"
             width="100%"
-            chart={<PlataformChart />}
+            chart={
+              <Suspense
+                fallback={
+                  <Box className={styles.loadingBox}>
+                    <CircularProgress className="mb-5" />
+                  </Box>
+                }
+              >
+                <PlataformChart />
+              </Suspense>
+            }
           />
         </Grid>
       </Grid>
@@ -47,7 +62,17 @@ const Dashboard = () => {
             title="Rendimento total"
             height="auto"
             width="100%"
-            chart={<PerformanceChart />}
+            chart={
+              <Suspense
+                fallback={
+                  <Box className={styles.loadingBox}>
+                    <CircularProgress className="mb-5" />
+                  </Box>
+                }
+              >
+                <PerformanceChart />
+              </Suspense>
+            }
           />
         </Grid>
 
@@ -56,7 +81,17 @@ const Dashboard = () => {
             title="Vidas"
             height="auto"
             width="100%"
-            chart={<LifesCharts />}
+            chart={
+              <Suspense
+                fallback={
+                  <Box className={styles.loadingBox}>
+                    <CircularProgress className="mb-5" />
+                  </Box>
+                }
+              >
+                <LifesCharts />
+              </Suspense>
+            }
           />
         </Grid>
 
@@ -65,7 +100,17 @@ const Dashboard = () => {
             title="Realidade"
             height="auto"
             width="100%"
-            chart={<RealChart />}
+            chart={
+              <Suspense
+                fallback={
+                  <Box className={styles.loadingBox}>
+                    <CircularProgress className="mb-5" />
+                  </Box>
+                }
+              >
+                <RealChart />
+              </Suspense>
+            }
           />
         </Grid>
       </Grid>
@@ -79,25 +124,55 @@ const Dashboard = () => {
             title="Mapeamento de vendas por uf"
             height="auto"
             width="100%"
-            chart={<LifesCharts />}
+            chart={
+              <Suspense
+                fallback={
+                  <Box className={styles.loadingBox}>
+                    <CircularProgress className="mb-5" />
+                  </Box>
+                }
+              >
+                <MapChart />
+              </Suspense>
+            }
           />
         </Grid>
 
         <Grid xl={3}>
           <GenericCard
-            title="nivel de serviço"
+            title="nível de serviço"
             height="auto"
-            width="100%"
-            chart={<MapChart />}
+            width="50%"
+            chart={
+              <Suspense
+                fallback={
+                  <Box className={styles.loadingBox}>
+                    <CircularProgress className="mb-5" />
+                  </Box>
+                }
+              >
+                <ServicesChart />
+              </Suspense>
+            }
           />
         </Grid>
 
-        <Grid xl={3}>
+        <Grid item xl={3}>
           <GenericCard
-            title="teste"
+            title="Realidade"
             height="auto"
             width="100%"
-            chart={<MapChart />}
+            chart={
+              <Suspense
+                fallback={
+                  <Box className={styles.loadingBox}>
+                    <CircularProgress className="mb-5" />
+                  </Box>
+                }
+              >
+                <RealChart />
+              </Suspense>
+            }
           />
         </Grid>
       </Grid>

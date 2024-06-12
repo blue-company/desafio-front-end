@@ -1,10 +1,10 @@
 .sidebarContainer {
   position: relative;
-  height: 100vh;
+  height: 100%;
 }
 
 .toggleButton {
-  position: absolute;
+  position: fixed;
   top: 2.5rem;
   left: 18rem;
   background-color: #e5e5e5;
@@ -19,12 +19,15 @@
   background-color: white;
   width: 20rem;
   height: 100vh;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 1.75rem;
- transition: left 0.3s ease;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease;
+  z-index: 9;
 }
 
 .logoContainer {
@@ -65,6 +68,8 @@
   gap: 1.75rem;
   border-radius: 1rem;
   cursor: pointer;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
   transition: background-color 0.3s ease;
 }
 
@@ -93,4 +98,3 @@
   color: white;
   justify-content: space-around;
 }
-
