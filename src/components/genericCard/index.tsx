@@ -13,7 +13,7 @@ interface GenericCardI {
 const GenericCard = ({ title, chart }: GenericCardI) => {
   return (
     <Grid container>
-      <Paper className="rounded-2xl w-[100%]">
+      <Paper className="w-[100%]" sx={{borderRadius: 7, width:' 100%'}}>
         <Typography className="pt-6 pl-6 pb-2 text-3xl">{title}</Typography>
         <Grid>{chart}</Grid>
       </Paper>

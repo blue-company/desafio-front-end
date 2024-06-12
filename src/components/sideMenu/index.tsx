@@ -12,10 +12,10 @@ import {
 import styles from "./SideBar.module.css";
 
 const SideBar = () => {
-  const [openMenu, setOpenMenu] = useState(true);
+  const [openMenu, setOpenMenu] = useState(false);
   const [buttonPosition, setButtonPosition] = useState({
     top: "2.5rem",
-    left: "19rem",
+    left: "1rem",
   });
 
   const handleToggleMenu = () => {
