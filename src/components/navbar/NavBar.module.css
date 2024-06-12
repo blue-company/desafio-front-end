@@ -1,0 +1,29 @@
+.navbar {
+  height: 6rem;
+  background-color: var(--navbar-bg-color, #fff);
+}
+
+.searchInput {
+  background-color: var(--input-bg-color, #f3f3f3);
+  border-radius: 1rem;
+  color: var(--input-text-color, #c0c0c0);
+  height: 3rem;
+  padding-left: 2.5rem;
+  padding-right: 1.25rem;
+  width: 24rem;
+}
+
+.searchIcon {
+  color: var(--search-icon-color, #2c02ff);
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.notificationIcon {
+  background-color: var(--notification-bg-color, #ffcba075);
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  position: relative;
+}

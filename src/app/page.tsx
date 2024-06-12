@@ -5,7 +5,7 @@ import Dashboard from "@/screen/dashboard";
 
 const Home = () => {
   return (
-    <main className="flex">
+    <main className="flex font-poppins">
       <SideBar />
       <div className="flex flex-col w-full">
         <NavBar />
