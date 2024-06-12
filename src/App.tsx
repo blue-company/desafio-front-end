@@ -13,6 +13,7 @@ import ChartCard from "./components/dashboard/card/charts/platforms-chart";
 import IncomesChart from "./components/dashboard/card/charts/incoming-chart";
 import LifesChart from "./components/dashboard/card/charts/lifes-chart";
 import RealityChart from "./components/dashboard/card/charts/reality-chart";
+import CountryChart from "./components/dashboard/card/charts/country-chart";
 
 function App() {
   return (
@@ -104,8 +105,11 @@ function App() {
                 <IncomesChart />
               </DashboardCard>
 
-              <DashboardCard title="Vidas" className="h-[30vh]">
-                <LifesChart />
+              <DashboardCard
+                title="Mapeamento de vendas por UF"
+                className="h-[30vh]"
+              >
+                <CountryChart />
               </DashboardCard>
 
               <DashboardCard title="Realidade" className="h-[30vh]">
