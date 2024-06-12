@@ -32,77 +32,113 @@ interface StateAnnotations {
 }
 
 const statesWithAnnotations: StateAnnotations = {
-  BR_DF: {
-    annotation: { x: -10, y: -15 },
-    tag: { fontSize: 14, x: 4, y: 0 },
-  },
-  BR_RN: {
-    annotation: { x: 28, y: 0 },
-    tag: { fontSize: 14, x: 4, y: 0 },
-  },
-  BR_PB: {
-    annotation: { x: 32, y: 0 },
-    tag: { fontSize: 14, x: 4, y: 0 },
-  },
-  BR_PE: {
-    annotation: { x: 50, y: 0 },
-    tag: { fontSize: 14, x: 4, y: 0 },
+  BR_AC: {
+    annotation: { x: 0, y: 100 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
   BR_AL: {
-    annotation: { x: 30, y: 0 },
-    tag: { fontSize: 14, x: 4, y: 0 },
+    annotation: { x: 0, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
-  BR_SE: {
-    annotation: { x: 25, y: 0 },
-    tag: { fontSize: 14, x: 4, y: 0 },
+  BR_AP: {
+    annotation: { x: 100, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_AM: {
+    annotation: { x: 0, y: 200 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_BA: {
+    annotation: { x: 50, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_CE: {
+    annotation: { x: 50, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_DF: {
+    annotation: { x: 100, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
   BR_ES: {
+    annotation: { x: 50, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_GO: {
+    annotation: { x: 100, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_MA: {
+    annotation: { x: 0, y: -50 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_MT: {
+    annotation: { x: -200, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_MS: {
+    annotation: { x: -200, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_MG: {
+    annotation: { x: 0, y: -100 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_PA: {
+    annotation: { x: 150, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_PB: {
     annotation: { x: 20, y: 0 },
-    tag: { fontSize: 14, x: 4, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_PR: {
+    annotation: { x: 100, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_PE: {
+    annotation: { x: 20, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
+  },
+  BR_PI: {
+    annotation: { x: 0, y: -70 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
   BR_RJ: {
-    annotation: { x: 25, y: 0 },
-    tag: { fontSize: 14, x: 4, y: 0 },
+    annotation: { x: 50, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
-  PY_AM: {
-    annotation: { x: 16, y: -10 },
-    tag: { fontSize: 14, x: 2, y: 0 },
+  BR_RN: {
+    annotation: { x: 10, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
-  PY_AA: {
-    annotation: { x: 15, y: 0 },
-    tag: { fontSize: 14, x: 4, y: 0 },
+  BR_RS: {
+    annotation: { x: 100, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
-  PY_GU: {
-    annotation: { x: -90, y: 75 },
-    tag: { fontSize: 14, x: 2, y: 8 },
+  BR_RO: {
+    annotation: { x: -30, y: 80 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
-  PY_PG: {
-    annotation: { x: -130, y: 30 },
-    tag: { fontSize: 14, x: 4, y: 10 },
+  BR_RR: {
+    annotation: { x: -200, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
-  PY_CZ: {
-    annotation: { x: -40, y: 100 },
-    tag: { fontSize: 14, x: 0, y: 8 },
+  BR_SC: {
+    annotation: { x: 100, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
-  PY_NE: {
-    annotation: { x: -100, y: 45 },
-    tag: { fontSize: 14, x: 4, y: 8 },
+  BR_SP: {
+    annotation: { x: 100, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
-  PY_CE: {
-    annotation: { x: -110, y: 10 },
-    tag: { fontSize: 14, x: 4, y: 10 },
+  BR_SE: {
+    annotation: { x: 20, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
-  PY_CR: {
-    annotation: { x: -100, y: -30 },
-    tag: { fontSize: 14, x: -4, y: 12 },
-  },
-  PY_AS: {
-    annotation: { x: -110, y: -10 },
-    tag: { fontSize: 14, x: 4, y: 10 },
-  },
-  PY_MI: {
-    annotation: { x: -25, y: 30 },
-    tag: { fontSize: 14, x: -5, y: 10 },
+  BR_TO: {
+    annotation: { x: 100, y: 0 },
+    tag: { fontSize: 18, x: 0, y: 0 },
   },
 };
 
@@ -119,7 +155,7 @@ interface GeographyStyle {
 const geographyStyle: GeographyStyle = {
   fill: "#D1D5DB",
   backgroundColor: "yellow",
-  stroke: "#607D8B",
+  stroke: "",
   strokeWidth: 1,
   outline: "none",
   cursor: "pointer",
@@ -138,6 +174,21 @@ interface ExtendedGeographyProps extends BaseGeographyProps {
 
 const CountryChart = () => {
   const [activeGeo, setActiveGeo] = useState<string | null>(null);
+  const [hoverInfo, setHoverInfo] = useState<{
+    id: string;
+    value: string;
+  } | null>(null);
+
+  const handleMouseEnter = (geoId: string) => {
+    setActiveGeo(geoId);
+    const randomValue = `R$ ${Math.floor(Math.random() * 1000)},00`;
+    setHoverInfo({ id: geoId, value: randomValue });
+  };
+
+  const handleMouseLeave = () => {
+    setActiveGeo(null);
+    setHoverInfo(null);
+  };
 
   const renderGeograph = ({
     dataSource,
@@ -166,17 +217,20 @@ const CountryChart = () => {
                   key={geo.rsmKey + "-Geography"}
                   stroke="#FFF"
                   geography={geo}
-                  onMouseEnter={() => setActiveGeo(geoId)}
-                  onMouseLeave={() => setActiveGeo(null)}
+                  onMouseEnter={() => handleMouseEnter(geoId)}
+                  onMouseLeave={handleMouseLeave}
                   onClick={() => setActiveGeo(geoId)}
                   style={{
                     default: {
                       ...geographyStyle,
                       fill: countryColor,
+                      zIndex: 0,
                     },
                     hover: {
                       ...geographyStyle,
                       fill: "blue",
+                      fontWeight: "600",
+                      zIndex: 1,
                     },
                     pressed: {
                       ...geographyStyle,
@@ -192,14 +246,18 @@ const CountryChart = () => {
                     subject={centroid}
                     dx={annotationOffset.annotation.x}
                     dy={annotationOffset.annotation.y}
+                    style={{
+                      zIndex: 3,
+                    }}
                   >
                     <text
                       x={tagPosition.x}
                       y={tagPosition.y}
                       fontSize={tagPosition.fontSize}
+                      fontWeight="600"
                       alignmentBaseline="middle"
                     >
-                      {geoId}
+                      {geoId} - {hoverInfo?.value}
                     </text>
                   </Annotation>
                 )}
@@ -216,7 +274,7 @@ const CountryChart = () => {
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{
-          scale: 500,
+          scale: 550,
           center: [-54, -15],
         }}
         width={600}
