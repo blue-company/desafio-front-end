@@ -70,6 +70,8 @@ const CustomLegend = (props: CustomLegendProps) => {
         flexDirection: "row",
         alignItems: "flex-start",
         justifyContent: "center",
+        borderTop: "1px solid #e0e0e0",
+        marginTop: "10px",
       }}
     >
       {payload.map((entry, index) => (
