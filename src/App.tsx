@@ -14,6 +14,7 @@ import IncomesChart from "./components/dashboard/card/charts/incoming-chart";
 import LifesChart from "./components/dashboard/card/charts/lifes-chart";
 import RealityChart from "./components/dashboard/card/charts/reality-chart";
 import CountryChart from "./components/dashboard/card/charts/country-chart";
+import ServiceChart from "./components/dashboard/card/charts/service-chart";
 
 function App() {
   return (
@@ -112,8 +113,8 @@ function App() {
                 <CountryChart />
               </DashboardCard>
 
-              <DashboardCard title="Realidade" className="h-[30vh]">
-                <RealityChart />
+              <DashboardCard title="Nivel de serviço" className="h-[30vh]">
+                <ServiceChart />
               </DashboardCard>
             </div>
           </main>
