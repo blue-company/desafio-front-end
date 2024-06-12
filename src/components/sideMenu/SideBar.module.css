@@ -58,11 +58,11 @@
 
 .menuItem {
   background-color: #2500FF;
-  color: white;
+  color: #ddd;
   padding: 0.75rem;
   width: 16rem;
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 16px;
   display: flex;
   align-items: center;
   gap: 1.75rem;

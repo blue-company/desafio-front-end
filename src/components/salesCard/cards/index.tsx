@@ -15,7 +15,7 @@ const CardsSeller: React.FC<CardsSellerI> = ({ img, value, text, porcentage, col
     <Paper
       sx={{
         backgroundColor: color,
-        padding: 1,
+        padding: 3,
         borderRadius: 2,
         display: 'flex',
         flexDirection: 'column',

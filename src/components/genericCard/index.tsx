@@ -6,18 +6,15 @@ import Grid from "@mui/material/Grid";
 interface GenericCardI {
   title: string;
   chart: any;
-  width: string;
-  height: string;
 }
 
 const GenericCard = ({ title, chart }: GenericCardI) => {
   return (
     <Grid container>
-      <Paper className="w-[100%]" sx={{ borderRadius: 7, width: " 100%" }}>
+      <Paper sx={{ borderRadius: 7, width: " 100%", height: "auto" }}>
         <Typography
           variant="h5"
-          className="pt-6 pl-6 pb-2 "
-          fontFamily="Poppins"
+          className="pt-6 pl-6 pb-2 font-[Poppins] font-semibold"
         >
           {title}
         </Typography>

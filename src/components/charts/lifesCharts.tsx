@@ -1,52 +1,56 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 import ApexCharts from "apexcharts";
 
-const LifesCharts: React.FC = () => {
+const PlataformChart: React.FC = () => {
   const chartRef = useRef<HTMLDivElement>(null);
 
-  const renderChart = useCallback(() => {
+  useEffect(() => {
     const options = {
+      colors: ["#0084ff", "#00f43d"],
       series: [
         {
-          name: "Desktops",
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+          name: "TD Consultoria",
+          data: [31, 40, 28, 51, 42, 29, 40],
+        },
+        {
+          name: "RIKO Plataforma",
+          data: [35, 45, 45, 60, 50, 52, 45],
         },
       ],
       chart: {
-        height: 350,
-        type: "line",
-        zoom: {
-          enabled: false,
+        height: 300,
+        type: "area",
+        toolbar: {
+          show: false,
         },
+      },
+      markers: {
+        size: 5,
+        colors: ["#0084ff", "#00f43d"],
+        strokeWidth: 3,
       },
       dataLabels: {
         enabled: false,
       },
       stroke: {
-        curve: "straight",
-      },
-      title: {
-        text: "Product Trends by Month",
-        align: "left",
+        curve: "smooth",
       },
       grid: {
-        row: {
-          colors: ["#f3f3f3", "transparent"],
-          opacity: 0.5,
+        yaxis: {
+          lines: {
+            show: false,
+          },
         },
       },
       xaxis: {
-        categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-        ],
+        labels: {
+          show: false,
+        },
+      },
+      yaxis: {
+        labels: {
+          show: false,
+        },
       },
     };
 
@@ -58,15 +62,7 @@ const LifesCharts: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const cleanup = renderChart();
-
-    return () => {
-      cleanup();
-    };
-  }, [renderChart]);
-
   return <div id="chart" ref={chartRef}></div>;
 };
 
-export default LifesCharts;
+export default PlataformChart;

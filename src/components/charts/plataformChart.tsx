@@ -6,19 +6,26 @@ const PlataformChart: React.FC = () => {
 
   useEffect(() => {
     const options = {
+      colors: ["#9C27B0", "#00f43d", "#f20c0c"],
       series: [
         {
-          name: "series1",
-          data: [31, 40, 28, 51, 42, 109, 100],
+          name: "TD Consultoria",
+          data: [31, 40, 28, 51, 42, 29, 40],
         },
         {
-          name: "series2",
-          data: [11, 32, 45, 32, 34, 52, 41],
+          name: "RIKO Plataforma",
+          data: [26, 32, 45, 32, 34, 52, 41],
+        },
+        {
+          name: "Blue Serviços",
+          data: [22, 42, 25, 32, 44, 32, 38],
         },
       ],
       chart: {
-        height: 350,
-        type: "area",
+        height: 300,
+        toolbar: {
+          show: false,
+        },
       },
       dataLabels: {
         enabled: false,
@@ -27,21 +34,21 @@ const PlataformChart: React.FC = () => {
         curve: "smooth",
       },
       xaxis: {
-        type: "datetime",
+        type: "date",
         categories: [
-          "2018-09-19T00:00:00.000Z",
-          "2018-09-19T01:30:00.000Z",
-          "2018-09-19T02:30:00.000Z",
-          "2018-09-19T03:30:00.000Z",
-          "2018-09-19T04:30:00.000Z",
-          "2018-09-19T05:30:00.000Z",
-          "2018-09-19T06:30:00.000Z",
+          "jan",
+          "fev",
+          "mar",
+          "abr",
+          "mai",
+          "jun",
+          "jul",
+          "ago",
+          "set",
+          "out",
+          "nov",
+          "dez",
         ],
-      },
-      tooltip: {
-        x: {
-          format: "dd/MM/yy HH:mm",
-        },
       },
     };
 

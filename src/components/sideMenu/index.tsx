@@ -19,7 +19,7 @@ const SideBar = () => {
   };
 
   return (
-    <div className={styles.sidebarContainer}>
+    <div className={styles.sidebarContainer} >
       <button
         onClick={handleToggleMenu}
         className={styles.toggleButton}

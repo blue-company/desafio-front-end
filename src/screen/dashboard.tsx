@@ -15,6 +15,9 @@ const MapChart = lazy(() => import("@/components/charts/mapChart"));
 const ServicesChart = lazy(() => import("@/components/charts/servicesChart"));
 
 const Dashboard = () => {
+  React.useEffect(() => {
+    console.log(window.location.href);
+  }, []);
   return (
     <Grid
       container
@@ -25,18 +28,13 @@ const Dashboard = () => {
         margin: "4rem 0",
       }}
     >
-      <Grid
-        container
-        sx={{ display: "flex", gap: 5, justifyContent: "center" }}
-      >
-        <Grid item xl={6}>
+      <Grid container sx={{ display: "flex", justifyContent: "space-around" }}>
+        <Grid item xl={7}>
           <SalesCard />
         </Grid>
         <Grid item xl={4}>
           <GenericCard
             title="Plataformas"
-            height="auto"
-            width="100%"
             chart={
               <Suspense
                 fallback={
@@ -55,13 +53,11 @@ const Dashboard = () => {
       <Grid
         container
         className="flex"
-        sx={{ gap: 3, justifyContent: "center" }}
+        sx={{ gap: 5, justifyContent: "center" }}
       >
-        <Grid item xl={4}>
+        <Grid item xl={5}>
           <GenericCard
             title="Rendimento total"
-            height="auto"
-            width="100%"
             chart={
               <Suspense
                 fallback={
@@ -79,8 +75,6 @@ const Dashboard = () => {
         <Grid item xl={3}>
           <GenericCard
             title="Vidas"
-            height="auto"
-            width="100%"
             chart={
               <Suspense
                 fallback={
@@ -98,8 +92,6 @@ const Dashboard = () => {
         <Grid item xl={3}>
           <GenericCard
             title="Realidade"
-            height="auto"
-            width="100%"
             chart={
               <Suspense
                 fallback={
@@ -122,8 +114,6 @@ const Dashboard = () => {
         <Grid xl={4}>
           <GenericCard
             title="Mapeamento de vendas por uf"
-            height="auto"
-            width="100%"
             chart={
               <Suspense
                 fallback={
@@ -132,17 +122,15 @@ const Dashboard = () => {
                   </Box>
                 }
               >
-                <MapChart />
+                <ServicesChart />
               </Suspense>
             }
           />
         </Grid>
 
-        <Grid xl={3}>
+        {/* <Grid xl={3}>
           <GenericCard
             title="nível de serviço"
-            height="auto"
-            width="50%"
             chart={
               <Suspense
                 fallback={
@@ -160,8 +148,6 @@ const Dashboard = () => {
         <Grid item xl={3}>
           <GenericCard
             title="Realidade"
-            height="auto"
-            width="100%"
             chart={
               <Suspense
                 fallback={
@@ -174,7 +160,7 @@ const Dashboard = () => {
               </Suspense>
             }
           />
-        </Grid>
+        </Grid> */}
       </Grid>
     </Grid>
   );
