@@ -72,6 +72,14 @@
   background-color: #4b5563;
 }
 
+.infoButton {
+  background-color: rgb(255, 255, 255);
+  color: #2500FF;
+  border-radius: 0.375rem;
+  font-weight: bold;
+  width: 70%;
+  height: 2rem;
+}
 .infoBox {
   background-color: #2500FF;
   width: 70%;
@@ -86,11 +94,3 @@
   justify-content: space-around;
 }
 
-.infoButton {
-  background-color: white;
-  color: #2500FF;
-  border-radius: 0.375rem;
-  font-weight: bold;
-  width: 70%;
-  height: 2rem;
-}

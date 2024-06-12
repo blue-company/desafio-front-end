@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React, { useState } from "react";
 import logo from "@/assets/icons/logoWhite.png";
@@ -9,15 +9,13 @@ import {
   FaArrowRightFromBracket,
   FaArrowRightToBracket,
 } from "react-icons/fa6";
-
-import { Button } from "@mui/material";
 import styles from "./SideBar.module.css";
 
 const SideBar = () => {
   const [openMenu, setOpenMenu] = useState(true);
   const [buttonPosition, setButtonPosition] = useState({
     top: "2.5rem",
-    left: "1rem",
+    left: "19rem",
   });
 
   const handleToggleMenu = () => {
@@ -77,7 +75,7 @@ const SideBar = () => {
               Saiba mais informações sobre a Blue, uma operadora de saúde Health
               Tech
             </p>
-            <Button className={styles.infoButton}>conhecer</Button>
+            <button className={styles.infoButton}>conhecer</button>
           </div>
         </div>
       )}
