@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import {
   BarChart,
   FileSpreadsheet,
@@ -15,6 +16,7 @@ import LifesChart from "./components/dashboard/card/charts/lifes-chart";
 import RealityChart from "./components/dashboard/card/charts/reality-chart";
 import CountryChart from "./components/dashboard/card/charts/country-chart";
 import ServiceChart from "./components/dashboard/card/charts/service-chart";
+import ProductsChart from "./components/dashboard/card/charts/products-chart";
 
 function App() {
   return (
@@ -102,8 +104,8 @@ function App() {
             </div>
 
             <div className="lg:grid lg:grid-cols-[40%_27%_27%] flex flex-col lg:gap-8 gap-4">
-              <DashboardCard title="Rendimento total" className="h-[30vh]">
-                <IncomesChart />
+              <DashboardCard title="Top produtos" className="h-[30vh]">
+                <ProductsChart />
               </DashboardCard>
 
               <DashboardCard
