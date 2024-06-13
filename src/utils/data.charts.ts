@@ -1,3 +1,5 @@
+import { ChartOptions, ChartType } from "chart.js";
+
 export const lifesChartData = {
   options: {
     series: [
@@ -283,7 +285,7 @@ export const servicesChartData = {
   ],
 };
 
-export const servicesChartOptions = {
+export const servicesChartOptions: ChartOptions<ChartType> = {
   plugins: {
     legend: {
       display: false,

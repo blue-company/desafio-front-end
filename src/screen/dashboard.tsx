@@ -12,9 +12,9 @@ const PerformanceChart = React.lazy(
 const LifesCharts = React.lazy(() => import("@/components/charts/lifesCharts"));
 const RealChart = React.lazy(() => import("@/components/charts/realCharts"));
 const MapChart = React.lazy(() => import("@/components/charts/mapChart"));
-const ServicesChart = React.lazy(
-  () => import("@/components/charts/servicesChart")
-);
+// const ServicesChart = React.lazy(
+//   () => import("@/components/charts/servicesChart")
+// );
 const TopProductsChart = React.lazy(
   () => import("@/components/charts/topProducstChart")
 );
@@ -141,7 +141,7 @@ const Dashboard = () => {
           <GenericCard title="Mapeamento de vendas (UF)" chart={<MapChart />} />
         </Grid>
 
-        <Grid item xl={3}>
+        {/* <Grid item xl={3}>
           <GenericCard
             title="Nível de serviço"
             chart={
@@ -156,7 +156,7 @@ const Dashboard = () => {
               </Suspense>
             }
           />
-        </Grid>
+        </Grid> */}
       </Grid>
     </Grid>
   );
