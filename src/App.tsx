@@ -48,14 +48,17 @@ function App() {
 
               <DashboardCard
                 title="Realidade"
-                className="2xl:h-[30vh] flex items-center"
+                className="2xl:h-[30vh]  flex items-center"
               >
                 <RealityChart />
               </DashboardCard>
             </div>
 
             <div className="lg:grid lg:grid-cols-[40%_27%_27%] flex flex-col lg:gap-8 gap-4">
-              <DashboardCard title="Top produtos" className="2xl:h-[27vh]">
+              <DashboardCard
+                title="Top produtos"
+                className="2xl:h-[27vh] w-fit lg:w-auto"
+              >
                 <ProductsChart />
               </DashboardCard>
 

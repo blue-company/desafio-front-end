@@ -119,38 +119,40 @@ export default function ServiceChart() {
   const legendPayload = [{ value: "Realidade" }, { value: "Expectativa" }];
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <BarChart barCategoryGap={20} data={data}>
-        <CartesianGrid horizontal={false} vertical={false} />
-        <XAxis hide dataKey="name" />
-        <YAxis hide />
-        <Tooltip />
-        <Legend
-          content={
-            <CustomLegend
-              payload={legendPayload.map((entry) => ({
-                ...entry,
-                color: entry.value === "Realidade" ? "#66de90" : "#6698de",
-              }))}
-              maxValues={maxValues}
-            />
-          }
-        />
-        <Bar
-          dataKey="amt"
-          stackId="a"
-          name="Realidade"
-          fill="#66de90"
-          radius={[3, 3, 0, 0]}
-        />
-        <Bar
-          dataKey="pv"
-          stackId="a"
-          name="Expectativa"
-          fill="#6698de"
-          radius={[3, 3, 0, 0]}
-        />
-      </BarChart>
-    </ResponsiveContainer>
+    <div style={{ width: "100%", height: "300px", minHeight: "200px" }}>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart barCategoryGap={15} data={data}>
+          <CartesianGrid horizontal={false} vertical={false} />
+          <XAxis hide dataKey="name" />
+          <YAxis hide />
+          <Tooltip />
+          <Legend
+            content={
+              <CustomLegend
+                payload={legendPayload.map((entry) => ({
+                  ...entry,
+                  color: entry.value === "Realidade" ? "#66de90" : "#6698de",
+                }))}
+                maxValues={maxValues}
+              />
+            }
+          />
+          <Bar
+            dataKey="amt"
+            stackId="a"
+            name="Realidade"
+            fill="#66de90"
+            radius={[3, 3, 0, 0]}
+          />
+          <Bar
+            dataKey="pv"
+            stackId="a"
+            name="Expectativa"
+            fill="#6698de"
+            radius={[3, 3, 0, 0]}
+          />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 }

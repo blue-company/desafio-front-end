@@ -109,7 +109,7 @@ const ProductsChart = () => {
     useTable<Data>({ columns, data });
 
   return (
-    <table {...getTableProps()} className="table">
+    <table {...getTableProps()} className="table" style={{ width: "100%" }}>
       <thead>
         {headerGroups.map((headerGroup: HeaderGroup<Data>) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
