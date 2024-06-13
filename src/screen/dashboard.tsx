@@ -122,7 +122,7 @@ const Dashboard = () => {
       >
         <Grid item xl={5}>
           <GenericCard
-            title="Realidade"
+            title="Top produtos"
             chart={
               <Suspense
                 fallback={

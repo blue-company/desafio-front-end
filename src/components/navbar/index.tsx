@@ -8,15 +8,17 @@ import USA from "@/assets/icons/usa.png";
 import profile from "@/assets/images/profile.jpg";
 import styles from "./NavBar.module.css";
 
-const NavBar = () => {
+const NavBar = ({ shiftRight }: any) => {
   return (
     <div>
       <div
-        className={`${styles.navbar} shadow-md flex items-center justify-around`}
+        className={`${styles.navbar} ${
+          shiftRight ? styles.navbarOpen : styles.navbarClosed
+        } shadow-md flex items-center justify-around`}
       >
         <Typography
           variant="h5"
-          sx={{fontWeight: 'bold', fontFamily: 'Poppins'}}
+          sx={{ fontWeight: "bold", fontFamily: "Poppins" }}
         >
           Dashboard
         </Typography>
