@@ -17,9 +17,9 @@ app.post('/auth/login', async (c) => {
   if (username === 'ADMIN' && password === '12345678') {
     const token = await sign(payload, process.env.NEXT_PUBLIC_SECRET_KEY as string);
     return c.json({ token });
-  } else {
-    return c.json({ error: 'Credenciais inválidas' }, 401);
   }
+
+  return c.json({ error: 'Credenciais inválidas' }, 401);
 });
 
 export const POST = handle(app);

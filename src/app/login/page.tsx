@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { LoginFormClient } from './components/loginFormClient';
 
 export const metadata: Metadata = {
   title: 'Login'
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
 export default function LoginPage() {
   return (
     <div>
-      <h1>Login</h1>
+      <LoginFormClient />
     </div>
   );
 }
