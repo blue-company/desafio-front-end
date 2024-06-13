@@ -1,29 +1,68 @@
 "use client";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Grid, Box, CircularProgress } from "@mui/material";
 import GenericCard from "@/components/genericCard";
 import SalesCard from "@/components/salesCard";
-const PlataformChart = React.lazy(
-  () => import("@/components/charts/plataformChart")
+// const PlataformChart = React.lazy(
+//   () => import("@/components/charts/plataformChart")
+// );
+// const PerformanceChart = React.lazy(
+//   () => import("@/components/charts/performanceChart")
+// );
+// const LifesCharts = React.lazy(() => import("@/components/charts/lifesCharts"));
+const PlataformChart = dynamic(
+  () => import("@/components/charts/plataformChart"),
+  {
+    ssr: false,
+  }
 );
-const PerformanceChart = React.lazy(
-  () => import("@/components/charts/performanceChart")
+
+const RealChart = dynamic(() => import("@/components/charts/realCharts"), {
+  ssr: false,
+});
+
+const PerformanceChart = dynamic(
+  () => import("@/components/charts/plataformChart"),
+  {
+    ssr: false,
+  }
 );
-const LifesCharts = React.lazy(() => import("@/components/charts/lifesCharts"));
-const RealChart = React.lazy(() => import("@/components/charts/realCharts"));
-const MapChart = React.lazy(() => import("@/components/charts/mapChart"));
+
+const LifesCharts = dynamic(() => import("@/components/charts/lifesCharts"), {
+  ssr: false,
+});
+
+// const ServicesChart = dynamic(
+//   () => import("@/components/charts/servicesChart"),
+//   {
+//     ssr: false,
+//   }
+// );
+
+const MapChart = dynamic(() => import("@/components/charts/mapChart"), {
+  ssr: false,
+});
+
+const TopProductsChart = dynamic(
+  () => import("@/components/charts/topProducstChart"),
+  {
+    ssr: false,
+  }
+);
+
+// const RealChart = React.lazy(() => import("@/components/charts/realCharts"));
+// const MapChart = React.lazy(() => import("@/components/charts/mapChart"));
 // const ServicesChart = React.lazy(
 //   () => import("@/components/charts/servicesChart")
 // );
-const TopProductsChart = React.lazy(
-  () => import("@/components/charts/topProducstChart")
-);
+// const TopProductsChart = React.lazy(
+//   () => import("@/components/charts/topProducstChart")
+// );
 import styles from "./DashBoard.module.css";
-const Dashboard = () => {
-  React.useEffect(() => {
-    console.log(window.location.href);
-  }, []);
+import dynamic from "next/dynamic";
 
+const Dashboard = () => {
+  useEffect(() => {});
   return (
     <Grid
       container
@@ -142,21 +181,21 @@ const Dashboard = () => {
         </Grid>
 
         {/* <Grid item xl={3}>
-          <GenericCard
-            title="Nível de serviço"
-            chart={
-              <Suspense
-                fallback={
-                  <Box className={styles.loadingBox}>
-                    <CircularProgress className="mb-5" />
-                  </Box>
-                }
-              >
-                <ServicesChart />
-              </Suspense>
-            }
-          />
-        </Grid> */}
+            <GenericCard
+              title="Nível de serviço"
+              chart={
+                <Suspense
+                  fallback={
+                    <Box className={styles.loadingBox}>
+                      <CircularProgress className="mb-5" />
+                    </Box>
+                  }
+                >
+                  <ServicesChart />
+                </Suspense>
+              }
+            />
+          </Grid> */}
       </Grid>
     </Grid>
   );

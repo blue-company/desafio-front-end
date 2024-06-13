@@ -6,12 +6,14 @@ const PlataformChart: React.FC = () => {
   const chartRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const chart = new ApexCharts(chartRef.current, plataformChartData);
-    chart.render();
+    if (typeof window !== "undefined") {
+      const chart = new ApexCharts(chartRef.current, plataformChartData);
+      chart.render();
 
-    return () => {
-      chart.destroy();
-    };
+      return () => {
+        chart.destroy();
+      };
+    }
   }, []);
 
   return <div id="chart" ref={chartRef}></div>;
