@@ -17,7 +17,7 @@ const SidebarCard = () => {
         Saiba mais informações sobre a Blue, uma operadora de saúde Health Tech
       </p>
 
-      <button className="bg-white font-bold text-blue-800 px-8 mt-2 py-1 rounded-lg">
+      <button className="bg-white 00 hover:text-black font-bold text-blue-800 px-8 mt-2 py-1 rounded-lg">
         Conheçer
       </button>
     </div>

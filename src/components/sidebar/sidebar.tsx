@@ -29,8 +29,8 @@ const Sidebar = () => {
             <PieChart size={26} className="mr-2" />
             Dashboard
           </li>
-          <li className="flex cursor-pointer py-4 px-10 items-center rounded-xl font-semibold text-gray-400">
-            <BarChart2 size={26} className="mr-2 text-gray-500" />
+          <li className="flex cursor-pointer py-4 px-10 items-center hover:bg-blue-700 hover:text-white rounded-xl font-semibold text-gray-400">
+            <BarChart2 size={26} className="mr-2  hover:text-white" />
             Leaderboard
           </li>
         </ul>

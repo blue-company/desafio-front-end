@@ -13,12 +13,12 @@ import SellsChart from "./components/dashboard/card/charts/sells-chart";
 
 function App() {
   return (
-    <div className="lg:grid h-screen lg:grid-cols-[14rem_1fr] flex flex-col ">
+    <div className="xl:grid h-screen xl:grid-cols-[14rem_1fr] flex flex-col ">
       <div className="flex flex-col xl:flex-row w-screen">
         <Sidebar />
-        <div className="flex  flex-col">
+        <div className="flex flex-col">
           <Header />
-          <main className="flex p-5 flex-col gap-2 ">
+          <main className="flex px-5 py-2 flex-col gap-2 ">
             <div className="flex xl:flex-row flex-col gap-4">
               <DashboardCard
                 title="Vendas hoje"
