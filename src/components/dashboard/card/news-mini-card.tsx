@@ -16,7 +16,7 @@ const NewsMiniCard: React.FC<NewsMiniCardProps> = ({
   percentageText,
 }) => {
   return (
-    <div className={`flex flex-col    rounded-2xl p-3  ${className}`}>
+    <div className={`flex flex-col h-fit rounded-2xl p-3  ${className}`}>
       <div className="flex flex-col ">
         <div className="py-2 w-fit rounded-full flex justify-center text-white">
           {icon}

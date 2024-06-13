@@ -20,7 +20,10 @@ function App() {
           <Header />
           <main className="flex px-5 py-2 flex-col gap-2">
             <div className="flex 2xl:flex-row flex-col gap-4">
-              <DashboardCard title="Vendas hoje" className="2xl:h-[30vh] h-fit">
+              <DashboardCard
+                title="Vendas hoje"
+                className="2xl:h-[32vh] h-fit py-2"
+              >
                 <SellsChart />
               </DashboardCard>
 

@@ -20,7 +20,7 @@ const SellsChart = () => {
         </button>
       </div>
 
-      <div className="flex xl:flex-row flex-col items-center w-full gap-2 justify-around mt-2  mb-5">
+      <div className="flex xl:flex-row flex-col items-center w-full gap-2 justify-around mt-2 mb-5">
         <NewsMiniCard
           icon={<BarChart className="bg-pink-700 w-9 h-9 p-1 rounded-full" />}
           results={"R$ 1,000"}
