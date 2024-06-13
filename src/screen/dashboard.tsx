@@ -109,11 +109,11 @@ const Dashboard = () => {
 
       <Grid
         container
-        sx={{ display: "flex", gap: 3, justifyContent: "center" }}
+        sx={{ display: "flex", gap: 6, justifyContent: "center" }}
       >
-        <Grid xl={4}>
+        <Grid item xl={5}>
           <GenericCard
-            title="Mapeamento de vendas por uf"
+            title="Realidade"
             chart={
               <Suspense
                 fallback={
@@ -122,7 +122,31 @@ const Dashboard = () => {
                   </Box>
                 }
               >
-                <ServicesChart />
+                <RealChart />
+              </Suspense>
+            }
+          />
+        </Grid>
+
+        <Grid xl={3}>
+          <GenericCard
+            title="Mapeamento de vendas (UF)"
+            chart={<MapChart />}
+          />
+        </Grid>
+
+        <Grid item xl={3}>
+          <GenericCard
+            title="Realidade"
+            chart={
+              <Suspense
+                fallback={
+                  <Box className={styles.loadingBox}>
+                    <CircularProgress className="mb-5" />
+                  </Box>
+                }
+              >
+                <RealChart />
               </Suspense>
             }
           />

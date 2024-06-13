@@ -24,7 +24,7 @@ const CardsSeller: React.FC<CardsSellerI> = ({ img, value, text, porcentage, col
       }}
     >
       <Box display="flex" justifyContent="center" alignItems="center" height={50} width={50} mb={2}>
-        <Image width={50} height={50} src={img} alt="" />
+        <Image width={70} height={60} src={img} alt="" />
       </Box>
       <Grid container direction="column" alignItems="center" spacing={1}>
         <Grid item>

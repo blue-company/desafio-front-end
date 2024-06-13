@@ -4,10 +4,14 @@ import { Chart } from "react-google-charts";
 
 const MapChart = () => {
   const Data = [
-    ["Estado", "População"],
-    ["Amazonas", 28962558],
-    ["Bahia", 19581981],
-    ["Pernambuco", 19581981],
+    ["Estado", "vendas"],
+    ["santa catarina", "R$ 55.000"],
+    ["Pernambuco", "R$ 70.000"],
+    ["São paulo", "R$ 55.000"],
+    ["rio grande do sul", "R$ 90.000"],
+    ["bahia", "R$ 69.000"],
+    ["amazonas", "R$ 23.000"],
+    ["acre", "R$ 70.000"],
   ];
 
   const Options = {
@@ -21,14 +25,11 @@ const MapChart = () => {
   return (
     <div
       data-testid="MapChart"
-      className="flex flex-col items-center w-[98%] h-full"
+      className="flex flex-col items-end w-[100%] h-[100%] justify-end"
     >
-      <div className="flex w-full mb-5 text-13 font-bold">
-        <h1>Mapeamento de vendas por UF</h1>
-      </div>
       <Chart
-        width={"100%"}
-        height={"100%"}
+        width={"90%"}
+        height={"95%"}
         chartType="GeoChart"
         data={Data}
         options={Options}
