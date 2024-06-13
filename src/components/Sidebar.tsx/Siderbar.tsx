@@ -1,4 +1,5 @@
-import { PanelLeft } from "lucide-react";
+"use client"
+import { Bell, PanelLeft } from "lucide-react";
 
 import {
   Sheet,
@@ -13,12 +14,22 @@ import dashboard from "../assets/dashboard.svg";
 import blueLogo from "../assets/logoBlue.svg";
 import leaderboard from "../assets/leaderboard.svg";
 import Image from "next/image";
+import { SideBarCard } from "./SideBarCard";
+import { ChangeLanguage } from "../Header.tsx/ChangeLanguage";
+import { Profile } from "../Header.tsx/Profile";
 
 export function SideBar() {
   return (
     <>
-      <div className="w-80 min-h-screen hidden md:flex gap-8 flex-col border-r border-r-1 items-center px-4 py-8 bg-white">
-        <Image src={blueLogo} width={500} height={300} alt="Blue Company Icon" className="w-36" />
+      <div className="w-80 min-h-screen hidden md:flex gap-8 flex-col border-r border-r-1 items-center px-4 py-8 bg-white justify-between">
+        <div className="flex flex-col gap-5">
+          <Image src={blueLogo} alt="Blue Company Icon" className="w-36" />
+        </div>
+        <div className="hidden md:flex md:flex-col-reverse md:items-center gap-2 lg:hidden">
+          <ChangeLanguage />
+          <Bell className="w-5 h-5" />
+          <Profile />
+        </div>
         <SidebarLinkButtonIcon
           href="/"
           text="Dashboard"
@@ -33,10 +44,7 @@ export function SideBar() {
           alt="Leaderboard icon"
           icon
         />
-        
-        {/* <a href="/painel-administratitvo/tabuleiros">
-          <Frame className="text-stone-500 p-1 w-8 h-8 hover:text-stone-700 hover:bg-stone-200 hover:rounded" />
-        </a> */}
+        <SideBarCard />
       </div>
 
       <div className="flex items-center py-3 px-7 md:hidden">
@@ -46,21 +54,29 @@ export function SideBar() {
           </SheetTrigger>
           <SheetContent className="rounded-r-2xl" side="left">
             <SheetHeader>
-              <SheetDescription className="flex flex-col gap-9 mt-5">
-              <SidebarLinkButtonIcon
+              <SheetDescription className="flex flex-col justify-between gap-9 mt-5">
+                <div className="flex flex-col gap-5">
+                  <div className="flex flex-col-reverse items-center gap-2">
+                    <ChangeLanguage />
+                    <Bell className="w-5 h-5" />
+                    <Profile />
+                  </div>
+                  <SidebarLinkButtonIcon
                     href="/"
                     image={dashboard}
                     text="Dashboard"
                     alt="Dashboard icon"
                     icon
-              />
-                      <SidebarLinkButtonIcon
+                  />
+                  <SidebarLinkButtonIcon
                     href="/leaderboard"
                     text="Leaderboard"
                     image={leaderboard}
                     alt="Leaderboard icon"
                     icon
                   />
+                </div>
+                <SideBarCard />
               </SheetDescription>
             </SheetHeader>
           </SheetContent>

@@ -6,7 +6,6 @@ import Image, { StaticImageData } from "next/image";
 interface SidebarLinkButtonIconProps {
   href: string;
   image: StaticImageData;
-  icon?: boolean;
   text?: string;
   alt: string;
 }
@@ -14,7 +13,6 @@ interface SidebarLinkButtonIconProps {
 export function SidebarLinkButtonIcon({
   href,
   image,
-  icon = false,
   text,
   alt,
 }: SidebarLinkButtonIconProps) {
@@ -22,17 +20,15 @@ export function SidebarLinkButtonIcon({
 
 
   function linkClass(hrefLink: string) {
+    console.log(pathname.startsWith(hrefLink));
     return pathname.startsWith(hrefLink)
-      ? "p-1 w-8 h-8 hover:text-stone-700 hover:bg-stone-200 hover:rounded bg-brown-100 rounded"
-      : "p-1 w-8 h-8 hover:text-stone-700 hover:bg-stone-200 hover:rounded";
+      ? "flex p-1 bg-red-700 rounded-md "
+      : "flex p-1 ";
   }
 
-  const noIconClassName =
-    "flex items-center gap-2 text-base cursor-pointer ";
-
   return (
-    <a href={href} className={icon ? "" : noIconClassName}>
-      <Image src={image} width={500} height={300} alt={alt} className={linkClass(href)} />
+    <a href={href} className={linkClass(href)}>
+      <Image src={image} width={500} height={300} alt={alt} />
       {text}
     </a>
   );
