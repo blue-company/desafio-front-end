@@ -20,7 +20,10 @@ const Notifications = () => {
 
   return (
     <div>
-      <button className="bg-yellow-500/20 p-2 rounded-md" onClick={handleClick}>
+      <button
+        className="bg-yellow-500/20 hover:bg-yellow-500/40 p-2 rounded-md"
+        onClick={handleClick}
+      >
         <Bell className="text-yellow-600" size={20} />
       </button>
       <Popover

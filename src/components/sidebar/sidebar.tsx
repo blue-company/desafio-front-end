@@ -13,7 +13,7 @@ const Sidebar = () => {
   return (
     <div className="shadow-xl flex flex-col p-6">
       <header className="flex items-center gap-2">
-        <button className="xl:hidden" onClick={toggleMenu}>
+        <button className="2xl:hidden" onClick={toggleMenu}>
           {isOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
         <Logo />
@@ -22,7 +22,7 @@ const Sidebar = () => {
       <main
         className={`mt-10 flex-grow flex-col block ${
           isOpen ? "block" : "hidden"
-        } xl:block`}
+        } 2xl:block`}
       >
         <ul className="space-y-3">
           <li className="flex cursor-pointer py-4 px-10 bg-blue-700 rounded-xl items-center font-semibold text-white">

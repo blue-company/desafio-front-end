@@ -274,11 +274,11 @@ const CountryChart = () => {
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{
-          scale: 550,
+          scale: 500,
           center: [-54, -15],
         }}
         width={600}
-        height={400}
+        height={350}
       >
         {renderGeograph({
           dataSource,

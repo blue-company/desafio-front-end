@@ -79,8 +79,8 @@ export default function RealityChart() {
 
   return (
     <BarChart
-      width={350}
-      height={230}
+      width={330}
+      height={200}
       data={data}
       barGap={8}
       barCategoryGap={10}

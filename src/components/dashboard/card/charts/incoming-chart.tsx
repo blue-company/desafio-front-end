@@ -14,7 +14,7 @@ export default function IncomesChart() {
 
   useEffect(() => {
     const handleResize = () => {
-      const newWidth = window.innerWidth < 768 ? 430 : 525; // 768px é um breakpoint comum para dispositivos sm
+      const newWidth = window.innerWidth < 768 ? 320 : 525; // 768px é um breakpoint comum para dispositivos sm
       setChartWidth(newWidth);
     };
 
