@@ -2,16 +2,11 @@ import React from "react";
 import SideBar from "@/components/sideMenu";
 import NavBar from "@/components/navbar";
 import Dashboard from "@/screen/dashboard";
+import Profile from '@/app/profile/page'
 
 const Home = () => {
   return (
-    <main className="flex font-Poppins">
-      <SideBar />
-      <div className="flex flex-col w-full bg-[#DDD]">
-        <NavBar />
-        <Dashboard />
-      </div>
-    </main>
+    <Dashboard/>
   );
 };
 

@@ -45,25 +45,29 @@ const SideBar = () => {
         </main>
 
         <ul className={styles.menuList}>
-          <li className={styles.menuItem}>
-            <Image
-              src={DashBoard}
-              width={30}
-              height={30}
-              alt="Dashboard Icon"
-            />
-            Dashboard
-          </li>
+          <Link href="/">
+            <li className={styles.menuItem}>
+              <Image
+                src={DashBoard}
+                width={30}
+                height={30}
+                alt="Dashboard Icon"
+              />
+              Dashboard
+            </li>
+          </Link>
 
           <li className={styles.menuItem}>
             <RiBarChartLine className="text-xl" />
             LeaderBoard
           </li>
 
-          <li className={styles.menuItem}>
-            <RiBarChartLine className="text-xl" />
-            Profile
-          </li>
+          <Link href="/profile">
+            <li className={styles.menuItem}>
+              <RiBarChartLine className="text-xl" />
+              Profile
+            </li>
+          </Link>
         </ul>
 
         <div className={styles.infoBox}>

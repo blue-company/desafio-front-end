@@ -63,6 +63,7 @@
   width: 16rem;
   text-align: center;
   font-size: 16px;
+  height: 3.5rem;
   display: flex;
   align-items: center;
   gap: 1.75rem;
@@ -74,12 +75,12 @@
 }
 
 .menuItem:hover {
-  background-color: #4b5563;
+  background-color: #1c0072;
 }
 
 .infoButton {
   background-color: rgb(255, 255, 255);
-  color: #2500FF;
+  color: rgba(38, 0, 255, 0.444);
   border-radius: 0.375rem;
   font-weight: bold;
   width: 70%;
