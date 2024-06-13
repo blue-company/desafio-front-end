@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
 import { IoBagOutline } from "react-icons/io5";
 import { HiOutlineTicket } from "react-icons/hi";
 import ApexCharts from "apexcharts";

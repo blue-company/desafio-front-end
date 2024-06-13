@@ -3,13 +3,6 @@ import React, { Suspense, useEffect } from "react";
 import { Grid, Box, CircularProgress } from "@mui/material";
 import GenericCard from "@/components/genericCard";
 import SalesCard from "@/components/salesCard";
-// const PlataformChart = React.lazy(
-//   () => import("@/components/charts/plataformChart")
-// );
-// const PerformanceChart = React.lazy(
-//   () => import("@/components/charts/performanceChart")
-// );
-// const LifesCharts = React.lazy(() => import("@/components/charts/lifesCharts"));
 const PlataformChart = dynamic(
   () => import("@/components/charts/plataformChart"),
   {
@@ -22,7 +15,7 @@ const RealChart = dynamic(() => import("@/components/charts/realCharts"), {
 });
 
 const PerformanceChart = dynamic(
-  () => import("@/components/charts/plataformChart"),
+  () => import("@/components/charts/performanceChart"),
   {
     ssr: false,
   }
@@ -32,12 +25,12 @@ const LifesCharts = dynamic(() => import("@/components/charts/lifesCharts"), {
   ssr: false,
 });
 
-// const ServicesChart = dynamic(
-//   () => import("@/components/charts/servicesChart"),
-//   {
-//     ssr: false,
-//   }
-// );
+const ServicesChart = dynamic(
+  () => import("@/components/charts/servicesChart"),
+  {
+    ssr: false,
+  }
+);
 
 const MapChart = dynamic(() => import("@/components/charts/mapChart"), {
   ssr: false,
@@ -50,14 +43,6 @@ const TopProductsChart = dynamic(
   }
 );
 
-// const RealChart = React.lazy(() => import("@/components/charts/realCharts"));
-// const MapChart = React.lazy(() => import("@/components/charts/mapChart"));
-// const ServicesChart = React.lazy(
-//   () => import("@/components/charts/servicesChart")
-// );
-// const TopProductsChart = React.lazy(
-//   () => import("@/components/charts/topProducstChart")
-// );
 import styles from "./DashBoard.module.css";
 import dynamic from "next/dynamic";
 
@@ -180,22 +165,22 @@ const Dashboard = () => {
           <GenericCard title="Mapeamento de vendas (UF)" chart={<MapChart />} />
         </Grid>
 
-        {/* <Grid item xl={3}>
-            <GenericCard
-              title="Nível de serviço"
-              chart={
-                <Suspense
-                  fallback={
-                    <Box className={styles.loadingBox}>
-                      <CircularProgress className="mb-5" />
-                    </Box>
-                  }
-                >
-                  <ServicesChart />
-                </Suspense>
-              }
-            />
-          </Grid> */}
+        <Grid item xl={3}>
+          <GenericCard
+            title="Nível de serviço"
+            chart={
+              <Suspense
+                fallback={
+                  <Box className={styles.loadingBox}>
+                    <CircularProgress className="mb-5" />
+                  </Box>
+                }
+              >
+                <ServicesChart />
+              </Suspense>
+            }
+          />
+        </Grid>
       </Grid>
     </Grid>
   );
