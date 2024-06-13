@@ -68,7 +68,7 @@ const ServicesChart = () => {
     },
     responsive: true,
     maintainAspectRatio: false,
-   
+
     scales: {
       x: {
         ticks: {
@@ -88,7 +88,45 @@ const ServicesChart = () => {
   return (
     <div className="relative flex flex-col items-center w-full h-full">
       <div style={{ width: "100%", height: "80%" }}>
-        <Bar type="bar" data={data} options={options} />
+        <Bar
+          data={data}
+          options={{
+            plugins: {
+              legend: {
+                display: false,
+                align: "center",
+                position: "bottom",
+                labels: {
+                  color: "rgb(148, 163, 184)",
+                  boxWidth: 10,
+                  boxHeight: 10,
+                  padding: 15,
+                  font: {
+                    size: 14,
+                    family: "Poppins",
+                  },
+                },
+              },
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+
+            scales: {
+              x: {
+                ticks: {
+                  display: false,
+                },
+                stacked: true,
+                grid: {
+                  display: false,
+                },
+              },
+              y: {
+                display: false,
+              },
+            },
+          }}
+        />
       </div>
       <div className="flex w-full items-center justify-center gap-14 text-xs mt-5">
         <GenericSubComponent
