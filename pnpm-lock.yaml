@@ -8,6 +8,9 @@ dependencies:
   cookie:
     specifier: ^0.6.0
     version: 0.6.0
+  hono:
+    specifier: ^4.4.5
+    version: 4.4.5
   next:
     specifier: 14.2.3
     version: 14.2.3(react-dom@18.3.1)(react@18.3.1)
@@ -2244,6 +2247,11 @@ packages:
     dependencies:
       parse-passwd: 1.0.0
     dev: true
+
+  /hono@4.4.5:
+    resolution: {integrity: sha512-hyf+1c+gTEo0+xjdYT2e8y4M3HcEy0ARuRZHPRgeRhq/mupkI4j9/qEWVKsyj0se4KhfRnYrld4Tk6z/9veq/Q==}
+    engines: {node: '>=16.0.0'}
+    dev: false
 
   /human-signals@5.0.0:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
