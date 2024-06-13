@@ -1,23 +1,29 @@
 "use client";
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 import { Grid, Box, CircularProgress } from "@mui/material";
 import GenericCard from "@/components/genericCard";
 import SalesCard from "@/components/salesCard";
-import styles from "./DashBoard.module.css";
-
-const PlataformChart = lazy(() => import("@/components/charts/plataformChart"));
-const PerformanceChart = lazy(
+const PlataformChart = React.lazy(
+  () => import("@/components/charts/plataformChart")
+);
+const PerformanceChart = React.lazy(
   () => import("@/components/charts/performanceChart")
 );
-const LifesCharts = lazy(() => import("@/components/charts/lifesCharts"));
-const RealChart = lazy(() => import("@/components/charts/realCharts"));
-const MapChart = lazy(() => import("@/components/charts/mapChart"));
-const ServicesChart = lazy(() => import("@/components/charts/servicesChart"));
-
+const LifesCharts = React.lazy(() => import("@/components/charts/lifesCharts"));
+const RealChart = React.lazy(() => import("@/components/charts/realCharts"));
+const MapChart = React.lazy(() => import("@/components/charts/mapChart"));
+const ServicesChart = React.lazy(
+  () => import("@/components/charts/servicesChart")
+);
+const TopProductsChart = React.lazy(
+  () => import("@/components/charts/topProducstChart")
+);
+import styles from "./DashBoard.module.css";
 const Dashboard = () => {
   React.useEffect(() => {
     console.log(window.location.href);
   }, []);
+
   return (
     <Grid
       container
@@ -28,7 +34,7 @@ const Dashboard = () => {
         margin: "4rem 0",
       }}
     >
-      <Grid container sx={{ display: "flex", justifyContent: "space-around" }}>
+      <Grid container sx={{ display: "flex", justifyContent: "center", gap: 9 }}>
         <Grid item xl={7}>
           <SalesCard />
         </Grid>
@@ -122,39 +128,19 @@ const Dashboard = () => {
                   </Box>
                 }
               >
-                <RealChart />
+                <TopProductsChart />
               </Suspense>
             }
-          />
-        </Grid>
-
-        <Grid xl={3}>
-          <GenericCard
-            title="Mapeamento de vendas (UF)"
-            chart={<MapChart />}
           />
         </Grid>
 
         <Grid item xl={3}>
-          <GenericCard
-            title="Realidade"
-            chart={
-              <Suspense
-                fallback={
-                  <Box className={styles.loadingBox}>
-                    <CircularProgress className="mb-5" />
-                  </Box>
-                }
-              >
-                <RealChart />
-              </Suspense>
-            }
-          />
+          <GenericCard title="Mapeamento de vendas (UF)" chart={<MapChart />} />
         </Grid>
 
-        {/* <Grid xl={3}>
+        <Grid item xl={3}>
           <GenericCard
-            title="nível de serviço"
+            title="Nível de serviço"
             chart={
               <Suspense
                 fallback={
@@ -168,23 +154,6 @@ const Dashboard = () => {
             }
           />
         </Grid>
-
-        <Grid item xl={3}>
-          <GenericCard
-            title="Realidade"
-            chart={
-              <Suspense
-                fallback={
-                  <Box className={styles.loadingBox}>
-                    <CircularProgress className="mb-5" />
-                  </Box>
-                }
-              >
-                <RealChart />
-              </Suspense>
-            }
-          />
-        </Grid> */}
       </Grid>
     </Grid>
   );
