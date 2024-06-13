@@ -1,64 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import ApexCharts from "apexcharts";
-import Image from "next/image";
-import IconBlue from "@/assets/icons/iconBlue.png";
-import IconGreen from "@/assets/icons/iconGreen.png";
 import { GenericSubComponent } from "@/components/subComponentsCharts";
+import { lifesChartData } from "@/utils/data.charts";
 
 const LifesCharts: React.FC = () => {
   const chartRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const options = {
-      series: [
-        {
-          name: "TD Consultoria",
-          data: [31, 40, 28, 51, 42, 29, 40],
-        },
-        {
-          name: "RIKO Plataforma",
-          data: [35, 45, 45, 60, 50, 52, 45],
-        },
-      ],
-      legend: {
-        show: false,
-      },
-      chart: {
-        height: 250,
-        type: "area",
-        toolbar: {
-          show: false,
-        },
-      },
-      markers: {
-        size: 5,
-        colors: ["#0084ff", "#00f43d"],
-        strokeWidth: 3,
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: "smooth",
-      },
-      grid: {
-        yaxis: {
-          lines: {
-            show: false,
-          },
-        },
-      },
-      xaxis: {
-        labels: {
-          show: false,
-        },
-      },
-      yaxis: {
-        labels: {
-          show: false,
-        },
-      },
-    };
+    const options = lifesChartData.options;
 
     const chart = new ApexCharts(chartRef.current, options);
     chart.render();
@@ -68,19 +17,30 @@ const LifesCharts: React.FC = () => {
     };
   }, []);
 
+  const {
+    display,
+    size,
+    leftImage,
+    leftLabel,
+    firstValue,
+    rightImage,
+    secondLabel,
+    secondValue,
+  } = lifesChartData.lifesModuleData;
+
   return (
     <div>
       <div>
         <div id="chart" ref={chartRef}></div>
         <GenericSubComponent
-          display="block"
-          size={30}
-          leftImage={IconBlue}
-          leftLabel="Ultimo mês"
-          firstValue="3.451"
-          rightImage={IconGreen}
-          secondLabel="Este mês"
-          secondValue="4.525"
+          display={display}
+          size={size}
+          leftImage={leftImage}
+          leftLabel={leftLabel}
+          firstValue={firstValue}
+          rightImage={rightImage}
+          secondLabel={secondLabel}
+          secondValue={secondValue}
         />
       </div>
     </div>
