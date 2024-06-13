@@ -68,3 +68,23 @@ export const lifesChartData = {
     secondValue: "4.525",
   },
 };
+
+export const mapChartData = {
+  data: [
+    ["Estado", "vendas"],
+    ["Santa Catarina", "R$ 55.000"],
+    ["Pernambuco", "R$ 70.000"],
+    ["São Paulo", "R$ 55.000"],
+    ["Rio Grande do Sul", "R$ 90.000"],
+    ["Bahia", "R$ 69.000"],
+    ["Amazonas", "R$ 23.000"],
+    ["Acre", "R$ 70.000"],
+  ],
+  options: {
+    region: "BR",
+    displayMode: "regions",
+    resolution: "provinces",
+    colorAxis: { colors: ["#2500ff", "#2500ff"] },
+    datalessRegionColor: "#D4D4D4",
+  },
+};
