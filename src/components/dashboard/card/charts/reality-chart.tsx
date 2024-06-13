@@ -8,6 +8,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+import React from "react";
 
 interface LegendEntry {
   value: string;

@@ -8,6 +8,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+import React from "react";
 
 export default function IncomesChart() {
   const [chartWidth, setChartWidth] = useState(525);

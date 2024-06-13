@@ -1,5 +1,6 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
+import React from "react";
 
 const HeaderSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");

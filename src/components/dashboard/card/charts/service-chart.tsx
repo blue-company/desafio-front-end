@@ -8,6 +8,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import React from "react";
 
 interface DataItem {
   pv: number;

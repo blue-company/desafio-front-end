@@ -6,6 +6,7 @@ import {
   UserPlus,
 } from "lucide-react";
 import NewsMiniCard from "../news-mini-card";
+import React from "react";
 
 const SellsChart = () => {
   return (

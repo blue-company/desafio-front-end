@@ -1,4 +1,5 @@
 import { HeartPulse } from "lucide-react";
+import React from "react";
 
 const Logo = () => {
   return (

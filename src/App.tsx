@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
 import DashboardCard from "./components/dashboard/card/card";
 import Header from "./components/header/header";
 import Sidebar from "./components/sidebar/sidebar";

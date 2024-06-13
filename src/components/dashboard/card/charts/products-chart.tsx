@@ -1,5 +1,6 @@
 import { ProgressBar } from "react-bootstrap";
 import styled from "styled-components";
+import React from "react";
 import { useTable, Column, Row, HeaderGroup, Cell } from "react-table";
 
 interface Data {

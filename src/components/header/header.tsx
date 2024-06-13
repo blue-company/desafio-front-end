@@ -4,6 +4,7 @@ import LanguageSelector from "./language-selector";
 import Notifications from "./notifications";
 import UserCard from "./user-card";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import React from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

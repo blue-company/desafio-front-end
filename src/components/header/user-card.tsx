@@ -1,6 +1,8 @@
 import { Avatar, Popover, Button } from "@mui/material";
 import { ChevronDown, Settings, LogOut } from "lucide-react";
 import { MouseEvent, useState } from "react";
+import React from "react";
+
 
 const UserCard = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);

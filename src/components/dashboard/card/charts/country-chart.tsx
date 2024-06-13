@@ -1,4 +1,6 @@
 import { useState } from "react";
+import React from "react";
+
 import { geoCentroid, ExtendedFeature } from "d3-geo";
 import {
   ComposableMap,

@@ -1,4 +1,6 @@
 import { CodeXml } from "lucide-react";
+import React from "react";
+
 
 const SidebarCard = () => {
   return (
