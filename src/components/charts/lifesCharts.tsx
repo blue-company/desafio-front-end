@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import ApexCharts from "apexcharts";
 import { GenericSubComponent } from "@/components/subComponentsCharts";
 import { lifesChartData } from "@/utils/data.charts";
+import iconBlue from '@/assets/icons/iconBlue.png'
+import iconGreen from "@/assets/icons/iconGreen.png";
 
 const LifesCharts: React.FC = () => {
   const chartRef = useRef<HTMLDivElement>(null);
@@ -20,10 +22,8 @@ const LifesCharts: React.FC = () => {
   const {
     display,
     size,
-    leftImage,
     leftLabel,
     firstValue,
-    rightImage,
     secondLabel,
     secondValue,
   } = lifesChartData.lifesModuleData;
@@ -35,10 +35,10 @@ const LifesCharts: React.FC = () => {
         <GenericSubComponent
           display={display}
           size={size}
-          leftImage={leftImage}
+          leftImage={iconBlue}
           leftLabel={leftLabel}
           firstValue={firstValue}
-          rightImage={rightImage}
+          rightImage={iconGreen}
           secondLabel={secondLabel}
           secondValue={secondValue}
         />
