@@ -10,6 +10,7 @@ import {
   FaArrowRightToBracket,
 } from "react-icons/fa6";
 import styles from "./SideBar.module.css";
+import Link from "next/link";
 
 const SideBar = () => {
   const [openMenu, setOpenMenu] = useState(true);
@@ -19,7 +20,7 @@ const SideBar = () => {
   };
 
   return (
-    <div className={styles.sidebarContainer} >
+    <div className={styles.sidebarContainer}>
       <button
         onClick={handleToggleMenu}
         className={styles.toggleButton}
@@ -74,7 +75,13 @@ const SideBar = () => {
             Saiba mais informações sobre a Blue, uma operadora de saúde Health
             Tech
           </p>
-          <button className={styles.infoButton}>conhecer</button>
+          <Link
+            href="https://www.saudeblue.com/"
+            target="blank"
+            className="w-full flex justify-center"
+          >
+            <button className={styles.infoButton}>conhecer</button>
+          </Link>
         </div>
       </div>
       <div
@@ -82,8 +89,7 @@ const SideBar = () => {
           marginLeft: openMenu ? "20rem" : "0",
           transition: "margin-left 0.3s ease",
         }}
-      >
-      </div>
+      ></div>
     </div>
   );
 };

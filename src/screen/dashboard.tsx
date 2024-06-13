@@ -34,7 +34,10 @@ const Dashboard = () => {
         margin: "4rem 0",
       }}
     >
-      <Grid container sx={{ display: "flex", justifyContent: "center", gap: 9 }}>
+      <Grid
+        container
+        sx={{ display: "flex", justifyContent: "center", gap: 9 }}
+      >
         <Grid item xl={7}>
           <SalesCard />
         </Grid>

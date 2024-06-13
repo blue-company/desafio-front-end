@@ -18,7 +18,7 @@ const GenericCard = ({ title, chart }: GenericCardI) => {
         >
           {title}
         </Typography>
-        <Grid className=" h-[300px]">{chart}</Grid>
+        <Grid className=" h-[320px]">{chart}</Grid>
       </Paper>
     </Grid>
   );

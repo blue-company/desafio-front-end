@@ -1,6 +1,15 @@
 .navbar {
   height: 6rem;
+  transition: transform 0.3s ease, width 0.3s ease;
   background-color: var(--navbar-bg-color, #fff);
+}
+
+.navbarOpen {
+  width: calc(100% - 20rem);
+}
+
+.navbarClosed {
+  width: 100%;
 }
 
 .searchInput {
