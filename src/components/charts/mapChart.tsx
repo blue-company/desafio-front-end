@@ -1,8 +1,11 @@
 "use client";
 
 import { Chart } from "react-google-charts";
+import { CircularProgress } from "@mui/material";
+import { useState } from "react";
 
 const MapChart = () => {
+    const [loading, setLoading] = useState(true);
   const Data = [
     ["Estado", "vendas"],
     ["santa catarina", "R$ 55.000"],
@@ -22,17 +25,27 @@ const MapChart = () => {
     datalessRegionColor: "#D4D4D4",
   };
 
+    const handleChartReady = () => {
+      setLoading(false);
+    };
+
   return (
     <div
       data-testid="MapChart"
       className="flex flex-col items-end w-[100%] h-[100%] justify-end"
     >
+      {loading && (
+        <div className="flex">
+          <CircularProgress  />
+        </div>
+      )}
       <Chart
         width={"90%"}
         height={"95%"}
         chartType="GeoChart"
         data={Data}
         options={Options}
+        chartEvents={[{ eventName: "ready", callback: handleChartReady }]}
       />
     </div>
   );

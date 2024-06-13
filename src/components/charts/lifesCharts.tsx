@@ -3,6 +3,7 @@ import ApexCharts from "apexcharts";
 import Image from "next/image";
 import IconBlue from "@/assets/icons/iconBlue.png";
 import IconGreen from "@/assets/icons/iconGreen.png";
+import { GenericSubComponent } from "@/components/subComponentsCharts";
 
 const LifesCharts: React.FC = () => {
   const chartRef = useRef<HTMLDivElement>(null);
@@ -70,31 +71,17 @@ const LifesCharts: React.FC = () => {
   return (
     <div>
       <div>
-        <div>
-          <div id="chart" ref={chartRef}></div>
-          <span className="flex justify-center">
-            <hr className="h-[0.8px] w-[90%] bg-[#ddd] mt-[-1rem]" />
-          </span>
-          <div className="gap-3 flex mt-[-1rem] items-center justify-center ">
-            <div className="flex items-center flex-col">
-              <div className="flex items-center gap-4 mt-1">
-                <Image width={30} src={IconBlue} alt="Icon Blue" />
-                Utimo mês
-              </div>
-              <span className="">4.520</span>
-            </div>
-
-            <hr className="h-5 w-[0.10px] bg-[#DDD] mb-4" />
-
-            <div className="flex items-center flex-col">
-              <div className="flex items-center gap-4 mt-1">
-                <Image width={30} src={IconGreen} alt="Icon Blue" />
-                Este mês
-              </div>
-              <span>3.452</span>
-            </div>
-          </div>
-        </div>
+        <div id="chart" ref={chartRef}></div>
+        <GenericSubComponent
+          display="block"
+          size={30}
+          leftImage={IconBlue}
+          leftLabel="Ultimo mês"
+          firstValue="3.451"
+          rightImage={IconGreen}
+          secondLabel="Este mês"
+          secondValue="4.525"
+        />
       </div>
     </div>
   );
