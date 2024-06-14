@@ -27,13 +27,13 @@ export function DaySalesCard({
     };
 
     return (
-        <Card className="w-48 rounded-2xl" style={cardStyle}>
-            <CardHeader className="pb-2 flex flex-col gap-2">
+        <Card className="max-w-48 rounded-2xl" style={cardStyle}>
+            <CardHeader className="pb-1 flex flex-col">
                 <Image src={icon} alt={title} className="w-10 h-10"/>
                 <CardTitle>{number}</CardTitle>
-                <CardDescription>{title}</CardDescription>
+                <CardDescription className="text-lg text-[#425166]">{title}</CardDescription>
             </CardHeader>
-            <CardContent>{description}</CardContent>
+            <CardContent className="text-blue-700 text-sm pb-3 " >{description}</CardContent>
         </Card>
     );
 }

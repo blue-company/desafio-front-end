@@ -10,7 +10,7 @@ import implantadas from "./assets/implantadas.svg";
 
 export function DaySales() {
     return (
-        <Card className ="bg-white mt-10">
+        <Card className ="bg-white mt-10 w-full">
         <CardHeader className="flex flex-row justify-between">
           <CardTitle className="flex flex-col gap-3">
             Vendas Hoje

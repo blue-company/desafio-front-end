@@ -1,6 +1,7 @@
 "use client";
 
 import { LineChart, Line, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from "recharts";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
 interface PlataformsProps {
   tdConsultoria: number;
@@ -9,83 +10,90 @@ interface PlataformsProps {
   month: string;
 }
 const data: PlataformsProps[] = [
-  {
-    tdConsultoria: 4000,
-    rikoPlataforma: 2400,
-    blueServicos: 2400,
-    month: "Jan",
-  },
-  {
-    tdConsultoria: 3000,
-    rikoPlataforma: 1398,
-    blueServicos: 2210,
-    month: "Fev",
-  },
-  {
-    tdConsultoria: 2000,
-    rikoPlataforma: 9800,
-    blueServicos: 2290,
-    month: "Mar",
-  },
-  {
-    tdConsultoria: 2780,
-    rikoPlataforma: 3908,
-    blueServicos: 2000,
-    month: "Abr",
-  },
-  {
-    tdConsultoria: 1890,
-    rikoPlataforma: 4800,
-    blueServicos: 2181,
-    month: "Mai",
-  },
-  {
-    tdConsultoria: 2390,
-    rikoPlataforma: 3800,
-    blueServicos: 2500,
-    month: "Jun",
-  },
-  {
-    tdConsultoria: 3490,
-    rikoPlataforma: 4300,
-    blueServicos: 2100,
-    month: "Jul",
-  },
-  {
-    tdConsultoria: 4000,
-    rikoPlataforma: 2400,
-    blueServicos: 2400,
-    month: "Ago",
-  },
-  {
-    tdConsultoria: 3000,
-    rikoPlataforma: 1398,
-    blueServicos: 2210,
-    month: "Set",
-  },
-  {
-    tdConsultoria: 2000,
-    rikoPlataforma: 9800,
-    blueServicos: 2290,
-    month: "Out",
-  },
-  {
-    tdConsultoria: 2780,
-    rikoPlataforma: 3908,
-    blueServicos: 2000,
-    month: "Nov",
-  },
-  {
-    tdConsultoria: 1890,
-    rikoPlataforma: 4800,
-    blueServicos: 2181,
-    month: "Dez",
-  },
+    {
+        tdConsultoria: 400,
+        rikoPlataforma: 240,
+        blueServicos: 240,
+        month: "Jan",
+    },
+    {
+        tdConsultoria: 300,
+        rikoPlataforma: 139,
+        blueServicos: 221,
+        month: "Fev",
+    },
+    {
+        tdConsultoria: 200,
+        rikoPlataforma: 380,
+        blueServicos: 229,
+        month: "Mar",
+    },
+    {
+        tdConsultoria: 278,
+        rikoPlataforma: 390,
+        blueServicos: 200,
+        month: "Abr",
+    },
+    {
+        tdConsultoria: 189,
+        rikoPlataforma: 480,
+        blueServicos: 218,
+        month: "Mai",
+    },
+    {
+        tdConsultoria: 239,
+        rikoPlataforma: 380,
+        blueServicos: 250,
+        month: "Jun",
+    },
+    {
+        tdConsultoria: 349,
+        rikoPlataforma: 430,
+        blueServicos: 210,
+        month: "Jul",
+    },
+    {
+        tdConsultoria: 400,
+        rikoPlataforma: 240,
+        blueServicos: 240,
+        month: "Ago",
+    },
+    {
+        tdConsultoria: 300,
+        rikoPlataforma: 139,
+        blueServicos: 221,
+        month: "Set",
+    },
+    {
+        tdConsultoria: 200,
+        rikoPlataforma: 280,
+        blueServicos: 229,
+        month: "Out",
+    },
+    {
+        tdConsultoria: 278,
+        rikoPlataforma: 390,
+        blueServicos: 200,
+        month: "Nov",
+    },
+    {
+        tdConsultoria: 189,
+        rikoPlataforma: 480,
+        blueServicos: 218,
+        month: "Dez",
+    },
 ];
 
-export function Overview() {
+export function Plataforms() {
   return (
-    <ResponsiveContainer width="100%" height={350} className="bg-white rounded-md border">
+    <Card className ="bg-white mt-10 max-w-xl w-full">
+            <CardHeader className="flex flex-row justify-between">
+          <CardTitle className="flex flex-col gap-3">
+            Plataformas
+          </CardTitle>
+        </CardHeader>
+    
+      <ResponsiveContainer width="100%" height={350}>
       <LineChart
         data={data}
         margin={{
@@ -105,5 +113,9 @@ export function Overview() {
         <Legend iconType="square"  />
       </LineChart>
     </ResponsiveContainer>
+
+    </Card>
+
+    
   );
 }

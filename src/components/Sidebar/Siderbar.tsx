@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Bell, PanelLeft } from "lucide-react";
 
 import {
@@ -15,13 +15,13 @@ import blueLogo from "../assets/logoBlue.svg";
 import leaderboard from "../assets/leaderboard.svg";
 import Image from "next/image";
 import { SideBarCard } from "./SideBarCard";
-import { ChangeLanguage } from "../Header.tsx/ChangeLanguage";
-import { Profile } from "../Header.tsx/Profile";
+import { ChangeLanguage } from "../Header/ChangeLanguage";
+import { Profile } from "../Header/Profile";
 
 export function SideBar() {
   return (
     <>
-      <div className="w-80 min-h-screen hidden md:flex gap-8 flex-col border-r border-r-1 items-center px-4 py-8 bg-white justify-between">
+      <div className="w-80 min-h-screen hidden md:flex gap-8 flex-col border-r border-r-1 items-center px-4 py-8 bg-white">
         <div className="flex flex-col gap-5">
           <Image src={blueLogo} alt="Blue Company Icon" className="w-36" />
         </div>
@@ -35,16 +35,14 @@ export function SideBar() {
           text="Dashboard"
           image={dashboard}
           alt="Dashboard icon"
-          icon
         />
         <SidebarLinkButtonIcon
           href="/leaderboard"
           text="Leaderboard"
           image={leaderboard}
           alt="Leaderboard icon"
-          icon
         />
-        <SideBarCard />
+        <SideBarCard  />
       </div>
 
       <div className="flex items-center py-3 px-7 md:hidden">
@@ -66,14 +64,12 @@ export function SideBar() {
                     image={dashboard}
                     text="Dashboard"
                     alt="Dashboard icon"
-                    icon
                   />
                   <SidebarLinkButtonIcon
                     href="/leaderboard"
                     text="Leaderboard"
                     image={leaderboard}
                     alt="Leaderboard icon"
-                    icon
                   />
                 </div>
                 <SideBarCard />

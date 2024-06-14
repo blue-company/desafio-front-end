@@ -20,15 +20,14 @@ export function SidebarLinkButtonIcon({
 
 
   function linkClass(hrefLink: string) {
-    console.log(pathname.startsWith(hrefLink));
     return pathname.startsWith(hrefLink)
-      ? "flex p-1 bg-red-700 rounded-md "
-      : "flex p-1 ";
+      ? "flex items-center gap-3 p-4 text-white font-bold bg-primary-foreground rounded-md "
+      : "flex items-center gap-3 p-4  ";
   }
 
   return (
     <a href={href} className={linkClass(href)}>
-      <Image src={image} width={500} height={300} alt={alt} />
+      <Image src={image} className="w-5" alt={alt} />
       {text}
     </a>
   );
