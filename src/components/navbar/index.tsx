@@ -9,18 +9,18 @@ import USA from "@/assets/icons/usa.png";
 import profile from "@/assets/images/profile.jpg";
 import styles from "./NavBar.module.css";
 import BasicSelect from "@/components/dropDown";
-// import { usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const NavBar = ({ shiftRight }: any) => {
-//  const pathname = usePathname();
+ const pathname = usePathname();
 
-//   let pageTitle = "Dashboard";
+  let pageTitle = "Dashboard";
 
-//   if (pathname === "/profile") {
-//     pageTitle = "Profile";
-//   } else if (pathname === "/leaderboard") {
-//     pageTitle = "Leaderboard";
-//   }
+  if (pathname === "/profile") {
+    pageTitle = "Profile";
+  } else if (pathname === "/leaderboard") {
+    pageTitle = "Leaderboard";
+  }
   return (
     <div>
       <div

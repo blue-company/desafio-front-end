@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import "tailwindcss/tailwind.css";
 import { FaArrowAltCircleDown } from "react-icons/fa";
 
 const Dropdown = () => {
