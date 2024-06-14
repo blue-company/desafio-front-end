@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import ApexCharts from "apexcharts";
 import { GenericSubComponent } from "@/components/subComponentsCharts";
-import { lifesChartData } from "@/utils/data.charts";
+import { ProfileChartData } from "@/utils/data.charts";
 import iconBlue from "@/assets/icons/iconBlue.png";
 import iconGreen from "@/assets/icons/iconGreen.png";
 
@@ -9,7 +9,7 @@ const LifesCharts: React.FC = () => {
   const chartRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const options = lifesChartData.options;
+    const options = ProfileChartData.options;
 
     const chart = new ApexCharts(chartRef.current, options);
     chart.render();
@@ -20,7 +20,7 @@ const LifesCharts: React.FC = () => {
   }, []);
 
   const { display, size, leftLabel, firstValue, secondLabel, secondValue } =
-    lifesChartData.lifesModuleData;
+    ProfileChartData.lifesModuleData;
 
   return (
     <div>
