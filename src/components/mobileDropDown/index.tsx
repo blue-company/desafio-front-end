@@ -1,7 +1,10 @@
+"use client";
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import Link from "next/link";
+import { CiMenuBurger } from "react-icons/ci";
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -14,15 +17,16 @@ export default function BasicMenu() {
   };
 
   return (
-    <div>
+    <div className="fixed mx-5 mt-5">
       <Button
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
+        sx={{background: '#9f9f9f'}}
       >
-        s
+        <CiMenuBurger className="text-[#fff]"/>
       </Button>
       <Menu
         id="basic-menu"
@@ -33,9 +37,16 @@ export default function BasicMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <Link href="/">
+          <MenuItem onClick={handleClose}>DashBoard</MenuItem>
+        </Link>
+
+        <Link href="/profile">
+          <MenuItem onClick={handleClose}>Profile</MenuItem>
+        </Link>
+        <Link href="/leaderBoard">
+          <MenuItem onClick={handleClose}>Leaderboard</MenuItem>
+        </Link>
       </Menu>
     </div>
   );
