@@ -31,9 +31,7 @@ export function useLogin(props: UseLoginProps) {
 
   const handleSignIn = form.handleSubmit(async (data) => {
     try {
-      console.log(props.login(data));
       const res = await props.login(data);
-      console.log('AAAA');
       form.reset();
       setCookie(null, authToken, res.token, authCookieOptions);
       toast({

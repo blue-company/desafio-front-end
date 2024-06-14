@@ -6,13 +6,13 @@ interface SidebarProps {
     id: number;
     name: string;
     path: string;
-    icon: string;
+    icon: React.FC<React.SVGProps<SVGSVGElement>>;
   }[];
 }
 
 export function Sidebar({ routes }: SidebarProps) {
   return (
-    <aside className="bg-white flex flex-col justify-between px-8 py-8 h-screen">
+    <aside className="bg-white flex flex-col justify-between px-10 py-8 h-screen">
       <div className="flex flex-col gap-10">
         <div className="flex items-center gap-4">
           <SidebarLogo className="size-11 rounded-lg" />
@@ -22,9 +22,8 @@ export function Sidebar({ routes }: SidebarProps) {
           {routes.map((item) => (
             <a
               key={item.id}
-              className="flex gap-4 px-5 items-center bg-[#2500FF] py-4 rounded-lg"
-              href={item.path}
-            >
+              className="flex gap-4 px-5 items-center bg-[#2500FF] py-3 rounded-xl"
+              href={item.path}>
               <item.icon />
               {item.name}
             </a>
