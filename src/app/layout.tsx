@@ -24,7 +24,7 @@ export default function RootLayout({
       
         <main className="flex font-Poppins">
           <SideBar />
-          <div className="flex flex-col w-full bg-[#DDD]">
+          <div className="flex flex-col w-full bg-[#DDD] ">
             <NavBar />
             {children}
           </div>

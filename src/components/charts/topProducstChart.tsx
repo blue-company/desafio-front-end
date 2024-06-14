@@ -21,11 +21,11 @@ const TopProductsChart: React.FC = () => {
       index: "01",
       product: "Green Start Pro",
       percentage: 70,
-      graphBarColor: "bg-green-500",
-      graphPercentageBorder: "border-green-500",
-      graphBarBackground: "bg-green-200",
-      graphPercentageBackground: "bg-green-100",
-      percentageTextColor: "text-green-500",
+      graphBarColor: "bg-[#0095FF]",
+      graphPercentageBorder: "border-[#0095FF]",
+      graphBarBackground: "bg-[#0095ff54]",
+      graphPercentageBackground: "bg-[#F0F9FF]",
+      percentageTextColor: "text-[#0095FF]",
       customPadding: "py-3",
     },
     {
@@ -33,11 +33,11 @@ const TopProductsChart: React.FC = () => {
       index: "02",
       product: "Red Start Pro",
       percentage: 50,
-      graphBarColor: "bg-red-500",
-      graphPercentageBorder: "border-red-500",
-      graphBarBackground: "bg-red-200",
-      graphPercentageBackground: "bg-red-100",
-      percentageTextColor: "text-red-500",
+      graphBarColor: "bg-[#30fe9e]",
+      graphPercentageBorder: "border-[#30fe9e]",
+      graphBarBackground: "bg-[#b2fdda]",
+      graphPercentageBackground: "bg-[#b4fcda1e]",
+      percentageTextColor: "text-[#41ffa6]",
       customPadding: "py-3",
     },
     {
@@ -45,11 +45,11 @@ const TopProductsChart: React.FC = () => {
       index: "03",
       product: "Yellow Start Pro",
       percentage: 80,
-      graphBarColor: "bg-yellow-500",
-      graphPercentageBorder: "border-yellow-500",
-      graphBarBackground: "bg-yellow-200",
-      graphPercentageBackground: "bg-yellow-100",
-      percentageTextColor: "text-yellow-500",
+      graphBarColor: "bg-[#884DFF]",
+      graphPercentageBorder: "border-[#884DFF]",
+      graphBarBackground: "bg-[#884dff3d]",
+      graphPercentageBackground: "bg-[#b594f73c]",
+      percentageTextColor: "text-[#884DFF]",
       customPadding: "py-3",
     },
     {
@@ -57,11 +57,11 @@ const TopProductsChart: React.FC = () => {
       index: "04",
       product: "Blue Start Pro",
       percentage: 40,
-      graphBarColor: "bg-blue-500",
-      graphPercentageBorder: "border-blue-500",
-      graphBarBackground: "bg-blue-200",
-      graphPercentageBackground: "bg-blue-100",
-      percentageTextColor: "text-blue-500",
+      graphBarColor: "bg-[#FF8F0D]",
+      graphPercentageBorder: "border-[#FF8F0D]",
+      graphBarBackground: "bg-[#ff8e0d39]",
+      graphPercentageBackground: "bg-[#ffc58239]",
+      percentageTextColor: "text-[#FF8F0D]",
       customPadding: "pt-3",
     },
   ];
@@ -111,10 +111,18 @@ const TopProductsChart: React.FC = () => {
         <table className="w-full table-auto border-collapse text-[10px] mt-10 h-full">
           <thead>
             <tr>
-              <th className="px-4 py-2 font-normal text-[#94A3B8] text-left">#</th>
-              <th className="px-4 py-2 font-normal text-[#94A3B8] text-left">Produto</th>
-              <th className="px-4 py-2 font-normal text-[#94A3B8] text-left">Alavancagem</th>
-              <th className="px-4 py-2 font-normal text-[#94A3B8] text-left">%/</th>
+              <th className="px-4 py-2 font-normal text-[#94A3B8] text-left">
+                #
+              </th>
+              <th className="px-4 py-2 font-normal text-[#94A3B8] text-left">
+                Produto
+              </th>
+              <th className="px-4 py-2 font-normal text-[#94A3B8] text-left">
+                Alavancagem
+              </th>
+              <th className="px-4 py-2 font-normal text-[#94A3B8] text-left">
+                %/
+              </th>
             </tr>
           </thead>
           <tbody>
