@@ -14,13 +14,13 @@ import { usePathname } from "next/navigation";
 const NavBar = ({ shiftRight }: any) => {
  const pathname = usePathname();
 
-  let pageTitle = "Dashboard";
+ let pageTitle = "Dashboard";
 
-  if (pathname === "/profile") {
-    pageTitle = "Profile";
-  } else if (pathname === "/leaderboard") {
-    pageTitle = "Leaderboard";
-  }
+ if (pathname === "/profile") {
+   pageTitle = "Profile";
+ } else if (pathname === "/leaderboard") {
+   pageTitle = "Leaderboard";
+ }
   return (
     <div>
       <div
@@ -32,7 +32,7 @@ const NavBar = ({ shiftRight }: any) => {
           variant="h5"
           sx={{ fontWeight: "bold", fontFamily: "Poppins" }}
         >
-          dashboard
+          {pageTitle}
         </Typography>
         <div className="relative flex items-center">
           <input
