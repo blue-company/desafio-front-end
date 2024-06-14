@@ -27,7 +27,7 @@ const Dropdown = () => {
       </button>
       <div
         id="my-dropdown"
-        className={`origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ${
+        className={`origin-top-right absolute mt-2 w-36 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ${
           isOpen ? "block" : "hidden"
         }`}
       >

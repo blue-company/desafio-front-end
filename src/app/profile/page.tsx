@@ -21,7 +21,7 @@ function Profile() {
     <Grid container className="p-6 h-screen flex justify-center">
       <Grid container spacing={3} justifyContent="center">
         <Grid item xl={5}>
-          <Paper className="w-full px-5 py-4 rounded-3xl">
+          <Paper className="w-full px-5 py-4" style={{ borderRadius: 24 }}>
             <Grid container className="flex items-center gap-5">
               <Image
                 width={100}
