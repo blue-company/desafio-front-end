@@ -62,10 +62,10 @@ const Dashboard = () => {
         container
         sx={{ display: "flex", justifyContent: "center", gap: 9 }}
       >
-        <Grid item xl={7} lg={10} md={10}>
+        <Grid item xl={7} lg={10} md={10} sm={10}>
           <SalesCard />
         </Grid>
-        <Grid item xl={4} lg={10} md={10}>
+        <Grid item xl={4} lg={10} md={10} sm={10}>
           <GenericCard
             title="Plataformas"
             chart={
@@ -86,9 +86,9 @@ const Dashboard = () => {
       <Grid
         container
         className="flex"
-        sx={{ gap: { xl: 5, lg: 1, md: 4 }, justifyContent: "center" }}
+        sx={{ gap: { xl: 5, lg: 1, md: 4, sm: 5 }, justifyContent: "center" }}
       >
-        <Grid item xl={5} lg={5} md={10}>
+        <Grid item xl={5} lg={5} md={10} sm={10}>
           <GenericCard
             title="Rendimento total"
             chart={
@@ -105,7 +105,7 @@ const Dashboard = () => {
           />
         </Grid>
 
-        <Grid item xl={3} lg={5} md={10}>
+        <Grid item xl={3} lg={5} md={10} sm={10}>
           <GenericCard
             title="Vidas"
             chart={
@@ -122,7 +122,7 @@ const Dashboard = () => {
           />
         </Grid>
 
-        <Grid item xl={3} lg={5} md={10}>
+        <Grid item xl={3} lg={5} md={10} sm={10}>
           <GenericCard
             title="Realidade"
             chart={
@@ -144,11 +144,11 @@ const Dashboard = () => {
         container
         sx={{
           display: "flex",
-          gap: { xl: 5, lg: 1, md: 4 },
+          gap: { xl: 5, lg: 1, md: 4, sm: 5 },
           justifyContent: "center",
         }}
       >
-        <Grid item xl={5} lg={5} md={10}>
+        <Grid item xl={5} lg={5} md={10} sm={10}>
           <GenericCard
             title="Top produtos"
             chart={
@@ -165,11 +165,11 @@ const Dashboard = () => {
           />
         </Grid>
 
-        <Grid item xl={3} lg={5} md={10}>
+        <Grid item xl={3} lg={5} md={10} sm={10}>
           <GenericCard title="Mapeamento de vendas (UF)" chart={<MapChart />} />
         </Grid>
 
-        <Grid item xl={3} lg={5} md={10}>
+        <Grid item xl={3} lg={5} md={10} sm={10}>
           <GenericCard
             title="Nível de serviço"
             chart={

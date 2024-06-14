@@ -12,15 +12,18 @@
   width: 100%;
 }
 
+
 .searchInput {
-  background-color: var(--input-bg-color, #f3f3f3);
+  background-color: #f3f3f3;
   border-radius: 1rem;
-  color: var(--input-text-color, #c0c0c0);
+  color:  #c0c0c0;
   height: 3rem;
   padding-left: 2.5rem;
   padding-right: 1.25rem;
   width: 24rem;
 }
+
+
 
 .searchIcon {
   color: var(--search-icon-color, #2c02ff);

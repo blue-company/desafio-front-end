@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { FaSearch } from "react-icons/fa";
@@ -7,26 +7,27 @@ import { IoIosArrowDown } from "react-icons/io";
 import Image from "next/image";
 import USA from "@/assets/icons/usa.png";
 import profile from "@/assets/images/profile.jpg";
-import styles from "./NavBar.module.css";
 import BasicSelect from "@/components/dropDown";
 import { usePathname } from "next/navigation";
 
+
 const NavBar = ({ shiftRight }: any) => {
- const pathname = usePathname();
+  const pathname = usePathname();
 
- let pageTitle = "Dashboard";
+  let pageTitle = "Dashboard";
 
- if (pathname === "/profile") {
-   pageTitle = "Profile";
- } else if (pathname === "/leaderBoard") {
-   pageTitle = "Leaderboard";
- }
+  if (pathname === "/profile") {
+    pageTitle = "Profile";
+  } else if (pathname === "/leaderBoard") {
+    pageTitle = "Leaderboard";
+  }
+
   return (
-    <div>
+    <div className="hidden 2xl:block xl:block lg:block ">
       <div
-        className={`${styles.navbar} ${
-          shiftRight ? styles.navbarOpen : styles.navbarClosed
-        } shadow-md flex items-center justify-around`}
+        className={`h-16 transition-transform transition-width ${
+          shiftRight ? "w-[calc(100% - 20rem)]" : "w-full"
+        } bg-white shadow-md flex items-center justify-around`}
       >
         <Typography
           variant="h5"
@@ -38,18 +39,18 @@ const NavBar = ({ shiftRight }: any) => {
           <input
             type="text"
             placeholder="Pesquisar informações"
-            className={styles.searchInput}
+            className="bg-[#f3f3f3] rounded-lg text-[#c0c0c0] h-10 px-10 2xl:w-96 xl:w-44 lg:w-32 md:w-12 sm:w-5"
           />
-          <FaSearch className={styles.searchIcon} />
+          <FaSearch className="text-[#2c02ff] absolute left-2 top-1/2 transform -translate-y-1/2" />
         </div>
         <div className="flex gap-5 items-center">
           <Image src={USA} alt="usa logo" width={30} />
           <p className="font-bold text-[14px]">PT (BR)</p>
           <IoIosArrowDown />
 
-          <div className={styles.notificationIcon}>
-            <CiBellOn className="text-[35px] text-[#af570f]" />
-            <div className="absolute bg-red-600 rounded-[50%] top-1 right-1.5 w-1 h-1" />
+          <div className="bg-[#ffcba075] rounded-lg h-10 relative">
+            <CiBellOn className="text-[#af570f] text-2xl m-2" />
+            <div className="absolute bg-red-600 rounded-full top-1 right-1 w-2 h-2" />
           </div>
           <Image
             src={profile}

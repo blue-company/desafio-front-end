@@ -10,7 +10,6 @@ import {
   FaArrowRightFromBracket,
   FaArrowRightToBracket,
 } from "react-icons/fa6";
-import styles from "./SideBar.module.css";
 import Link from "next/link";
 
 const SideBar = () => {
@@ -21,10 +20,10 @@ const SideBar = () => {
   };
 
   return (
-    <div className={styles.sidebarContainer}>
+    <div className="hidden md:hidden lg:block xl:block 2xl:block">
       <button
         onClick={handleToggleMenu}
-        className={styles.toggleButton}
+        className="fixed top-10 left-18 bg-[#e5e5e5] text-white px-2 py-1 rounded-lg z-10 transition-left duration-300 ease"
         style={{ left: openMenu ? "19rem" : "1rem" }}
       >
         {openMenu ? (
@@ -35,19 +34,19 @@ const SideBar = () => {
       </button>
 
       <div
-        className={styles.sidebar}
+        className="sidebar bg-white w-80  h-screen flex flex-col items-center pt-12 fixed left-0 top-0 transform transition-transform duration-300 ease z-0"
         style={{ transform: openMenu ? "translateX(0)" : "translateX(-100%)" }}
       >
-        <main className={styles.logoContainer}>
-          <span className={styles.logoBackground}>
+        <main className="logoContainer flex items-center gap-3 mb-10 ml-5">
+          <span className="logoBackground bg-[#2500FF] p-2 rounded-lg">
             <Image src={logo} alt="Logo" width={40} height={50} />
           </span>
-          <p className={styles.logoText}>Blue</p>
+          <p className="logoText text-3xl font-bold">Blue</p>
         </main>
 
-        <ul className={styles.menuList}>
+        <ul className="menuList flex flex-col gap-4">
           <Link href="/">
-            <li className={styles.menuItem}>
+            <li className="menuItem bg-[#2500FF] text-gray-300 px-3 w-64  font-semibold h-14 flex items-center gap-3 rounded-lg cursor-pointer transition duration-300 ease hover:bg-[#1c0072]">
               <Image
                 src={DashBoard}
                 width={30}
@@ -58,22 +57,24 @@ const SideBar = () => {
             </li>
           </Link>
 
-          <Link href="/leaderBoard" className={styles.menuItem}>
-            <RiBarChartLine className="text-xl" />
-            LeaderBoard
+          <Link href="/leaderBoard">
+            <li className="menuItem bg-[#2500FF] text-gray-300 px-3 w-64  font-semibold h-14 flex items-center gap-3 rounded-lg cursor-pointer transition duration-300 ease hover:bg-[#1c0072]">
+              <RiBarChartLine className="text-xl" />
+              LeaderBoard
+            </li>
           </Link>
 
           <Link href="/profile">
-            <li className={styles.menuItem}>
+            <li className="menuItem bg-[#2500FF] text-gray-300 px-3 w-64  font-semibold h-14 flex items-center gap-3 rounded-lg cursor-pointer transition duration-300 ease hover:bg-[#1c0072]">
               <IoPerson className="text-xl" />
               Profile
             </li>
           </Link>
         </ul>
 
-        <div className={styles.infoBox}>
+        <div className="infoBox bg-[#2500FF] w-[80%] h-[290px] flex flex-col items-center p-2 mt-[30vh] rounded-lg text-white justify-around">
           <Image src={know} alt="Know Icon" width={50} />
-          <h2 className="text-xl text-center font-bold">
+          <h2 className="text-xl font-bold text-center">
             Conheça a <br /> blue
           </h2>
           <p className="text-sm text-center">
@@ -82,10 +83,12 @@ const SideBar = () => {
           </p>
           <Link
             href="https://www.saudeblue.com/"
-            target="blank"
+            target="_blank"
             className="w-full flex justify-center"
           >
-            <button className={styles.infoButton}>conhecer</button>
+            <button className=" bg-[#fff] text-[#713fdd] font-bold w-[70%] h-8 rounded-2xl">
+              conhecer
+            </button>
           </Link>
         </div>
       </div>
