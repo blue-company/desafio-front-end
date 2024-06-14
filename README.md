@@ -44,7 +44,7 @@ https://github.com/JoaoKeuwe/desafio-front-end/assets/91097315/19c0d46d-b3d1-452
 
 ```bash
  # Clonar o repositório
- $ git clone git@github.com:JoaoKeuwe/deafio-front-end.git
+ $ git clone git@github.com:JoaoKeuwe/desafio-front-end.git
 
  # Entrar no diretório(pasta) da aplicação
  $ cd desafio-front-end
