@@ -21,6 +21,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/styles": "^5.15.20",
     "@mui/x-charts": "^7.6.2",
+    "@mui/x-data-grid": "^7.7.0",
     "@types/jest": "^29.5.12",
     "apexcharts": "^3.49.1",
     "chart.js": "^4.4.3",
