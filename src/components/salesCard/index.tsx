@@ -10,7 +10,9 @@ import CardsSeller from "./cards";
 const SalesCard = () => {
   return (
     <Grid container justifyContent="center">
-      <Paper sx={{ borderRadius: 7, padding: 2, width: "100%", height: 380 }}>
+      <Paper
+        sx={{ borderRadius: 7, padding: 3, width: " 100%", height: "auto" }}
+      >
         <Box
           display="flex"
           justifyContent="space-between"
@@ -35,7 +37,12 @@ const SalesCard = () => {
             Exportar
           </Button>
         </Box>
-        <Grid container spacing={2} justifyContent="space-around">
+        <Grid
+          container
+          spacing={2}
+          justifyContent="space-around"
+          flexWrap="nowrap"
+        >
           <Grid item>
             <CardsSeller
               color="#FFE2E5"

@@ -15,12 +15,14 @@ const CardsSeller: React.FC<CardsSellerI> = ({ img, value, text, porcentage, col
     <Paper
       sx={{
         backgroundColor: color,
-        padding: 3,
         borderRadius: 2,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        height: "100%",
+        height: '100%',
+        width: {xl: '100%', lg: '100%', md: '100%'},
+        padding: { xl: 2, sm: 1, md: 1, lg: 1 },
+        maxWidth: '100%'
       }}
     >
       <Box
