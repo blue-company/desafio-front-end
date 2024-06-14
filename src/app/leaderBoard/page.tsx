@@ -37,7 +37,7 @@ const columns: GridColDef[] = [
     field: "idade",
     headerName: "Idade",
     type: "number",
-    width: 200,
+    width: 120,
   },
 ];
 
@@ -56,12 +56,14 @@ const DataGridDemo: React.FC = () => {
       container
       justifyContent="center"
       alignItems="center"
+      flexDirection="column"
+      gap={10}
       style={{ height: "100vh" }}
     >
       <Typography variant="h2" sx={{fontWeight: 'bold', fontFamily: 'Poppins' }}>
         Melhores vendededores 🏆
       </Typography>
-      <Box sx={{ width: "80%" }}>
+      <Box sx={{ width: "60%" }}>
         <DataGrid
           style={{ backgroundColor: "#ffffffc1", color: "black", borderRadius: 30 }}
           rows={rowsWithPosition}
