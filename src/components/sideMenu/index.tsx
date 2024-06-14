@@ -5,6 +5,7 @@ import logo from "@/assets/icons/logoWhite.png";
 import know from "@/assets/icons/know.png";
 import DashBoard from "@/assets/icons/dashIcon.png";
 import { RiBarChartLine } from "react-icons/ri";
+import { IoPerson } from "react-icons/io5";
 import {
   FaArrowRightFromBracket,
   FaArrowRightToBracket,
@@ -64,7 +65,7 @@ const SideBar = () => {
 
           <Link href="/profile">
             <li className={styles.menuItem}>
-              <RiBarChartLine className="text-xl" />
+              <IoPerson className="text-xl" />
               Profile
             </li>
           </Link>

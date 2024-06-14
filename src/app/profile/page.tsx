@@ -18,9 +18,9 @@ const PercentageChart = dynamic(
 
 function Profile() {
   return (
-    <Grid container className="p-6 h-screen">
+    <Grid container className="p-6 h-screen flex justify-center">
       <Grid container spacing={3} justifyContent="center">
-        <Grid item xl={6}>
+        <Grid item xl={5}>
           <Paper className="w-full px-5 py-4 rounded-3xl">
             <Grid container className="flex items-center gap-5">
               <Image
@@ -75,12 +75,12 @@ function Profile() {
           </Paper>
         </Grid>
 
-        <Grid item xl={6}>
+        <Grid item xl={5}>
           <GenericCard title="meta" chart={<PercentageChart />} />
         </Grid>
       </Grid>
 
-      <Grid container>
+      <Grid container xl={10} display="flex" justifyContent="center">
         <GenericCard title="Vendas no mês" chart={<ProfileChart />} />
       </Grid>
     </Grid>

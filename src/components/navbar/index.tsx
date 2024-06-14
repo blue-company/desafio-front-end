@@ -7,6 +7,7 @@ import Image from "next/image";
 import USA from "@/assets/icons/usa.png";
 import profile from "@/assets/images/profile.jpg";
 import styles from "./NavBar.module.css";
+import BasicSelect from "@/components/dropDown";
 
 const NavBar = ({ shiftRight }: any) => {
   return (
@@ -47,11 +48,7 @@ const NavBar = ({ shiftRight }: any) => {
             className="rounded-xl"
           />
           <div>
-            <span className="flex gap-3">
-              <p>João Keuwe</p>
-              <IoIosArrowDown />
-            </span>
-            Comercial
+            <BasicSelect />
           </div>
         </div>
       </div>
