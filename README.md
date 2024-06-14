@@ -1,6 +1,6 @@
 <h1 align='center' >
 
-Projeto Blue Dashboard
+Projeto Blue Dashboard 📊
 
 <h1/>
 
