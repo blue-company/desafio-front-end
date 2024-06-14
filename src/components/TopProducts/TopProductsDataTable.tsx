@@ -71,7 +71,6 @@ export const columns: ColumnDef<TopProductsProps>[] = [
     },
   },
   {
-    accessorKey: "leverage",
     header: "%",
     cell: ({ row }) => {
       const percentage = row.getValue("leverage") as number;

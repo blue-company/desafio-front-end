@@ -51,11 +51,11 @@ const renderLegend = (props: any) => {
 
 export function ServiceLevel() {
   return (
-    <Card className="bg-white mt-10">
+    <Card className="col-span-12 lg:col-span-3 bg-white   pb-4">
       <CardHeader className="flex flex-row justify-between">
-        <CardTitle className="flex flex-col gap-3">Nivel de Serviço</CardTitle>
+        <CardTitle className="flex flex-col gap-3 text-base">Nivel de Serviço</CardTitle>
       </CardHeader>
-      <ResponsiveContainer width="100%" height={350}>
+      <ResponsiveContainer width="100%" height={250}>
         <BarChart
           data={data}
           margin={{
@@ -65,7 +65,7 @@ export function ServiceLevel() {
             bottom: 5,
           }}
         >
-          <Legend content={renderLegend} />
+          <Legend wrapperStyle={{ fontSize: '14px' }} content={renderLegend} />
           <Tooltip />
           <Bar
             barSize={20}

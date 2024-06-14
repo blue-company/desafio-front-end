@@ -86,14 +86,14 @@ const data: PlataformsProps[] = [
 
 export function Plataforms() {
   return (
-    <Card className ="bg-white mt-10 max-w-xl w-full">
-            <CardHeader className="flex flex-row justify-between">
-          <CardTitle className="flex flex-col gap-3">
+    <Card className ="bg-white w-full col-span-12 lg:col-span-5 pb-4">
+          <CardHeader className="flex flex-row justify-between">
+          <CardTitle className="flex flex-col gap-3 text-base">
             Plataformas
           </CardTitle>
         </CardHeader>
     
-      <ResponsiveContainer width="100%" height={350}>
+      <ResponsiveContainer width="100%" height={250}>
       <LineChart
         data={data}
         margin={{
@@ -103,14 +103,14 @@ export function Plataforms() {
           bottom: 5,
         }}
       >
-        <XAxis dataKey="month" tickLine={false} axisLine={false} />
-        <YAxis tickLine={false} axisLine={false} />
+        <XAxis tick={{fontSize:"10px"}} dataKey="month" tickLine={false} axisLine={false} />
+        <YAxis tick={{fontSize:"10px"}} tickLine={false} axisLine={false} />
         <CartesianGrid vertical={false} />
         <Tooltip />
         <Line strokeWidth={3} dataKey="tdConsultoria" stroke="#a700ff" type="monotone" dot={false}/>
         <Line strokeWidth={3} dataKey="rikoPlataforma" stroke="#ef4444" type="monotone" dot={false}/>
         <Line strokeWidth={3} dataKey="blueServicos" stroke="#3cd856" type="monotone" dot={false}/>
-        <Legend iconType="square"  />
+        <Legend wrapperStyle={{ fontSize: '10px' }} iconType="square"  />
       </LineChart>
     </ResponsiveContainer>
 

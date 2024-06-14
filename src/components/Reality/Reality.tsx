@@ -21,13 +21,13 @@ const data: RealityProps[] = [
 
 export function Reality() {
   return (
-    <Card className ="bg-white mt-10">
+    <Card className ="col-span-12 lg:col-span-3 bg-white   pb-4">
             <CardHeader className="flex flex-row justify-between">
-          <CardTitle className="flex flex-col gap-3">
+          <CardTitle className="flex flex-col gap-3 text-base">
             Realidade
           </CardTitle>
         </CardHeader>
-    <ResponsiveContainer width="100%" height={350} >
+    <ResponsiveContainer width="100%" height={250} >
       <BarChart
         data={data}
         margin={{
@@ -37,9 +37,9 @@ export function Reality() {
           bottom: 5,
         }}
       >
-        <XAxis dataKey="month" tickLine={false} axisLine={false}/>
+        <XAxis tick={{fontSize:"10px"}} dataKey="month" tickLine={false} axisLine={false}/>
         <Tooltip />
-        <Legend />
+        <Legend wrapperStyle={{ fontSize: '14px' }} />
         <Bar barSize={20} strokeWidth={10} dataKey="contratosFinalizados" fill="#4AB58E"/>
         <Bar barSize={20} strokeWidth={10} dataKey="aguadando" fill="#FFCF00"/>
       </BarChart>

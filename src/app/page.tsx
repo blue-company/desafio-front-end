@@ -12,21 +12,19 @@ export default function Home() {
   return (
     <main className="flex flex-col md:flex-row ">
       <SideBar />
-      <section className="container mx-auto py-10">
-      <Header />
-      <div className="flex flex-col ">
-        <div className="grid lg:grid-cols-2 gap-8">
-          <DaySales />
-          <Plataforms />
+      <section className="w-full">
+        <Header />
+        <div className="p-8 gap-5">
+          <div className="gap-5 grid  grid-cols-12">
+            <DaySales />
+            <Plataforms />
+            <TotalIncome />
+            <Lifes />
+            <Reality />
+            <TopProducts />
+            <ServiceLevel />
+          </div>
         </div>
-        <div className="grid lg:grid-cols-3 lg:grid-rows-2 gap-8">
-          <TotalIncome />
-          <Lifes/>
-          <Reality />
-          <TopProducts />
-          <ServiceLevel />
-        </div>
-      </div>
       </section>
     </main>
   );

@@ -18,16 +18,16 @@ const data: TotalIncomeProps[] = [
     { Aguardando: 20000, Implantadas: 18000, day: "Sáb" },
     { Aguardando: 10000, Implantadas: 12000, day: "Dom" },
 ];
-
+// 1170px
 export function TotalIncome() {
   return (
-    <Card className ="bg-white mt-10">
+    <Card className ="col-span-12 lg:col-span-6 bg-white pb-4">
             <CardHeader className="flex flex-row justify-between">
-          <CardTitle className="flex flex-col gap-3">
+          <CardTitle className="flex flex-col gap-3 text-base">
             Rendimento Total
           </CardTitle>
         </CardHeader>
-    <ResponsiveContainer width="100%" height={350} >
+    <ResponsiveContainer width="100%" height={250} >
       <BarChart
         data={data}
         margin={{
@@ -37,12 +37,11 @@ export function TotalIncome() {
           bottom: 5,
         }}
       >
-        <XAxis dataKey="day" tickLine={false} axisLine={false}/>
+        <XAxis tick={{fontSize:"10px"}} dataKey="day" tickLine={false} axisLine={false}/>
         <Tooltip />
-        <XAxis dataKey="month" tickLine={false} axisLine={false} />
-        <YAxis tickLine={false} axisLine={false} />
+        <YAxis tick={{fontSize:"10px"}} tickLine={false} axisLine={false} />
         <CartesianGrid vertical={false} />
-        <Legend />
+        <Legend iconType="circle" wrapperStyle={{ fontSize: '12px' }}/>
         <Bar barSize={16} strokeWidth={10} dataKey="Aguardando" fill="#0095ff"/>
         <Bar barSize={16} strokeWidth={10} dataKey="Implantadas" fill="#00e096"/>
       </BarChart>

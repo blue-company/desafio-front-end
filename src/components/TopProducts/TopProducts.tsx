@@ -7,9 +7,9 @@ import { TopProductsDataTable } from "./TopProductsDataTable";
 
 export function TopProducts() {
   return (
-    <Card className ="bg-white mt-10">
+    <Card className ="col-span-12 lg:col-span-6 bg-white   pb-4">
             <CardHeader className="flex flex-row justify-between">
-          <CardTitle className="flex flex-col gap-3">
+          <CardTitle className="flex flex-col gap-3 text-base">
             Top Produtos
           </CardTitle>
         </CardHeader>
