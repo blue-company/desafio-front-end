@@ -17,7 +17,7 @@ https://github.com/JoaoKeuwe/desafio-front-end/assets/91097315/19c0d46d-b3d1-452
 
 ## O que foi passado no desafio:
 
-- Desenvolver uma aplicação de acordo com os requisitos propostos
+- O objetivo deste desafio é criar uma aplicação front-end responsiva com base em uma imagem fornecida. O candidato deve utilizar tecnologias como React.js, Next.js, Tailwind CSS e Material-UI (Mui). 
 
 ## Tecnologias utilizadas :
 - [NextJs](https://nextjs.org/)
