@@ -18,7 +18,7 @@ const NavBar = ({ shiftRight }: any) => {
 
  if (pathname === "/profile") {
    pageTitle = "Profile";
- } else if (pathname === "/leaderboard") {
+ } else if (pathname === "/leaderBoard") {
    pageTitle = "Leaderboard";
  }
   return (

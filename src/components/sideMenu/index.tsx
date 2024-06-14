@@ -58,10 +58,10 @@ const SideBar = () => {
             </li>
           </Link>
 
-          <li className={styles.menuItem}>
+          <Link href="/leaderBoard" className={styles.menuItem}>
             <RiBarChartLine className="text-xl" />
             LeaderBoard
-          </li>
+          </Link>
 
           <Link href="/profile">
             <li className={styles.menuItem}>
