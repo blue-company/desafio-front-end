@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
@@ -17,16 +17,16 @@ export default function BasicMenu() {
   };
 
   return (
-    <div className="fixed mx-5 mt-5">
+    <div className="fixed block 2xl:hidden xl:hidden lg:hidden md:block sm:block mx-5 mt-5">
       <Button
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
-        sx={{background: '#9f9f9f'}}
+        sx={{ background: "#9f9f9f" }}
       >
-        <CiMenuBurger className="text-[#fff]"/>
+        <CiMenuBurger className="text-[#fff]" />
       </Button>
       <Menu
         id="basic-menu"

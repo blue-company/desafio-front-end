@@ -57,15 +57,28 @@ const DataGridDemo: React.FC = () => {
       justifyContent="center"
       alignItems="center"
       flexDirection="column"
-      gap={10}
+      gap={5}
       style={{ height: "100vh" }}
     >
-      <Typography variant="h2" sx={{fontWeight: 'bold', fontFamily: 'Poppins' }}>
+      <Typography
+        variant="h2"
+        sx={{
+          fontWeight: "bold",
+          fontFamily: "Poppins",
+          paddingRight: 6,
+          fontSize: { xl: 40, sm: 30, md: 25, xs: 24 },
+          margin: 0,
+        }}
+      >
         Melhores vendededores 🏆
       </Typography>
       <Box sx={{ width: "60%" }}>
         <DataGrid
-          style={{ backgroundColor: "#ffffffc1", color: "black", borderRadius: 30 }}
+          style={{
+            backgroundColor: "#ffffffc1",
+            color: "black",
+            borderRadius: 30,
+          }}
           rows={rowsWithPosition}
           columns={columns}
           initialState={{
