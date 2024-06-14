@@ -72,7 +72,7 @@ const DataGridDemo: React.FC = () => {
       >
         Melhores vendededores 🏆
       </Typography>
-      <Box sx={{ width: "60%" }}>
+      <Box sx={{ width: "80%" }}>
         <DataGrid
           style={{
             backgroundColor: "#ffffffc1",
