@@ -14,8 +14,6 @@ export function TopProducts() {
           </CardTitle>
         </CardHeader>
         <TopProductsDataTable />
-        
-
   </Card>
   );
 }

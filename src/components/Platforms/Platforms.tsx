@@ -93,7 +93,7 @@ export function Plataforms() {
           </CardTitle>
         </CardHeader>
     
-      <ResponsiveContainer width="100%" height={250}>
+      <ResponsiveContainer width="100%" height={200}>
       <LineChart
         data={data}
         margin={{

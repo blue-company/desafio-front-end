@@ -27,7 +27,7 @@ export function TotalIncome() {
             Rendimento Total
           </CardTitle>
         </CardHeader>
-    <ResponsiveContainer width="100%" height={250} >
+    <ResponsiveContainer width="100%" height={200} >
       <BarChart
         data={data}
         margin={{

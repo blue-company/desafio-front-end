@@ -50,7 +50,7 @@ export function ChangeLanguage() {
           variant="ghost"
           role="combobox"
           aria-expanded={open}
-          className="justify-start gap-1 px-0"
+          className="justify-start gap-1 px-0 lg:text-xs xl:text-sm font-bold"
         >
           <Image
             src={
@@ -61,7 +61,7 @@ export function ChangeLanguage() {
             width={1}
             height={1}
             alt="Framework Icon"
-            className="w-5"
+            className="w-5 lg:w-4 xl:w-5"
           />
           {value
             ? frameworks.find((framework) => framework.value === value)?.label

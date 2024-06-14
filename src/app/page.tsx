@@ -1,18 +1,19 @@
 import { DaySales } from "@/components/DaySales/DaySales";
 import { Header } from "@/components/Header/Header";
 import { Lifes } from "@/components/Lifes/Lifes";
+import { Map } from "@/components/Map/Map";
 import { Plataforms } from "@/components/Platforms/Platforms";
 import { Reality } from "@/components/Reality/Reality";
 import { ServiceLevel } from "@/components/ServiceLevel/ServiceLevel";
-import { SideBar } from "@/components/Sidebar/Siderbar";
+import { SideBarDesktop } from "@/components/Sidebar/SideBarDesktop";
 import { TopProducts } from "@/components/TopProducts/TopProducts";
 import { TotalIncome } from "@/components/TotalIncome/TotalIncome";
 
 export default function Home() {
   return (
     <main className="flex flex-col md:flex-row ">
-      <SideBar />
-      <section className="w-full">
+      <SideBarDesktop />
+      <section className="w-full md:calc(w-full - 320px) md:ml-80">
         <Header />
         <div className="p-8 gap-5">
           <div className="gap-5 grid  grid-cols-12">
@@ -22,6 +23,7 @@ export default function Home() {
             <Lifes />
             <Reality />
             <TopProducts />
+            <Map />
             <ServiceLevel />
           </div>
         </div>

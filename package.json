@@ -22,6 +22,7 @@
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-google-charts": "^4.0.1",
     "recharts": "^2.12.7",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"

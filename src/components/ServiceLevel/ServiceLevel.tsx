@@ -35,7 +35,7 @@ const renderLegend = (props: any) => {
   const { payload } = props;
 
   return (
-    <div className="flex gap-4 mt-3 border-t">
+    <div className="flex gap-3 border-t flex-wrap justify-center">
       {payload.map((entry: any, index: any) => (
         <div key={`item-${index}`} className="flex flex-col capitalize ">
           <div className="text-[#96A5B8] flex items-center gap-1">
@@ -55,7 +55,7 @@ export function ServiceLevel() {
       <CardHeader className="flex flex-row justify-between">
         <CardTitle className="flex flex-col gap-3 text-base">Nivel de Serviço</CardTitle>
       </CardHeader>
-      <ResponsiveContainer width="100%" height={250}>
+      <ResponsiveContainer width="100%" height={200}>
         <BarChart
           data={data}
           margin={{

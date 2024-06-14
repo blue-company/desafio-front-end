@@ -6,17 +6,17 @@ import bg from "../assets/CardBg.svg"
 
 export function SideBarCard() {
     return(
-        <Card className="text-white md:mt-auto bg-no-repeat bg-cover" style={{ backgroundImage: `url(${bg.src})` }}>
-          <CardHeader >
-            <CardTitle className="text-center flex flex-col items-center gap-2 text-base md:text-2xl">
+        <Card className="text-white mt-auto bg-no-repeat bg-cover p-0" style={{ backgroundImage: `url(${bg.src})` }}>
+          <CardHeader className="p-0 px-3 pt-5">
+            <CardTitle className="text-center flex flex-col items-center gap-2 text-base md:text-xl xl:text-2xl">
               <Image src={logoBlueWhite} width={500} height={300} alt="Blue Company Icon" className="w-12" />
               Conheça a Blue
             </CardTitle>
-          </CardHeader>
-          <CardContent className="text-center">
+          </CardHeader >
+          <CardContent className="p-0 px-3 pb-3 text-center text-xs xl:text-base">
             <p>Saiba mais informações sobre a Blue, uma operadora de saúde Health Tech</p>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="p-0 px-5 pb-5">
             <Button variant="default" className="w-full" asChild>
               <a href="https://www.saudeblue.com" target="_blank">
                 Conhecer

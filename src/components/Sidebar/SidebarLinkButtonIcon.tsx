@@ -21,8 +21,8 @@ export function SidebarLinkButtonIcon({
 
   function linkClass(hrefLink: string) {
     return pathname.startsWith(hrefLink)
-      ? "flex items-center gap-3 p-4 text-white font-bold bg-primary-foreground rounded-lg w-full max-w-[200px] "
-      : "flex items-center gap-3 p-4  hover:bg-primary-foreground hover:opacity-80 hover:text-white rounded-lg w-full max-w-[200px] hover:font-bold";
+      ? "flex items-center justify-center gap-3 p-2 lg:p-4 lg:text-md  text-white font-bold bg-primary-foreground rounded-lg w-full md:max-w-[150px] lg:max-w-[200px] "
+      : "flex items-center justify-center gap-3 p-2 lg:p-4 text-sm lg:text-md hover:bg-primary-foreground hover:opacity-80 hover:text-white rounded-lg w-full md:max-w-[150px] lg:max-w-[200px] hover:font-bold";
   }
 
   return (
