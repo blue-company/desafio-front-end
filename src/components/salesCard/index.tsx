@@ -42,6 +42,14 @@ const SalesCard = () => {
           spacing={2}
           justifyContent="space-around"
           flexWrap="nowrap"
+          sx={{
+            flexDirection: {
+              xs: "column",
+              sm: "column",
+              md: "row",
+              xl: "row",
+            },
+          }}
         >
           <Grid item>
             <CardsSeller
