@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align='center' >
 
-## Getting Started
+Projeto Blue Dashboard
 
-First, run the development server:
+<h1/>
+
+## (📱Caso esteja pelo celular é so clicar no link abaixo📱)
+
+
+
+https://github.com/JoaoKeuwe/desafio-front-end/assets/91097315/19c0d46d-b3d1-4523-8b75-3c304d07a2b1
+
+
+## Sobre o Projeto
+
+-O projeto é um dashboard com diversos gráficos e telas de leadrboard e profile<br>
+
+## O que foi passado no desafio:
+
+- Desenvolver uma aplicação de acordo com os requisitos propostos
+
+## Tecnologias utilizadas :
+- [NextJs](https://nextjs.org/)
+- [ReactJs](https://react.dev/)  
+- [Material UI](https://mui.com/)
+- [React Charts](https://react-charts.tanstack.com/)  
+- [Google charts | Icons](https://www.react-google-charts.com/)
+- [Jest](https://jestjs.io/pt-BR/)
+
+
+# Sobre o que foi desenvolvido no projeto:
+👨🏾‍💻 Foram utilizadas metodologias que são aplicadas no mercado de trabalho, principalmente na organização das pastas e o nome de cada uma delas, ja sendo feito pensando em atualizações futuras, com a pesquisa orientada a pastas e não só a arquivos, pois em uma grande aplicação muitos nomes de arquivos podem se repetir.
+ 
+📲 Projeto totalmente repsonsivo, tanto para celulares e tablets, quanto para o desktop !
+
+🔥 Foram feitos diversos commits pensando em mostrar a trajetória do projeto desde seu inicio, com pequenos e descritivos commits.
+
+🚩 Foi também utilizada a API fornecida pela empresa para que pudesse ser feito o CRUD, busca e filtro.
+
+🧪 Também foram realizados testes para uma melhor eficiencia de codigo
+
+
+## Guia de instalação do projeto para a sua máquina !
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+ # Clonar o repositório
+ $ git clone git@github.com:JoaoKeuwe/deafio-front-end.git
+
+ # Entrar no diretório(pasta) da aplicação
+ $ cd desafio-front-end
+
+ # Instalar todas as dependencias de desenvolvimento do projeto (necessita ter o Node(npm) instalado)
+ $ npm install
+
+ # Comando para executar o projeto
+ $ npm run dev
+ 
+ # Caso não abra direto em seu navegador digitar no campo de busca 
+ $ http://localhost:3000/
+
+ # Comando caso queira executar os testes
+ $ npm test
+
 ```
+<br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deploy do projeto ⬇️
+Acesse: [Blue Dashboard](https://desafio-front-end-flame.vercel.app/) 👨🏾‍💻
