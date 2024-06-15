@@ -40,7 +40,7 @@ export function FirstSection() {
   return (
     <>
       <Card
-        className="w-full"
+        className="flex-grow"
         title="Vendas hoje"
         subtitle="Resumo de vendas"
         button={<ExportButton />}

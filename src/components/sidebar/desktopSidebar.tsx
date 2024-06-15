@@ -12,7 +12,7 @@ interface DesktopSidebarProps {
 
 export function DesktopSidebar({ routes }: DesktopSidebarProps) {
   return (
-    <aside className="bg-white hidden md:flex flex-col justify-between px-10 py-8 h-screen">
+    <aside className="bg-white hidden md:flex flex-col justify-between px-10 py-8">
       <div className="flex flex-col gap-10">
         <div className="flex items-center gap-4">
           <SidebarLogo className="size-11 rounded-lg" />

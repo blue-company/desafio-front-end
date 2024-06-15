@@ -2,6 +2,7 @@
 
 import { FirstSection } from './firstSection';
 import { SecondSection } from './secondSection';
+import { ThirdSection } from './thirdSection';
 
 export function Hero() {
   return (
@@ -11,6 +12,9 @@ export function Hero() {
       </div>
       <div className="flex gap-8">
         <SecondSection />
+      </div>
+      <div className="flex gap-8">
+        <ThirdSection />
       </div>
     </div>
   );

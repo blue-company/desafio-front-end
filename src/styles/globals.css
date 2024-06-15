@@ -44,3 +44,12 @@
     @apply bg-[#FAFBFC] text-foreground;
   }
 }
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(150, 150, 150);
+  border-radius: 20px;
+}

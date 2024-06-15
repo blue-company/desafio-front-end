@@ -74,9 +74,9 @@ const reality = [
 export function SecondSection() {
   return (
     <>
-      <Card className="w-full" title="Rendimento total">
+      <Card className="flex-grow" title="Rendimento total">
         <ResponsiveContainer width="100%" height={230}>
-          <BarChart data={teste} barGap={4} barCategoryGap={20}>
+          <BarChart data={teste} barGap={4} barCategoryGap={38}>
             <CartesianGrid horizontal={true} vertical={false} />
             <XAxis dataKey="day" tickLine={false} axisLine={{ strokeWidth: 0 }} />
             <YAxis
