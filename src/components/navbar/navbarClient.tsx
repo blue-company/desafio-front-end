@@ -1,12 +1,13 @@
 'use client';
 import { SelectLanguages } from '@/utils/selectLanguages';
+import { sidebarRoutes } from '@/utils/sidebarRoutes';
 import { usePathname } from 'next/navigation';
-import { Navbar } from './navbar';
+import { NavbarContainer } from './navbarContainer';
 
 export function NavbarClient() {
   const currentRoute = usePathname();
 
   const test = currentRoute === '/' ? 'Dashboard' : 'Leaderboard';
 
-  return <Navbar currentRoute={test} languages={SelectLanguages} />;
+  return <NavbarContainer currentRoute={test} languages={SelectLanguages} routes={sidebarRoutes} />;
 }

@@ -11,9 +11,11 @@ export function BlueCard() {
           <span>Conheça a</span>
           <span>Blue</span>
         </div>
-        <p className="text-center text-xs font-medium mb-4 max-w-52 text-gray-300">
-          Saiba mais informações sobre a Blue, uma operadora de saúde Health Tech
-        </p>
+        <div className="flex justify-center items-center">
+          <p className="text-center text-xs font-medium mb-4 max-w-52 text-gray-300">
+            Saiba mais informações sobre a Blue, uma operadora de saúde Health Tech
+          </p>
+        </div>
         <div className="flex justify-center">
           <button className="z-10 bg-white text-[#2500FF] py-2 px-4 rounded font-bold hover:bg-gray-200">
             Conhecer

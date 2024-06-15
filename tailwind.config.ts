@@ -74,6 +74,10 @@ const config = {
       },
       backgroundImage: {
         'purple-pink-gradient': 'linear-gradient(135deg, #8e44ad 0%, #ff6f61 100%)'
+      },
+      screens: {
+        xs: '500px',
+        '3xl': '1920px'
       }
     }
   },

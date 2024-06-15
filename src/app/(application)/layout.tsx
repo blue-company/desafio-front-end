@@ -1,5 +1,5 @@
 import { NavbarClient } from '@/components/navbar/navbarClient';
-import { Sidebar } from '@/components/sidebar/sidebar';
+import { SidebarContainer } from '@/components/sidebar/sidebarContainer';
 import { sidebarRoutes } from '@/utils/sidebarRoutes';
 
 export default function ApplcationLayout({
@@ -9,7 +9,7 @@ export default function ApplcationLayout({
 }>) {
   return (
     <div className="flex">
-      <Sidebar routes={sidebarRoutes} />
+      <SidebarContainer routes={sidebarRoutes} />
       <div className="flex flex-col w-screen">
         <NavbarClient />
         {children}

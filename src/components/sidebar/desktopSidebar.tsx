@@ -1,7 +1,7 @@
 import { SidebarLogo } from '../icon/sidebarLogo';
 import { BlueCard } from './blueCard';
 
-interface SidebarProps {
+interface DesktopSidebarProps {
   routes: {
     id: number;
     name: string;
@@ -10,9 +10,9 @@ interface SidebarProps {
   }[];
 }
 
-export function Sidebar({ routes }: SidebarProps) {
+export function DesktopSidebar({ routes }: DesktopSidebarProps) {
   return (
-    <aside className="bg-white flex flex-col justify-between px-10 py-8 h-screen">
+    <aside className="bg-white hidden md:flex flex-col justify-between px-10 py-8 h-screen">
       <div className="flex flex-col gap-10">
         <div className="flex items-center gap-4">
           <SidebarLogo className="size-11 rounded-lg" />
@@ -23,7 +23,8 @@ export function Sidebar({ routes }: SidebarProps) {
             <a
               key={item.id}
               className="flex gap-4 px-5 items-center bg-[#2500FF] py-3 rounded-xl"
-              href={item.path}>
+              href={item.path}
+            >
               <item.icon />
               {item.name}
             </a>
