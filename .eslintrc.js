@@ -10,7 +10,9 @@ module.exports = {
         args: 'after-used',
         caughtErrors: 'none',
         ignoreRestSiblings: true,
-        vars: 'all'
+        vars: 'all',
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_'
       }
     ],
     'prefer-const': 'error',
