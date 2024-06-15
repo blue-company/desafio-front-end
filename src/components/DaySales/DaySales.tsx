@@ -4,11 +4,10 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { DaySalesCard } from "./DaySalesCard";
+import { DaySalesCard } from "./DaySalesCard/DaySalesCard";
 import vendas from "./assets/vendas.svg";
 import totalContratos from "./assets/totalContratos.svg";
 import novoContrato from "./assets/novoContrato.svg";
@@ -16,7 +15,7 @@ import implantadas from "./assets/implantadas.svg";
 
 export function DaySales() {
   return (
-    <Card className="bg-white  w-full col-span-12 lg:col-span-7">
+    <Card className="bg-white  w-full col-span-12 xl:col-span-7">
       <CardHeader className="flex flex-row justify-between">
         <CardTitle className="flex flex-col gap-3 text-base">
           Vendas Hoje

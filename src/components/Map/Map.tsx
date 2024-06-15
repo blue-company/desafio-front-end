@@ -17,7 +17,7 @@ const options = {
 
 export function Map() {
   return (
-    <Card className="col-span-12 lg:col-span-3 bg-white   pb-4">
+    <Card className="col-span-12 xl:col-span-3 bg-white   pb-4">
       <CardHeader className="flex flex-row justify-between">
         <CardTitle className="flex flex-col gap-3 text-base">Mapeamento de Vendas por UF</CardTitle>
       </CardHeader>

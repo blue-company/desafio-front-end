@@ -1,14 +1,13 @@
 "use client";
-import { Bell } from "lucide-react";
 import { SidebarLinkButtonIcon } from "./SidebarLinkButtonIcon";
 import dashboard from "../assets/dashboard.svg";
 import blueLogo from "../assets/logoBlue.svg";
 import leaderboard from "../assets/leaderboard.svg";
 import Image from "next/image";
 import { SideBarCard } from "./SideBarCard";
-import { ChangeLanguage } from "../Header/ChangeLanguage";
-import { Profile } from "../Header/Profile";
-import { Notification } from "../Header/Notification";
+import { ChangeLanguage } from "../Header/ChangeLanguage/ChangeLanguage";
+import { Profile } from "../Profile/Profile";
+import { Notification } from "../Notification/Notification";
 
 export function SideBarDesktop() {
   return (
@@ -22,11 +21,11 @@ export function SideBarDesktop() {
       </div>
       <div className="hidden md:flex md:flex-col-reverse md:items-center gap-3 lg:hidden">
         <ChangeLanguage />
-        <Notification name="Notificações"/>
+        <Notification name="Notificações" />
         <Profile />
       </div>
       <SidebarLinkButtonIcon
-        href="/"
+        href="/dashboard"
         text="Dashboard"
         image={dashboard}
         alt="Dashboard icon"

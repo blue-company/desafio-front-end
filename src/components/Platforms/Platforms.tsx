@@ -1,92 +1,13 @@
 "use client";
 
 import { LineChart, Line, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from "recharts";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardHeader, CardTitle } from "../ui/card";
 
-interface PlataformsProps {
-  tdConsultoria: number;
-  rikoPlataforma: number;
-  blueServicos: number;
-  month: string;
-}
-const data: PlataformsProps[] = [
-    {
-        tdConsultoria: 400,
-        rikoPlataforma: 240,
-        blueServicos: 240,
-        month: "Jan",
-    },
-    {
-        tdConsultoria: 300,
-        rikoPlataforma: 139,
-        blueServicos: 221,
-        month: "Fev",
-    },
-    {
-        tdConsultoria: 200,
-        rikoPlataforma: 380,
-        blueServicos: 229,
-        month: "Mar",
-    },
-    {
-        tdConsultoria: 278,
-        rikoPlataforma: 390,
-        blueServicos: 200,
-        month: "Abr",
-    },
-    {
-        tdConsultoria: 189,
-        rikoPlataforma: 480,
-        blueServicos: 218,
-        month: "Mai",
-    },
-    {
-        tdConsultoria: 239,
-        rikoPlataforma: 380,
-        blueServicos: 250,
-        month: "Jun",
-    },
-    {
-        tdConsultoria: 349,
-        rikoPlataforma: 430,
-        blueServicos: 210,
-        month: "Jul",
-    },
-    {
-        tdConsultoria: 400,
-        rikoPlataforma: 240,
-        blueServicos: 240,
-        month: "Ago",
-    },
-    {
-        tdConsultoria: 300,
-        rikoPlataforma: 139,
-        blueServicos: 221,
-        month: "Set",
-    },
-    {
-        tdConsultoria: 200,
-        rikoPlataforma: 280,
-        blueServicos: 229,
-        month: "Out",
-    },
-    {
-        tdConsultoria: 278,
-        rikoPlataforma: 390,
-        blueServicos: 200,
-        month: "Nov",
-    },
-    {
-        tdConsultoria: 189,
-        rikoPlataforma: 480,
-        blueServicos: 218,
-        month: "Dez",
-    },
-];
+import { data } from "./data";
 
 export function Plataforms() {
   return (
-    <Card className ="bg-white w-full col-span-12 lg:col-span-5 pb-4">
+    <Card className ="bg-white w-full col-span-12 xl:col-span-5 pb-4">
           <CardHeader className="flex flex-row justify-between">
           <CardTitle className="flex flex-col gap-3 text-base">
             Plataformas

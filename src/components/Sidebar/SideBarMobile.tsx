@@ -1,4 +1,4 @@
-import { Bell, PanelLeft } from "lucide-react";
+import { PanelLeft } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -6,13 +6,13 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "../ui/sheet";
-import { ChangeLanguage } from "../Header/ChangeLanguage";
-import { Profile } from "../Header/Profile";
+import { ChangeLanguage } from "../Header/ChangeLanguage/ChangeLanguage";
+import { Profile } from "../Profile/Profile";
 import { SidebarLinkButtonIcon } from "./SidebarLinkButtonIcon";
 import { SideBarCard } from "./SideBarCard";
 import dashboard from "../assets/dashboard.svg";
 import leaderboard from "../assets/leaderboard.svg";
-import { Notification } from "../Header/Notification";
+import { Notification } from "../Notification/Notification";
 
 export function SideBarMobile() {
   return (
@@ -30,11 +30,11 @@ export function SideBarMobile() {
               <div className="flex flex-col gap-5">
                 <div className="flex flex-col-reverse items-center gap-2">
                   <ChangeLanguage />
-                  <Notification name="Notificações"/>
+                  <Notification name="Notificações" />
                   <Profile />
                 </div>
                 <SidebarLinkButtonIcon
-                  href="/"
+                  href="/dashboard"
                   image={dashboard}
                   text="Dashboard"
                   alt="Dashboard icon"

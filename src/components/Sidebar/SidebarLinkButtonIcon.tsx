@@ -18,7 +18,6 @@ export function SidebarLinkButtonIcon({
 }: SidebarLinkButtonIconProps) {
   const pathname = usePathname();
 
-
   function linkClass(hrefLink: string) {
     return pathname.startsWith(hrefLink)
       ? "flex items-center justify-center gap-3 p-2 lg:p-4 lg:text-md  text-white font-bold bg-primary-foreground rounded-lg w-full md:max-w-[150px] lg:max-w-[200px] "

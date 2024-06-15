@@ -22,7 +22,6 @@ import {
 import * as React from "react";
 import { Progress } from "../ui/progress";
 import { Badge } from "../ui/badge";
-
 interface TopProductsProps {
   id: number;
   product: string;
@@ -31,9 +30,9 @@ interface TopProductsProps {
 
 const data: TopProductsProps[] = [
   { id: 1, product: "Product 1", leverage: 90 },
-  { id: 2, product: "Product 2", leverage: 50 },
-  { id: 3, product: "Product 3", leverage: 24 },
-  { id: 4, product: "Product 4", leverage: 65 },
+  { id: 2, product: "Product 2", leverage: 51 },
+  { id: 3, product: "Product 3", leverage: 27 },
+  { id: 4, product: "Product 4", leverage: 15 },
 ];
 
 function padNumber(num: number): string {
@@ -41,6 +40,20 @@ function padNumber(num: number): string {
     return "0" + num;
   }
   return "" + num;
+}
+
+function getColor(percentage: number): string {
+  if (percentage >= 0 && percentage < 25) {
+    return "#FF8900";
+  } else if (percentage >= 25 && percentage < 50) {
+    return "#884DFF";
+  } else if (percentage >= 50 && percentage < 75) {
+    return "#00E096";
+  } else if (percentage >= 75 && percentage <= 100) {
+    return "#0095FF";
+  } else {
+    return "default";
+  }
 }
 
 export const columns: ColumnDef<TopProductsProps>[] = [
@@ -65,7 +78,7 @@ export const columns: ColumnDef<TopProductsProps>[] = [
       const percentage = row.getValue("leverage") as number;
       return (
         <div>
-          <Progress value={percentage} />
+          <Progress value={percentage} className="border" />
         </div>
       );
     },
@@ -76,7 +89,16 @@ export const columns: ColumnDef<TopProductsProps>[] = [
       const percentage = row.getValue("leverage") as number;
       return (
         <div>
-          <Badge variant="outline">{percentage}%</Badge>
+          <Badge
+            variant="outline"
+            className="rounded-md"
+            style={{
+              borderColor: getColor(percentage),
+              color: getColor(percentage),
+            }}
+          >
+            {percentage}%
+          </Badge>
         </div>
       );
     },

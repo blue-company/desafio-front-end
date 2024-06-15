@@ -1,33 +1,17 @@
-import { DaySales } from "@/components/DaySales/DaySales";
-import { Header } from "@/components/Header/Header";
-import { Lifes } from "@/components/Lifes/Lifes";
-import { Map } from "@/components/Map/Map";
-import { Plataforms } from "@/components/Platforms/Platforms";
-import { Reality } from "@/components/Reality/Reality";
-import { ServiceLevel } from "@/components/ServiceLevel/ServiceLevel";
-import { SideBarDesktop } from "@/components/Sidebar/SideBarDesktop";
-import { TopProducts } from "@/components/TopProducts/TopProducts";
-import { TotalIncome } from "@/components/TotalIncome/TotalIncome";
+"use client"
+
+import { Login } from "@/components/Login/Login"
+import Image from 'next/image'
+import loginImage from '/public/loginImage.svg'
+import bg from "../components/assets/CardBg.svg"
+
 
 export default function Home() {
+
+
   return (
-    <main className="flex flex-col md:flex-row ">
-      <SideBarDesktop />
-      <section className="w-full md:calc(w-full - 320px) md:ml-80">
-        <Header />
-        <div className="p-8 gap-5">
-          <div className="gap-5 grid  grid-cols-12">
-            <DaySales />
-            <Plataforms />
-            <TotalIncome />
-            <Lifes />
-            <Reality />
-            <TopProducts />
-            <Map />
-            <ServiceLevel />
-          </div>
-        </div>
-      </section>
+    <main className="flex items-center justify-center h-screen w-full bg-no-repeat bg-center bg-cover" style={{ backgroundImage: `url(${bg.src})` }}>
+        <Login />
     </main>
-  );
+  )
 }

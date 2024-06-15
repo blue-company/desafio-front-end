@@ -1,12 +1,12 @@
 "use client";
 
-import { Bell, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { Input } from "../ui/input";
-import { ChangeLanguage } from "./ChangeLanguage";
-import { Profile } from "./Profile";
+import { ChangeLanguage } from "./ChangeLanguage/ChangeLanguage";
+import { Profile } from "../Profile/Profile";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { SideBarMobile } from "../Sidebar/SideBarMobile";
-import { Notification } from "./Notification";
+import { Notification } from "../Notification/Notification";
 
 export function Header() {
   const isDesktop: boolean = useMediaQuery("(min-width: 768px)");
@@ -30,14 +30,14 @@ export function Header() {
   }
   return (
     <header className="bg-white p-8 flex flex-col gap-3 justify-between items-center ">
-        <div className="flex gap-2 items-center justify-start w-full">
-            <div className="flez-none">
-                <SideBarMobile />
-            </div>
-            <div  className="grow">
-                <h1 className="text-2xl font-bold text-center">Dashboard</h1>
-            </div>
+      <div className="flex gap-2 items-center justify-start w-full">
+        <div className="flez-none">
+          <SideBarMobile />
         </div>
+        <div className="grow">
+          <h1 className="text-2xl font-bold text-center">Dashboard</h1>
+        </div>
+      </div>
       <Input
         type="search "
         icon={<Search className="text-[#5D5FEF]" />}
