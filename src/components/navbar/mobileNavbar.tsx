@@ -12,6 +12,17 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger
+} from '../ui/alert-dialog';
 import { Button } from '../ui/button';
 import {
   CommandDialog,
@@ -45,9 +56,10 @@ interface MobileNavbarProps {
     value: string;
     flag: React.ComponentType<React.ComponentPropsWithoutRef<'svg'>>;
   }[];
+  logout: () => void;
 }
 
-export function MobileNavbar({ languages }: MobileNavbarProps) {
+export function MobileNavbar({ languages, logout }: MobileNavbarProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -164,10 +176,32 @@ export function MobileNavbar({ languages }: MobileNavbarProps) {
             </div>
           </div>
           <SheetFooter className="mt-auto">
-            <Button variant="outline">
-              <LogOut color="red" size={16} className="mr-2" />
-              Logout
-            </Button>
+            <AlertDialog>
+              <AlertDialogTrigger onSelect={(e) => e.preventDefault()} asChild>
+                <Button className="w-full" variant="outline">
+                  <LogOut color="red" size={16} className="mr-2" />
+                  Logout
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent className="max-w-80 rounded-lg">
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Você realmente quer desconectar?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    Ao confirmar, você sairá do sistema de dashboard da Blue Company e precisará
+                    fazer login novamente.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                  <AlertDialogAction
+                    className="bg-red-500 hover:bg-red-500/80"
+                    onClick={() => logout()}
+                  >
+                    Sair
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </SheetFooter>
         </SheetContent>
       </Sheet>

@@ -13,6 +13,17 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { BrazilFlag } from '../icon/flags';
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger
+} from '../ui/alert-dialog';
+import {
   Command,
   CommandDialog,
   CommandEmpty,
@@ -39,9 +50,10 @@ interface DesktopNavbarProps {
     value: string;
     flag: React.ComponentType<React.ComponentPropsWithoutRef<'svg'>>;
   }[];
+  logout: () => void;
 }
 
-export function DesktopNavbar({ languages }: DesktopNavbarProps) {
+export function DesktopNavbar({ languages, logout }: DesktopNavbarProps) {
   const [open, setOpen] = useState(false);
 
   function CustomSelectPlaceholder() {
@@ -69,32 +81,32 @@ export function DesktopNavbar({ languages }: DesktopNavbarProps) {
           <CommandGroup heading="Suggestions">
             <CommandItem>
               <CalendarIcon className="mr-2 h-4 w-4" />
-              <span>Calendar</span>
+              <span>Calendário</span>
             </CommandItem>
             <CommandItem>
               <FaceIcon className="mr-2 h-4 w-4" />
-              <span>Search Emoji</span>
+              <span>Pesquisar Emojis</span>
             </CommandItem>
             <CommandItem>
               <RocketIcon className="mr-2 h-4 w-4" />
-              <span>Launch</span>
+              <span>Lançamentos</span>
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Settings">
             <CommandItem>
               <PersonIcon className="mr-2 h-4 w-4" />
-              <span>Profile</span>
+              <span>Perfil</span>
               <CommandShortcut>⌘P</CommandShortcut>
             </CommandItem>
             <CommandItem>
               <EnvelopeClosedIcon className="mr-2 h-4 w-4" />
-              <span>Mail</span>
+              <span>Email</span>
               <CommandShortcut>⌘B</CommandShortcut>
             </CommandItem>
             <CommandItem>
               <GearIcon className="mr-2 h-4 w-4" />
-              <span>Settings</span>
+              <span>Configurações</span>
               <CommandShortcut>⌘S</CommandShortcut>
             </CommandItem>
           </CommandGroup>
@@ -149,21 +161,43 @@ export function DesktopNavbar({ languages }: DesktopNavbarProps) {
         <DropdownMenuContent>
           <DropdownMenuItem>
             <CircleUserRound size={16} className="mr-2" />
-            Profile
+            Perfil
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Mails size={16} className="mr-2" />
-            Messages
+            Messagens
           </DropdownMenuItem>
           <DropdownMenuItem>
             <UsersRound size={16} className="mr-2" />
-            Team
+            Times
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <LogOut color="red" size={16} className="mr-2" />
-            Logout
-          </DropdownMenuItem>
+          <AlertDialog>
+            <AlertDialogTrigger onSelect={(e) => e.preventDefault()} asChild>
+              <DropdownMenuItem>
+                <LogOut color="red" size={16} className="mr-2" />
+                Sair
+              </DropdownMenuItem>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Você realmente quer desconectar?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  Ao confirmar, você sairá do sistema de dashboard da Blue Company e precisará fazer
+                  login novamente.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                <AlertDialogAction
+                  className="bg-red-500 hover:bg-red-500/80"
+                  onClick={() => logout()}
+                >
+                  Sair
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
