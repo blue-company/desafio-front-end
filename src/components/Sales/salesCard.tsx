@@ -40,7 +40,7 @@ export function SalesCard({
             }}>
                 {React.cloneElement(icon, { fontSize: "medium", sx: { color: theme.palette.text.secondary } })}
             </Box>
-            <Typography variant="h5" fontWeight="bold" color="text.primary" sx={{ mt: "0.75rem" }}>{salesAmount}</Typography>
+            <Typography variant="h5" fontWeight="bold" color="text.dark" sx={{ mt: "0.75rem" }}>{salesAmount}</Typography>
             <Typography color="secondary.contrastText" sx={{ mt: "8px", fontSize: "1rem" }}>{salesText}</Typography>
             <Typography color="primary.main" sx={{ fontSize: "0.75rem", mt: "0.75rem" }}>{salesChange}</Typography>
         </Card>

@@ -11,6 +11,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import avatarImg from "@/assets/avatar.svg";
+import { DarkModeSwitch } from './darkModeSwitch';
 
 export function AccountMenu() {
     const [anchorEl, setAnchorEl] = useState<EventTarget & HTMLButtonElement | null>(null);
@@ -77,6 +78,9 @@ export function AccountMenu() {
                         <LogoutIcon fontSize="small" />
                     </ListItemIcon>
                     Sair
+                </MenuItem>
+                <MenuItem sx={{ display: "flex", justifyContent: "center" }} >
+                    <DarkModeSwitch />
                 </MenuItem>
             </Menu>
         </>

@@ -1,8 +1,8 @@
-import { Box, GlobalStyles, ThemeProvider } from '@mui/material';
-import { theme } from '../themes/Theme';
-import { SideMenu } from '@/components/menu-lateral/side-menu';
+import { Box, CssBaseline, GlobalStyles } from '@mui/material';
+
 import { DrawerProvider } from '@/components/menu-lateral/drawerContext';
-import Header from '@/components/header/header';
+
+import { ThemeContextProvider } from '@/themes/themeContext';
 
 export const metadata = {
   title: 'Next.js',
@@ -17,25 +17,15 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <body>
-        <ThemeProvider theme={theme}>
+        <ThemeContextProvider>
+          <CssBaseline />
           <DrawerProvider>
             <GlobalStyles styles={{ '*': { boxSizing: 'border-box' } }} />
-            <Box sx={{ display: 'flex' }}>
-              <SideMenu />
-              <Box
-                component="main"
-                sx={{
-                  flexGrow: 1,
-
-                }}
-              >
-                <Header />
-                {children}
-              </Box>
-            </Box>
+            {children}
           </DrawerProvider>
-        </ThemeProvider>
+        </ThemeContextProvider>
       </body>
     </html>
-  )
+  );
 }
+

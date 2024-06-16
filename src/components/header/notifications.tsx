@@ -1,7 +1,6 @@
 import React from 'react';
 import { IconButton, Badge, useTheme } from '@mui/material';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-import { theme } from '@/themes/Theme';
 
 
 
@@ -10,7 +9,7 @@ export function NotificationButton({ hasNotification }: { hasNotification: boole
     const theme = useTheme();
 
     return (
-        <IconButton aria-label="Notifications" sx={{ background: "#FFFAF1", borderRadius: "5px" }}>
+        <IconButton aria-label="Notifications" sx={{ background: theme.palette.yellow?.dark, borderRadius: "5px" }}>
             <Badge
                 invisible={!hasNotification}
                 color="error"

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { MenuItem, Select, FormControl, useMediaQuery, Box, Typography, SelectChangeEvent } from '@mui/material';
 import { ArrowDropDown as ArrowDropDownIcon } from '@mui/icons-material';
-import { theme } from '@/themes/Theme';
+import { createTheme } from '@mui/material/styles';
+import { DarkModeSwitch } from './darkModeSwitch';
+
 
 const languages = [
     { code: 'en', label: 'EN (US)', icon: '/us.svg' },
@@ -11,7 +13,7 @@ const languages = [
 
 export function LanguageSelector() {
     const [selectedLanguage, setSelectedLanguage] = useState('pt-br');
-    const isLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
+    const isLargeScreen = useMediaQuery(createTheme().breakpoints.up('lg'));
 
     const handleChange = (event: SelectChangeEvent<string>) => {
         setSelectedLanguage(event.target.value);
@@ -69,7 +71,9 @@ export function LanguageSelector() {
                             </Box>
                         )}
                     </MenuItem>
+
                 ))}
+
             </Select>
         </FormControl>
     );

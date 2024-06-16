@@ -56,15 +56,15 @@ export function Reality() {
                 </Box >
                 <Box sx={{ display: "flex", gap: "1rem", mt: "0.5rem", width: "100%", alignItems: "center", justifyContent: "space-between" }}>
                     <Box sx={{ display: "flex", gap: "1rem" }}>
-                        <Box sx={{ background: theme.palette.yellow?.light, width: "36px", height: "36px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "8px" }}>
-                            <StarBorderIcon sx={{ color: theme.palette.yellow?.dark }} />
+                        <Box sx={{ background: theme.palette.yellow?.dark, width: "36px", height: "36px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "8px" }}>
+                            <StarBorderIcon sx={{ color: theme.palette.yellow?.contrastText }} />
                         </Box>
                         <Box>
                             <Typography variant="body2" color="text.primary" fontWeight="bold">Aguardando</Typography>
                             <Typography color="secondary.main" sx={{ fontSize: "0.725rem" }}>Commercial</Typography>
                         </Box>
                     </Box>
-                    <Typography variant="body2" color="yellow.dark" fontWeight="bold" sx={{ justifySelf: "flex-end" }}>{aguardando}</Typography>
+                    <Typography variant="body2" color="yellow.contra" fontWeight="bold" sx={{ justifySelf: "flex-end" }}>{aguardando}</Typography>
                 </Box >
             </Box>
         );
@@ -123,7 +123,7 @@ export function Reality() {
                         />
 
                         <Bar dataKey="finalizados" name="Finalizados" fill={theme.palette.green?.dark} shape={renderCustomBarShape} />
-                        <Bar dataKey="aguardando" name="Aguardando" fill={theme.palette.yellow?.dark} shape={renderCustomBarShape} />
+                        <Bar dataKey="aguardando" name="Aguardando" fill={theme.palette.yellow?.contrastText} shape={renderCustomBarShape} />
 
                     </BarChart>
                 </ResponsiveContainer>

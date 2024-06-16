@@ -1,5 +1,5 @@
 "use client"
-import { Box, Button, Stack, Typography, useTheme, Drawer, useMediaQuery } from "@mui/material";
+import { Box, Button, Stack, Typography, useTheme, Drawer, useMediaQuery, ThemeProvider } from "@mui/material";
 import Image from "next/image";
 import logo from "@/assets/logo.svg";
 import PieChartIcon from '@mui/icons-material/PieChart';
@@ -7,9 +7,10 @@ import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import SideCard from "./side-card";
 import { useState } from "react";
 import { useDrawer } from "./drawerContext";
+import { useThemeContext } from "@/themes/themeContext";
 
 export function SideMenu() {
-    const theme = useTheme();
+    const { theme } = useThemeContext();
     const [activeButton, setActiveButton] = useState('dashboard');
 
     const handleButtonClick = (buttonName: string) => {
@@ -96,7 +97,7 @@ export function SideMenu() {
     )
 
     return (
-        <>
+        <ThemeProvider theme={theme}>
             {isLargeScreen ? (
                 <Box sx={{ height: "100vh" }}>
                     {content}
@@ -106,6 +107,6 @@ export function SideMenu() {
                     {content}
                 </Drawer>
             )}
-        </>
+        </ThemeProvider>
     );
 }
