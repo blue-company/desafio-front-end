@@ -1,17 +1,18 @@
 import { Metadata } from 'next';
-import { Suspense } from 'react';
-import { Hero } from './components/hero';
+import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
   title: 'Dashboard'
 };
 
+const Hero = dynamic(() => import('./components/hero').then((mod) => mod.Hero), {
+  ssr: false
+});
+
 export default function DashboardPage() {
   return (
     <div className="p-4">
-      <Suspense fallback={'Carregando'}>
-        <Hero />
-      </Suspense>
+      <Hero />
     </div>
   );
 }
