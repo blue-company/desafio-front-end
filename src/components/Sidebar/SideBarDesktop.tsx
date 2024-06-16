@@ -5,9 +5,9 @@ import blueLogo from "../assets/logoBlue.svg";
 import leaderboard from "../assets/leaderboard.svg";
 import Image from "next/image";
 import { SideBarCard } from "./SideBarCard";
-import { ChangeLanguage } from "../Header/ChangeLanguage/ChangeLanguage";
 import { Profile } from "../Profile/Profile";
 import { Notification } from "../Notification/Notification";
+import { ChangeLanguage } from "../ChangeLanguage/ChangeLanguage";
 
 export function SideBarDesktop() {
   return (

@@ -10,6 +10,8 @@ import {
 } from "recharts";
 import { Card, CardHeader, CardTitle } from "../ui/card";
 import { data } from "./data";
+import { RealityProps } from "./types";
+
 
 export function Reality() {
   return (

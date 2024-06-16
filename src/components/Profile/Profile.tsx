@@ -7,9 +7,19 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import profile from "/public/profile.png";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, LogOut } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { signOut } from "next-auth/react";
 
 export function Profile() {
+  const router = useRouter();
+
+  async function handleLogout() {
+    await signOut({
+      redirect: false,
+    });
+    router.replace("/");
+  }
   return (
     <div className="flex items-center gap-1 lg:flex-row ">
       <DropdownMenu>
@@ -30,9 +40,13 @@ export function Profile() {
           </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuItem>Editar Informações</DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer">
+            Editar Informações
+          </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Sair</DropdownMenuItem>
+          <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
+            <LogOut className="text-[#5D5FEF] mr-2 w-4" /> Sair
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

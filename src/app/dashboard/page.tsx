@@ -8,13 +8,20 @@ import { ServiceLevel } from "@/components/ServiceLevel/ServiceLevel";
 import { SideBarDesktop } from "@/components/Sidebar/SideBarDesktop";
 import { TopProducts } from "@/components/TopProducts/TopProducts";
 import { TotalIncome } from "@/components/TotalIncome/TotalIncome";
+import { getServerSession } from "next-auth";
+import { nextAuthOptions } from "@/auth";
+import { redirect } from "next/navigation";
 
-export default function Dashboard() {
+export default async function Dashboard() {
+  const session = await getServerSession(nextAuthOptions);
+  if(!session){
+    redirect("/")
+  } 
   return (
     <main className="flex flex-col md:flex-row ">
       <SideBarDesktop />
       <section className="w-full md:calc(w-full - 320px) md:ml-80">
-        <Header />
+        <Header title="Dashboard"/>
         <div className="p-8 gap-5">
           <div className="gap-5 grid  grid-cols-12">
             <DaySales />

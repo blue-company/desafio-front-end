@@ -1,6 +1,6 @@
-import usaImage from "./assets/usaImage.svg";
-import brImage from "./assets/brImage.svg";
-import esImage from "./assets/esImage.svg";
+import usaImage from "../assets/ChangeLanguage/usaImage.svg";
+import brImage from "../assets/ChangeLanguage/brImage.svg";
+import esImage from "../assets/ChangeLanguage/esImage.svg";
 export const frameworks = [
     {
       value: "PT (BR)",

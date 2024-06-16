@@ -20,20 +20,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import * as React from "react";
-import { Progress } from "../ui/progress";
-import { Badge } from "../ui/badge";
-interface TopProductsProps {
-  id: number;
-  product: string;
-  leverage: number;
-}
-
-const data: TopProductsProps[] = [
-  { id: 1, product: "Product 1", leverage: 90 },
-  { id: 2, product: "Product 2", leverage: 51 },
-  { id: 3, product: "Product 3", leverage: 27 },
-  { id: 4, product: "Product 4", leverage: 15 },
-];
+import { Progress } from "../../ui/progress";
+import { Badge } from "../../ui/badge";
+import { TopProductsProps } from "./types";
+import { data } from "./data";
 
 function padNumber(num: number): string {
   if (num > 0 && num < 10) {

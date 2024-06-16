@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardHeader, CardTitle } from "../ui/card";
-import { TopProductsDataTable } from "./TopProductsDataTable";
+import { TopProductsDataTable } from "./TopProductsDataTable/TopProductsDataTable";
 
 export function TopProducts() {
   return (

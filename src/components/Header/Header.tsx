@@ -2,18 +2,19 @@
 
 import { Search } from "lucide-react";
 import { Input } from "../ui/input";
-import { ChangeLanguage } from "./ChangeLanguage/ChangeLanguage";
 import { Profile } from "../Profile/Profile";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { SideBarMobile } from "../Sidebar/SideBarMobile";
 import { Notification } from "../Notification/Notification";
+import { ChangeLanguage } from "../ChangeLanguage/ChangeLanguage";
+import { HeaderProps } from "./types";
 
-export function Header() {
+export function Header({title}: HeaderProps) {
   const isDesktop: boolean = useMediaQuery("(min-width: 768px)");
   if (isDesktop) {
     return (
       <header className="bg-white p-8 flex flex-col lg:flex-row justify-between items-center gap-5 xl:gap-0">
-        <h1 className="text-2xl font-bold">Dashboard</h1>
+        <h1 className="text-2xl font-bold">{title}</h1>
         <Input
           type="search "
           icon={<Search className="text-[#5D5FEF]" />}
@@ -35,7 +36,7 @@ export function Header() {
           <SideBarMobile />
         </div>
         <div className="grow">
-          <h1 className="text-2xl font-bold text-center">Dashboard</h1>
+          <h1 className="text-2xl font-bold text-center">{title}</h1>
         </div>
       </div>
       <Input

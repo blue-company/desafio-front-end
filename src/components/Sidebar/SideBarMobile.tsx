@@ -6,13 +6,13 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "../ui/sheet";
-import { ChangeLanguage } from "../Header/ChangeLanguage/ChangeLanguage";
 import { Profile } from "../Profile/Profile";
 import { SidebarLinkButtonIcon } from "./SidebarLinkButtonIcon";
 import { SideBarCard } from "./SideBarCard";
 import dashboard from "../assets/dashboard.svg";
 import leaderboard from "../assets/leaderboard.svg";
 import { Notification } from "../Notification/Notification";
+import { ChangeLanguage } from "../ChangeLanguage/ChangeLanguage";
 
 export function SideBarMobile() {
   return (

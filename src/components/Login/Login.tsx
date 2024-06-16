@@ -22,6 +22,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import logoBlue from "../assets/logoBlue.svg";
 import Image from "next/image";
 import { Lock, Mail } from "lucide-react";
+import { signIn } from "next-auth/react";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Email inválido" }),
@@ -41,23 +42,21 @@ export function Login() {
   const router = useRouter();
   const { toast } = useToast();
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    try {
-      await LoginMock(values);
-      router.push("/dashboard");
-    } catch (error) {
-      if (error instanceof Error) {
-        toast({
-          variant: "destructive",
-          title: "Atenção",
-          description: `${error.message}. Tente novamente.`,
-        });
-      } else {
-        toast({
-          variant: "destructive",
-          title: "Atenção",
-          description: `Ocorreu um erro desconhecido. Tente novamente.`,
-        });
-      }
+    const token = await signIn("credentials", {
+      email: values.email,
+      password: values.password,
+      callbackUrl: "/dashboard",
+      redirect: false,
+    });
+    if(token?.status === 401){
+      toast({
+        variant: "destructive",
+        title: "Atenção",
+        description: `Usuário ou senha inválidos`,
+      });
+      return;
+    } else{
+      router.replace("/dashboard");
     }
   }
 
@@ -84,6 +83,7 @@ export function Login() {
                       placeholder="Insira o seu email"
                       {...field}
                       icon={<Mail className="text-[#5D5FEF]" />}
+                      type="text"
                     />
                   </FormControl>
                   <FormMessage />
@@ -110,7 +110,7 @@ export function Login() {
             />
             <Button
               type="submit"
-              className="bg-primary-foreground hover:opacity-90 text-white w-full "
+              className="bg-primary-foreground hover:opacity-90 text-white w-full mt-2"
             >
               Entrar
             </Button>

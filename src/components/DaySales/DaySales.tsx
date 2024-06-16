@@ -8,10 +8,7 @@ import {
   CardTitle,
 } from "../ui/card";
 import { DaySalesCard } from "./DaySalesCard/DaySalesCard";
-import vendas from "./assets/vendas.svg";
-import totalContratos from "./assets/totalContratos.svg";
-import novoContrato from "./assets/novoContrato.svg";
-import implantadas from "./assets/implantadas.svg";
+import { data } from "./DaySalesCard/data";
 
 export function DaySales() {
   return (
@@ -27,34 +24,16 @@ export function DaySales() {
         </Button>
       </CardHeader>
       <CardContent className="flex flex-wrap justify-center md:justify-between gap-1">
-        <DaySalesCard
-          icon={vendas}
-          color="#FFE2E5"
-          number={1000}
-          title="Total de vendas"
-          description="+8% a mais que ontem"
-        />
-        <DaySalesCard
-          icon={totalContratos}
-          color="#FFF4DE"
-          number={300}
-          title="Total de contratos"
-          description="+5% a mais que ontem"
-        />
-        <DaySalesCard
-          icon={implantadas}
-          color="#DCFCE7"
-          number={5}
-          title="Implantadas"
-          description="+1,2% a mais que ontem"
-        />
-        <DaySalesCard
-          icon={novoContrato}
-          color="#F3E8FF"
-          number={8}
-          title="Novos Contratos"
-          description="+0,5% a mais que ontem"
-        />
+        {data.map((item, index) => (
+          <DaySalesCard
+            key={index}
+            icon={item.icon}
+            color={item.color}
+            number={index===0 ? `R$ ${item.number}` : item.number}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
       </CardContent>
     </Card>
   );
