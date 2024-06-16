@@ -9,8 +9,8 @@ import {
 import { Profile } from "../Profile/Profile";
 import { SidebarLinkButtonIcon } from "./SidebarLinkButtonIcon";
 import { SideBarCard } from "./SideBarCard";
-import dashboard from "../assets/dashboard.svg";
-import leaderboard from "../assets/leaderboard.svg";
+import dashboard from "../assets/Sidebar/dashboard.svg";
+import leaderboard from "../assets/Sidebar/leaderboard.svg";
 import { Notification } from "../Notification/Notification";
 import { ChangeLanguage } from "../ChangeLanguage/ChangeLanguage";
 

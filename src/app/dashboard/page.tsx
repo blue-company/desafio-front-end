@@ -11,6 +11,11 @@ import { TotalIncome } from "@/components/TotalIncome/TotalIncome";
 import { getServerSession } from "next-auth";
 import { nextAuthOptions } from "@/auth";
 import { redirect } from "next/navigation";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blue | Dashboard",
+};
 
 export default async function Dashboard() {
   const session = await getServerSession(nextAuthOptions);

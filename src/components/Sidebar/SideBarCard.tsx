@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import logoBlueWhite from "../assets/logoBlueWhite.svg";
+import logoBlueWhite from "../assets/Logo/logoBlueWhite.svg";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import bg from "../assets/CardBg.svg";

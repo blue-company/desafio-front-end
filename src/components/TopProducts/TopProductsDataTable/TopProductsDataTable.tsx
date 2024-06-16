@@ -66,9 +66,13 @@ export const columns: ColumnDef<TopProductsProps>[] = [
     header: "Alavancagem",
     cell: ({ row }) => {
       const percentage = row.getValue("leverage") as number;
+      const color = getColor(percentage);
+      const indicatorStyle = {
+        backgroundColor: color,
+      }
       return (
         <div>
-          <Progress value={percentage} className="border" />
+          <Progress value={percentage} className="border" indicatorClassName={indicatorStyle} />
         </div>
       );
     },

@@ -1,5 +1,3 @@
-"use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -14,12 +12,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { LoginMock } from "@/mock/login";
 import { useRouter } from "next/navigation";
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/components/ui/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import logoBlue from "../assets/logoBlue.svg";
+import logoBlue from "../assets/Logo/logoBlue.svg";
 import Image from "next/image";
 import { Lock, Mail } from "lucide-react";
 import { signIn } from "next-auth/react";

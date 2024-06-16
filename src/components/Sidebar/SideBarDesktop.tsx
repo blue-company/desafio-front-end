@@ -1,8 +1,8 @@
 "use client";
 import { SidebarLinkButtonIcon } from "./SidebarLinkButtonIcon";
-import dashboard from "../assets/dashboard.svg";
-import blueLogo from "../assets/logoBlue.svg";
-import leaderboard from "../assets/leaderboard.svg";
+import dashboard from "../assets/Sidebar/dashboard.svg";
+import blueLogo from "../assets/Logo/logoBlue.svg";
+import leaderboard from "../assets/Sidebar/leaderboard.svg";
 import Image from "next/image";
 import { SideBarCard } from "./SideBarCard";
 import { Profile } from "../Profile/Profile";

@@ -5,7 +5,11 @@ import { getServerSession } from "next-auth";
 import { nextAuthOptions } from "@/auth";
 import { redirect } from "next/navigation";
 import Head from "next/head";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Blue | Leaderboard",
+};
 export default async function Leaderboard() {
   const session = await getServerSession(nextAuthOptions);
   if (!session) {
