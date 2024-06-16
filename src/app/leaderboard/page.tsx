@@ -4,6 +4,7 @@ import { TopSellers } from "@/components/TopSellers/TopSellers";
 import { getServerSession } from "next-auth";
 import { nextAuthOptions } from "@/auth";
 import { redirect } from "next/navigation";
+import Head from "next/head";
 
 export default async function Leaderboard() {
   const session = await getServerSession(nextAuthOptions);

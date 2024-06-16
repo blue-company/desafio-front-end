@@ -84,6 +84,7 @@ export function Login() {
                       {...field}
                       icon={<Mail className="text-[#5D5FEF]" />}
                       type="text"
+                      name="email"
                     />
                   </FormControl>
                   <FormMessage />
@@ -111,6 +112,7 @@ export function Login() {
             <Button
               type="submit"
               className="bg-primary-foreground hover:opacity-90 text-white w-full mt-2"
+              name="Entrar"
             >
               Entrar
             </Button>
