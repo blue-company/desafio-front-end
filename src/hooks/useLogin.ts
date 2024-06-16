@@ -14,7 +14,7 @@ const loginSchema = z.object({
 });
 
 interface UseLoginProps {
-  login: (data: loginParams) => Promise<loginResponse>;
+  login: (_data: loginParams) => Promise<loginResponse>;
 }
 
 export function useLogin(props: UseLoginProps) {
@@ -32,6 +32,7 @@ export function useLogin(props: UseLoginProps) {
   const handleSignIn = form.handleSubmit(async (data) => {
     try {
       const res = await props.login(data);
+
       form.reset();
       setCookie(null, authToken, res.token, authCookieOptions);
       toast({
