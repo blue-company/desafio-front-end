@@ -45,7 +45,7 @@ export function FirstSection() {
         subtitle="Resumo de vendas"
         button={<ExportButton />}
       >
-        <div className="flex justify-between">
+        <div className="grid grid-cols-2 lg:flex lg:flex-row gap-4 2xl:gap-0 2xl:justify-between">
           <div className="flex flex-col gap-1 bg-[#FFE2E5] px-4 py-6 rounded-lg">
             <div className="bg-[#FA5A7D] max-w-min p-2 rounded-full">
               <BarChartIcon
@@ -55,9 +55,11 @@ export function FirstSection() {
                 className="bg-white rounded-sm"
               />
             </div>
-            <span className="font-bold text-[#151D48] text-xl">R$ 1,000</span>
+            <span className="font-bold text-[#151D48] text-lg 2xl:text-xl">R$ 1,000</span>
             <div className="flex flex-col gap-2">
-              <span className="font-medium text-[#425166]">Total de vendas</span>
+              <span className="font-medium text-sm 2xl:text-base text-[#425166]">
+                Total de vendas
+              </span>
               <span className="text-xs text-[#4079ED] font-semibold">+8% a mais que ontem</span>
             </div>
           </div>
@@ -65,9 +67,11 @@ export function FirstSection() {
             <div className="bg-[#FF947A] max-w-min p-2 rounded-full">
               <FileText color="white" strokeWidth={3} size={18} />
             </div>
-            <span className="font-bold text-[#151D48] text-xl">300</span>
+            <span className="font-bold text-[#151D48] text-lg 2xl:text-xl">300</span>
             <div className="flex flex-col gap-2">
-              <span className="font-medium text-[#425166]">Total de vendas</span>
+              <span className="font-medium text-sm 2xl:text-base text-[#425166]">
+                Total de contratos
+              </span>
               <span className="text-xs text-[#4079ED] font-semibold">+5% a mais que ontem</span>
             </div>
           </div>
@@ -75,9 +79,9 @@ export function FirstSection() {
             <div className="bg-[#3CD856] max-w-min p-2 rounded-full">
               <Tag strokeWidth={3} color="white" size={18} />
             </div>
-            <span className="font-bold text-[#151D48] text-xl">5</span>
+            <span className="font-bold text-[#151D48] text-lg 2xl:text-xl">5</span>
             <div className="flex flex-col gap-2">
-              <span className="font-medium text-[#425166]">Total de vendas</span>
+              <span className="font-medium text-sm 2xl:text-base text-[#425166]">Implantadas</span>
               <span className="text-xs text-[#4079ED] font-semibold">+1,2% a mais que ontem</span>
             </div>
           </div>
@@ -85,9 +89,11 @@ export function FirstSection() {
             <div className="bg-[#BF83FF] max-w-min p-2 rounded-full">
               <UserPlus strokeWidth={3} color="white" size={18} />
             </div>
-            <span className="font-bold text-[#151D48] text-xl">8</span>
+            <span className="font-bold text-[#151D48] text-lg 2xl:text-xl">8</span>
             <div className="flex flex-col gap-2">
-              <span className="font-medium text-[#425166]">Total de vendas</span>
+              <span className="font-medium text-sm 2xl:text-base text-[#425166]">
+                Novos contratos
+              </span>
               <span className="text-xs text-[#4079ED] font-semibold">0,5% a mais que ontem</span>
             </div>
           </div>
@@ -95,8 +101,8 @@ export function FirstSection() {
       </Card>
       <Card title="Plataformas">
         <div className="flex justify-center items-center">
-          <div>
-            <ResponsiveContainer width={550} height={210}>
+          <div className="w-full h-[240px] 2xl:w-[550px] 2xl:h-[210px]">
+            <ResponsiveContainer width="100%" height="100%">
               <LineChart data={data}>
                 <CartesianGrid horizontal={true} vertical={false} />
                 <XAxis dataKey="name" axisLine={{ strokeWidth: 0 }} tickLine={false} />

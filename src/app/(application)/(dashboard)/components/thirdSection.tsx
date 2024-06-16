@@ -137,15 +137,15 @@ export function ThirdSection() {
           <Image
             src="/brazilMap.svg"
             alt="Mapa do Brasil"
-            className="w-56"
+            className="w-96 2xl:w-56"
             width={230}
             height={230}
           />
         </div>
       </Card>
-      <Card title="Mapeamento de vendas por UF">
-        <div className="flex flex-col gap-3">
-          <ResponsiveContainer width={300} height={160}>
+      <Card title="Nível de serviço">
+        <div className="flex flex-col w-full h-[360px] 2xl:w-[300px] 2xl:h-[240px] gap-3">
+          <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data} barCategoryGap={16}>
               <Tooltip />
               <Bar dataKey="pv" stackId="a" fill="#00E096" radius={[1, 1, 0, 0]} />

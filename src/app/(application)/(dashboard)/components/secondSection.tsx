@@ -75,25 +75,27 @@ export function SecondSection() {
   return (
     <>
       <Card className="flex-grow" title="Rendimento total">
-        <ResponsiveContainer width="100%" height={230}>
-          <BarChart data={teste} barGap={4} barCategoryGap={38}>
-            <CartesianGrid horizontal={true} vertical={false} />
-            <XAxis dataKey="day" tickLine={false} axisLine={{ strokeWidth: 0 }} />
-            <YAxis
-              axisLine={false}
-              ticks={[0, 5000, 10000, 15000, 20000, 25000]}
-              tickFormatter={(value) => (value === 0 ? '0' : `${value / 1000}k`)}
-            />
-            <Tooltip />
-            <Legend iconType="circle" />
-            <Bar dataKey="Aguardando" fill="#0095FF" radius={3} />
-            <Bar dataKey="Implantadas" fill="#00E096" radius={3} />
-          </BarChart>
-        </ResponsiveContainer>
+        <div className="h-[230px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={teste} barGap={4} barCategoryGap={38}>
+              <CartesianGrid horizontal={true} vertical={false} />
+              <XAxis dataKey="day" tickLine={false} axisLine={{ strokeWidth: 0 }} />
+              <YAxis
+                axisLine={false}
+                ticks={[0, 5000, 10000, 15000, 20000, 25000]}
+                tickFormatter={(value) => (value === 0 ? '0' : `${value / 1000}k`)}
+              />
+              <Tooltip />
+              <Legend iconType="circle" />
+              <Bar dataKey="Aguardando" fill="#0095FF" radius={3} />
+              <Bar dataKey="Implantadas" fill="#00E096" radius={3} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </Card>
       <Card title="Vidas">
-        <div className="flex flex-col gap-3">
-          <ResponsiveContainer width={300} height={160}>
+        <div className="flex flex-col w-full h-[250px] 2xl:w-[300px] 2xl:h-[160px] gap-3">
+          <ResponsiveContainer width="100%" height="100%">
             <AreaChart width={830} data={lifes}>
               <defs>
                 <linearGradient id="lastMonth" x1="0" y1="0" x2="0" y2="1">
@@ -149,8 +151,8 @@ export function SecondSection() {
         </div>
       </Card>
       <Card title="Realidade">
-        <div className="flex flex-col gap-2">
-          <ResponsiveContainer width={300} height={160}>
+        <div className="flex w-full h-[350px] 2xl:w-[300px] 2xl:h-[250px] flex-col gap-2">
+          <ResponsiveContainer width="100%" height="100%">
             <BarChart data={reality} barGap={4} barCategoryGap={4}>
               <XAxis
                 dataKey="day"
