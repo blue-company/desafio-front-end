@@ -8,7 +8,7 @@ Para este desafio, foram implementadas algumas funcionalidades para melhorar a e
  A aplicação apresenta gráficos interativos que melhoram a visualização de dados. Além disso, foi implementado teste unitário na página de Login para garantir a qualidade do código através da biblioteca Playwright.
 
 ## 🔗 **Link Úteis:**  
-- 🌐 WebSite: [Clique Aqui](LINK DO VERCEL)
+- 🌐 WebSite: [Clique Aqui](https://desafioblue.vercel.app)
 - 🖥️ Repositório: [Clique Aqui](https://github.com/siquara/desafio-front-end-blue)
 
 ## 🔑 Login:
