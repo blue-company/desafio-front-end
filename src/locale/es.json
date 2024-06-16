@@ -1,0 +1,65 @@
+{
+    "translation": {
+        "meetBlue": "Conozca a Blue",
+        "knowMore": "Conozca más información sobre Blue, una operadora de salud Health Tech",
+        "KnowMoreButton": "Conozca más",
+        "search": "Buscar información",
+        "admin": "Administración",
+        "settings": "Configuraciones",
+        "logout": "Cerrar sesión",
+ 
+        "sales": "Ventas Hoy",  
+        "salesSummary": "Resumen de ventas", 
+        "Share" : "Exportar",
+        "totalSales": "Total de ventas",
+        "salesChange": "8% más que ayer",
+        "totalContracts": "Total de contratos",
+        "contractsChange": "5% más que ayer",
+        "deployments": "Implementaciones",
+        "deploymentsChange": "1.2% más que ayer",
+        "newContracts": "Nuevos contratos",
+        "newContractsChange": "0.5% más que ayer",
+ 
+        "platforms": "Plataformas",
+        "income": "Rendimiento total",
+        "waiting": "En espera",
+        "deployed": "Implementadas",
+        "lifes": "Vidas",
+        "lastMonth": "Mes pasado",
+        "thisMonth": "Este mes",
+ 
+        "endedContracts": "Contratos finalizados",
+        "waitingContracts": "Contratos en espera",
+ 
+        "productName": "Nombre",
+        "productLeverage": "Apalancamiento",
+ 
+        "salesMap" : "Mapa de ventas",
+ 
+        "expectation": "Expectativa",
+        "reality": "Realidad",
+        "serviceLevel": "Nivel de servicio",
+ 
+        "Jan": "Ene",
+        "Feb": "Feb",
+        "Mar": "Mar",
+        "Apr": "Abr",
+        "May": "May",
+        "Jun": "Jun",
+        "Jul": "Jul",
+        "Aug": "Ago",
+        "Sep": "Sep",
+        "Oct": "Oct",
+        "Nov": "Nov",
+        "Dec": "Dic",
+ 
+        "Seg": "Lun",
+        "Ter": "Mar",
+        "Qua": "Mié",
+        "Qui": "Jue",
+        "Sex": "Vie",
+        "Sab": "Sáb",
+        "Som": "Dom"
+    }
+ }
+ 

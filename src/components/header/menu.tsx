@@ -1,26 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MenuItem, Select, FormControl, useMediaQuery, Box, Typography, SelectChangeEvent } from '@mui/material';
 import { ArrowDropDown as ArrowDropDownIcon } from '@mui/icons-material';
 import { createTheme } from '@mui/material/styles';
-import { DarkModeSwitch } from './darkModeSwitch';
-
+import i18n from '../../locale/i18n';
 
 const languages = [
     { code: 'en', label: 'EN (US)', icon: '/us.svg' },
-    { code: 'pt-br', label: 'PT (BR)', icon: '/br.svg' },
+    { code: 'pt', label: 'PT (BR)', icon: '/br.svg' },
     { code: 'es', label: 'ES (ES)', icon: '/es.svg' },
 ];
 
 export function LanguageSelector() {
-    const [selectedLanguage, setSelectedLanguage] = useState('pt-br');
+    // State to hold the selected language
+    const [selectedLanguage, setSelectedLanguage] = useState(() => {
+        // Check localStorage for saved language, default to 'en' if none found
+        const savedLanguage = localStorage.getItem('selectedLanguage');
+        return savedLanguage || 'pt';
+    });
+
+    useEffect(() => {
+        // Save selectedLanguage to localStorage whenever it changes
+        localStorage.setItem('selectedLanguage', selectedLanguage);
+        // Also update i18n language immediately when selectedLanguage changes
+        i18n.changeLanguage(selectedLanguage);
+    }, [selectedLanguage]);
+
+    // Media query to determine screen size
     const isLargeScreen = useMediaQuery(createTheme().breakpoints.up('lg'));
 
+    // Handle language change
     const handleChange = (event: SelectChangeEvent<string>) => {
-        setSelectedLanguage(event.target.value);
+        const selectedLangCode = event.target.value;
+        setSelectedLanguage(selectedLangCode);
     };
 
     return (
-        <FormControl variant="standard" sx={{}}>
+        <FormControl variant="standard">
             <Select
                 labelId="language-selector-label"
                 id="language-selector"
@@ -71,9 +86,7 @@ export function LanguageSelector() {
                             </Box>
                         )}
                     </MenuItem>
-
                 ))}
-
             </Select>
         </FormControl>
     );

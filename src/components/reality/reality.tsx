@@ -1,5 +1,5 @@
-"use client"
-import React from 'react';
+"use client";
+import React, { useMemo } from 'react';
 import {
     BarChart,
     Bar,
@@ -11,6 +11,7 @@ import {
 import { Box, Card, Typography, useTheme } from '@mui/material';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import { useTranslation } from 'react-i18next';
 
 interface DataPoint {
     name: string;
@@ -18,7 +19,7 @@ interface DataPoint {
     finalizados: number;
 }
 
-const data: DataPoint[] = [
+const rawData: DataPoint[] = [
     { name: 'Jan', aguardando: 80, finalizados: 70 },
     { name: 'Fev', aguardando: 100, finalizados: 60 },
     { name: 'Mar', aguardando: 90, finalizados: 40 },
@@ -30,11 +31,18 @@ const data: DataPoint[] = [
 
 export function Reality() {
     const theme = useTheme();
+    const { t } = useTranslation();
+
+    const translatedData = useMemo(() => {
+        return rawData.map(item => ({
+            ...item,
+            name: t(item.name)
+        }));
+    }, [t]);
 
     const totalKeys = (key: keyof DataPoint) => {
-        return data.reduce((total, item) => total + Number(item[key]), 0);
+        return rawData.reduce((total, item) => total + Number(item[key]), 0);
     };
-
 
     const renderLegend = () => {
         const aguardando = totalKeys('aguardando');
@@ -48,7 +56,7 @@ export function Reality() {
                             <WorkOutlineIcon sx={{ color: theme.palette.green?.dark }} />
                         </Box>
                         <Box>
-                            <Typography variant="body2" color="text.primary" fontWeight="bold">Contratos finalizados</Typography>
+                            <Typography variant="body2" color="text.primary" fontWeight="bold">{t("endedContracts")}</Typography>
                             <Typography color="secondary.main" sx={{ fontSize: "0.725rem" }}>Global</Typography>
                         </Box>
                     </Box>
@@ -60,7 +68,7 @@ export function Reality() {
                             <StarBorderIcon sx={{ color: theme.palette.yellow?.contrastText }} />
                         </Box>
                         <Box>
-                            <Typography variant="body2" color="text.primary" fontWeight="bold">Aguardando</Typography>
+                            <Typography variant="body2" color="text.primary" fontWeight="bold">{t("waitingContracts")}</Typography>
                             <Typography color="secondary.main" sx={{ fontSize: "0.725rem" }}>Commercial</Typography>
                         </Box>
                     </Box>
@@ -75,7 +83,6 @@ export function Reality() {
         fontSize: theme.typography.fontSize,
         fill: theme.palette.text.primary,
     };
-
 
     const renderCustomBarShape = (props: any) => {
         const { x, y, width, height } = props;
@@ -105,11 +112,11 @@ export function Reality() {
             overflow: 'hidden',
         }}>
             <Typography variant="h6" fontWeight="bold" color="text.primary" gutterBottom>
-                Realidade
+                {t('reality')}
             </Typography>
             <Box sx={{ flex: 1 }}>
                 <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={data} margin={{ top: 20, left: 0, right: 0, bottom: 0 }} barSize={20}>
+                    <BarChart data={translatedData} margin={{ top: 20, left: 0, right: 0, bottom: 0 }} barSize={20}>
                         <XAxis dataKey="name" tick={axisStyle} tickLine={false} />
                         <Tooltip
                             contentStyle={{ fontFamily: theme.typography.fontFamily, fontSize: theme.typography.fontSize }}

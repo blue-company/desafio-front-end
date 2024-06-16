@@ -1,12 +1,16 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import background from "@/assets/card-bg.svg";
-import { Box, Card, CardContent, Typography, useTheme } from '@mui/material';
+import { Box, Card, CardContent, Link, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
 import logo from "@/assets/LogoWhite.svg";
+import { useTranslation } from 'react-i18next';
+
+
 
 export default function SideCard() {
     const theme = useTheme();
+    const { t } = useTranslation();
 
     return (
         <Card sx={{
@@ -29,26 +33,33 @@ export default function SideCard() {
 
             <CardContent>
                 <Typography textAlign="center" sx={{ fontSize: "1.5rem", maxWidth: "150px", marginX: "auto" }} color="text.secondary" gutterBottom>
-                    Conheça a Blue
+                    {t('meetBlue')}
                 </Typography>
 
                 <Typography textAlign="center" sx={{ fontSize: "0.875rem", marginTop: "1rem" }} color="text.secondary">
-                    Saiba mais informações sobre a Blue, uma operadora de saúde Health Tech
+                    {t('knowMore')}
                 </Typography>
 
                 <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
-                    <Button variant="contained" sx={{
-                        backgroundColor: theme.palette.primary.contrastText,
-                        color: theme.palette.primary.main,
-                        textTransform: "none",
-                        fontWeight: "bold",
-                        '&:hover': {
-                            backgroundColor: theme.palette.primary.main,
-                            color: theme.palette.primary.contrastText,
-                        }
-                    }}>
-                        Conhecer
-                    </Button>
+                    <Link href="https://www.saudeblue.com/" target="_blank">
+                        <Button
+                            component="a"
+                            variant="contained"
+                            sx={{
+                                backgroundColor: theme.palette.primary.contrastText,
+                                color: theme.palette.primary.main,
+                                textTransform: "none",
+                                fontWeight: "bold",
+                                '&:hover': {
+                                    backgroundColor: theme.palette.primary.main,
+                                    color: theme.palette.primary.contrastText,
+                                }
+                            }}
+                        >
+                            {t('KnowMoreButton')}
+                        </Button>
+                    </Link>
+
                 </Box>
             </CardContent>
         </Card >

@@ -12,6 +12,7 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 import useMediaQuery from '@mui/material/useMediaQuery';
 import avatarImg from "@/assets/avatar.svg";
 import { DarkModeSwitch } from './darkModeSwitch';
+import { useTranslation } from 'react-i18next';
 
 export function AccountMenu() {
     const [anchorEl, setAnchorEl] = useState<EventTarget & HTMLButtonElement | null>(null);
@@ -29,6 +30,8 @@ export function AccountMenu() {
         setAnchorEl(null);
     };
 
+    const { t } = useTranslation();
+
     return (
         <>
             <ListItemButton onClick={handleClick}>
@@ -45,7 +48,7 @@ export function AccountMenu() {
                 {!isSmallScreen && (
                     <ListItemText
                         primary="Paulo Freire"
-                        secondary="Comercial"
+                        secondary={t('admin')}
                         primaryTypographyProps={{ color: 'text.primary', fontWeight: 'bold' }}
                         secondaryTypographyProps={{ color: 'secondary.main' }}
                         sx={{ cursor: 'pointer', marginLeft: "16px" }}
@@ -71,13 +74,13 @@ export function AccountMenu() {
                     <ListItemIcon>
                         <SettingsIcon fontSize="small" />
                     </ListItemIcon>
-                    Configurações
+                    {t('settings')}
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
                     <ListItemIcon>
                         <LogoutIcon fontSize="small" />
                     </ListItemIcon>
-                    Sair
+                    {t('logout')}
                 </MenuItem>
                 <MenuItem sx={{ display: "flex", justifyContent: "center" }} >
                     <DarkModeSwitch />

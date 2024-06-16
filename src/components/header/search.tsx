@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, InputAdornment, Box, useTheme, IconButton, useMediaQuery } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { useTranslation } from 'react-i18next';
 
 export function SearchBar() {
     const theme = useTheme();
@@ -11,6 +12,8 @@ export function SearchBar() {
         setExpanded(!expanded);
     };
 
+    const { t } = useTranslation();
+
     return (
         <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: isSmallScreen ? 'flex-start' : 'center', position: 'relative' }}>
             {isSmallScreen ? (
@@ -20,7 +23,7 @@ export function SearchBar() {
             ) : (
                 <TextField
                     variant="outlined"
-                    placeholder="Pesquisar informações"
+                    placeholder={t('search')}
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">

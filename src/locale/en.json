@@ -1,0 +1,65 @@
+{
+    "translation": {
+        "meetBlue": "Meet Blue",
+        "knowMore": "Learn more about Blue, a Health Tech health insurance provider",
+        "KnowMoreButton": "Learn more",
+        "search": "Search information",
+        "admin": "Admin",
+        "settings": "Settings",
+        "logout": "Logout",
+ 
+        "sales": "Sales Today",  
+        "salesSummary": "Sales Summary", 
+        "Share" : "Export",
+        "totalSales": "Total Sales",
+        "salesChange": "8% more than yesterday",
+        "totalContracts": "Total Contracts",
+        "contractsChange": "5% more than yesterday",
+        "deployments": "Deployments",
+        "deploymentsChange": "1.2% more than yesterday",
+        "newContracts": "New Contracts",
+        "newContractsChange": "0.5% more than yesterday",
+ 
+        "platforms": "Platforms",
+        "income": "Total Income",
+        "waiting": "Waiting",
+        "deployed": "Deployed",
+        "lifes": "Lives",
+        "lastMonth": "Last Month",
+        "thisMonth": "This Month",
+ 
+        "endedContracts": "Ended Contracts",
+        "waitingContracts": "Waiting Contracts",
+ 
+        "productName": "Name",
+        "productLeverage": "Leverage",
+ 
+        "salesMap" : "Sales Map",
+ 
+        "expectation": "Expectation",
+        "reality": "Reality",
+        "serviceLevel": "Service Level",
+ 
+        "Jan": "Jan",
+        "Feb": "Feb",
+        "Mar": "Mar",
+        "Apr": "Apr",
+        "May": "May",
+        "Jun": "Jun",
+        "Jul": "Jul",
+        "Aug": "Aug",
+        "Sep": "Sep",
+        "Oct": "Oct",
+        "Nov": "Nov",
+        "Dec": "Dec",
+ 
+        "Seg": "Mon",
+        "Ter": "Tue",
+        "Qua": "Wed",
+        "Qui": "Thu",
+        "Sex": "Fri",
+        "Sab": "Sat",
+        "Som": "Sun"
+    }
+ }
+ 

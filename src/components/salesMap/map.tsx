@@ -5,6 +5,7 @@ import { Card, Typography, Tooltip } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
 import brasilTopoJson from './br-states.json';
+import { useTranslation } from 'react-i18next';
 
 const salesData: { [key: string]: { sales: number } } = {
     BA: { sales: 500 },
@@ -16,13 +17,16 @@ const salesData: { [key: string]: { sales: number } } = {
 
 const geoUrl = brasilTopoJson;
 
+
+
 export function SalesMap() {
     const theme = useTheme();
+    const { t } = useTranslation();
 
     return (
         <Card sx={{ padding: '1rem', height: '100%', borderRadius: '1rem', overflow: 'hidden' }}>
             <Typography variant="h6" gutterBottom>
-                Vendas por Estado
+                {t('salesMap')}
             </Typography>
             <ComposableMap
                 projection="geoMercator"

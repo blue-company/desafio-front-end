@@ -5,40 +5,43 @@ import AssessmentIcon from '@mui/icons-material/Assessment';
 import StickyNote2Icon from '@mui/icons-material/StickyNote2';
 import ModeIcon from '@mui/icons-material/Mode';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
+import { useTranslation } from "react-i18next";
 
 export function Sales() {
+
+    const { t } = useTranslation();
     const cards: SalesCardProps[] = [
         {
             cardBgColor: "pink.light",
             iconBgColor: "pink.main",
             icon: <AssessmentIcon />,
             salesAmount: "R$ 1,000",
-            salesText: "Total de vendas",
-            salesChange: "8% a mais que ontem"
+            salesText: t("totalSales"),
+            salesChange: t("salesChange")
         },
         {
             cardBgColor: "yellow.light",
             iconBgColor: "yellow.main",
             icon: <StickyNote2Icon />,
             salesAmount: "300",
-            salesText: "Total de contratos",
-            salesChange: "5% a mais que ontem"
+            salesText: t("totalContracts"),
+            salesChange: t("contractsChange")
         },
         {
             cardBgColor: "green.light",
             iconBgColor: "green.main",
             icon: <ModeIcon />,
             salesAmount: "5",
-            salesText: "Implantadas",
-            salesChange: "1,2% a mais que ontem"
+            salesText: t("deployments"),
+            salesChange: t("deploymentsChange")
         },
         {
             cardBgColor: "purple.light",
             iconBgColor: "purple.main",
             icon: <PersonAddAlt1Icon />,
             salesAmount: "8",
-            salesText: "Novos Contratos",
-            salesChange: "0,5% a mais que ontem"
+            salesText: t("newContracts"),
+            salesChange: t("newContractsChange")
         },
     ];
 
@@ -49,8 +52,8 @@ export function Sales() {
         }}>
             <Stack direction="row" sx={{ justifyContent: "space-between", alignItems: "center", mb: { xs: 2, lg: 0 } }}>
                 <Box>
-                    <Typography variant="h6" fontWeight="bold" color="text.primary">Vendas Hoje</Typography>
-                    <Typography color="secondary.contrastText" sx={{ mt: "0.25rem" }}>Resumo de vendas</Typography>
+                    <Typography variant="h6" fontWeight="bold" color="text.primary">{t('sales')}</Typography>
+                    <Typography color="secondary.contrastText" sx={{ mt: "0.25rem" }}>{t('salesSummary')}</Typography>
                 </Box>
                 <Button
                     variant="outlined"
@@ -63,7 +66,7 @@ export function Sales() {
                         borderRadius: "0.5rem",
                     }}
                 >
-                    Exportar
+                    {t('Share')}
                 </Button>
             </Stack>
             <Grid container spacing={1} sx={{ mt: "2rem" }}>

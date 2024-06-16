@@ -1,5 +1,5 @@
-"use client"
-import React from 'react';
+"use client";
+import React, { useMemo } from 'react';
 import {
     BarChart,
     Bar,
@@ -11,6 +11,7 @@ import {
     ResponsiveContainer,
 } from 'recharts';
 import { Box, Card, Typography, useTheme } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 interface DataPoint {
     name: string;
@@ -18,7 +19,7 @@ interface DataPoint {
     implantadas: number;
 }
 
-const data: DataPoint[] = [
+const rawData: DataPoint[] = [
     { name: 'Seg', aguardando: 100, implantadas: 50 },
     { name: 'Ter', aguardando: 120, implantadas: 80 },
     { name: 'Qua', aguardando: 90, implantadas: 70 },
@@ -30,24 +31,29 @@ const data: DataPoint[] = [
 
 export function Income() {
     const theme = useTheme();
+    const { t } = useTranslation();
+
+    const translatedData = useMemo(() => {
+        return rawData.map(item => ({
+            ...item,
+            name: t(item.name)
+        }));
+    }, [t]);
 
     const renderLegend = () => {
-
         return (
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
                 <div style={{ marginRight: '1rem', display: 'flex', flexDirection: "column", borderRight: "1px solid gray", paddingRight: "1rem" }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '12px', height: '12px', backgroundColor: theme.palette.blue?.main, borderRadius: '50%', marginRight: '5px' }}></div>
-                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>Aguardando</Typography>
+                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>{t('waiting')}</Typography>
                     </div>
-
                 </div>
                 <div style={{ marginRight: '1rem', display: 'flex', flexDirection: "column" }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '12px', height: '12px', backgroundColor: theme.palette.green?.main, borderRadius: '50%', marginRight: '5px' }}></div>
-                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>Implantadas</Typography>
+                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>{t('deployed')}</Typography>
                     </div>
-
                 </div>
             </div>
         );
@@ -93,11 +99,11 @@ export function Income() {
             overflow: 'hidden', // Prevent overflow and cutoffs
         }}>
             <Typography variant="h6" fontWeight="bold" color="text.primary" gutterBottom>
-                Rendimento Semanal
+                {t('income')}
             </Typography>
             <Box sx={{ flex: 1, marginLeft: "-30px" }}>
                 <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={data} margin={{ top: 20, left: 0, right: 0, bottom: 2 }} barSize={20}>
+                    <BarChart data={translatedData} margin={{ top: 20, left: 0, right: 0, bottom: 2 }} barSize={20}>
                         <CartesianGrid vertical={false} stroke={theme.palette.divider} />
                         <XAxis dataKey="name" tick={axisStyle} tickLine={false} />
                         <YAxis tickLine={false} tick={yAxisStyle} />
@@ -111,11 +117,11 @@ export function Income() {
                                 fontSize: theme.typography.fontSize,
                             }}
                         />
-                        <Bar dataKey="aguardando" name="Aguardando" fill={theme.palette.blue?.main} shape={renderCustomBarShape} />
-                        <Bar dataKey="implantadas" name="Implantadas" fill={theme.palette.green?.main} shape={renderCustomBarShape} />
+                        <Bar dataKey="aguardando" name={t("waiting")} fill={theme.palette.blue?.main} shape={renderCustomBarShape} />
+                        <Bar dataKey="implantadas" name={t("deployed")} fill={theme.palette.green?.main} shape={renderCustomBarShape} />
                     </BarChart>
                 </ResponsiveContainer>
             </Box>
         </Card>
     );
-};
+}

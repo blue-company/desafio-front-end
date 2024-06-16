@@ -8,6 +8,7 @@ import {
     Tooltip,
 } from 'recharts';
 import { Box, Card, Typography, useTheme } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 interface DataPoint {
     lastMonth: number;
@@ -30,6 +31,8 @@ const data: DataPoint[] = [
 export function Lifes() {
     const theme = useTheme();
 
+    const { t } = useTranslation();
+
     const totalKeys = (key: keyof DataPoint) => {
         return data.reduce((total, item) => total + item[key], 0);
     };
@@ -43,20 +46,21 @@ export function Lifes() {
                 <div style={{ marginRight: '1rem', display: 'flex', flexDirection: "column", borderRight: "1px solid gray", paddingRight: "1rem" }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '12px', height: '12px', backgroundColor: theme.palette.blue?.main, borderRadius: '50%', marginRight: '5px' }}></div>
-                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>Último Mês</Typography>
+                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>{t("lastMonth")}</Typography>
                     </div>
                     <Typography variant="body2" style={{ color: theme.palette.text.primary }}>{ultimoMesTotal}</Typography>
                 </div>
                 <div style={{ marginRight: '1rem', display: 'flex', flexDirection: "column" }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '12px', height: '12px', backgroundColor: theme.palette.green?.main, borderRadius: '50%', marginRight: '5px' }}></div>
-                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>Este Mês</Typography>
+                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>{t("thisMonth")}</Typography>
                     </div>
                     <Typography variant="body2" style={{ color: theme.palette.text.primary }}>{esteMesTotal}</Typography>
                 </div>
             </div>
         );
     };
+
 
     return (
         <Card sx={{
@@ -68,7 +72,7 @@ export function Lifes() {
             overflow: 'hidden',
         }}>
             <Typography variant="h6" fontWeight="bold" color="text.primary" gutterBottom>
-                Vidas
+                {t('lifes')}
             </Typography>
             <Box sx={{ flex: 1 }}>
                 <ResponsiveContainer width="100%" height="100%">

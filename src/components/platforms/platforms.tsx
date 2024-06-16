@@ -1,5 +1,5 @@
-"use client"
-import React, { useState, MouseEvent } from 'react';
+"use client";
+import React, { useState, useMemo } from 'react';
 import {
     LineChart,
     Line,
@@ -11,6 +11,7 @@ import {
     ResponsiveContainer,
 } from 'recharts';
 import { Box, Card, Typography, useTheme } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 interface DataPoint {
     name: string;
@@ -19,7 +20,7 @@ interface DataPoint {
     BlueServicos: number;
 }
 
-const data: DataPoint[] = [
+const rawData: DataPoint[] = [
     { name: 'Jan', TDConsultoria: 100, RIKOPlataforma: 80, BlueServicos: 120 },
     { name: 'Feb', TDConsultoria: 180, RIKOPlataforma: 120, BlueServicos: 150 },
     { name: 'Mar', TDConsultoria: 260, RIKOPlataforma: 160, BlueServicos: 180 },
@@ -37,6 +38,14 @@ const data: DataPoint[] = [
 export function Platforms() {
     const theme = useTheme();
     const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
+    const { t } = useTranslation();
+
+    const translatedData = useMemo(() => {
+        return rawData.map(item => ({
+            ...item,
+            name: t(item.name)
+        }));
+    }, [t]);
 
     const handleMouseOver = (event: any, data: any): void => {
         setActiveIndex(event ? event.index : undefined);
@@ -69,29 +78,25 @@ export function Platforms() {
     };
 
     const renderLegend = () => {
-
         return (
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
                 <div style={{ marginRight: '1rem', display: 'flex', flexDirection: "column" }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '12px', height: '12px', backgroundColor: theme.palette.purple?.main, borderRadius: '50%', marginRight: '5px' }}></div>
-                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>Td Consultoria</Typography>
+                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>TD Consultoria</Typography>
                     </div>
-
                 </div>
                 <div style={{ marginRight: '1rem', display: 'flex', flexDirection: "column" }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '12px', height: '12px', backgroundColor: theme.palette.pink?.main, borderRadius: '50%', marginRight: '5px' }}></div>
-                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>Riko Plataforma</Typography>
+                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>RIKO Plataforma</Typography>
                     </div>
-
                 </div>
                 <div style={{ marginRight: '1rem', display: 'flex', flexDirection: "column" }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '12px', height: '12px', backgroundColor: theme.palette.green?.main, borderRadius: '50%', marginRight: '5px' }}></div>
                         <Typography variant="body2" style={{ color: theme.palette.text.primary }}>Blue Serviços</Typography>
                     </div>
-
                 </div>
             </div>
         );
@@ -104,17 +109,17 @@ export function Platforms() {
             height: '100%',
             display: 'flex',
             flexDirection: 'column',
-            overflow: 'hidden', // Prevent overflow and cutoffs
+            overflow: 'hidden',
         }}>
             <Typography variant="h6" fontWeight="bold" color="text.primary" gutterBottom>
-                Plataformas
+                {t('platforms')}
             </Typography>
             <Box sx={{ flex: 1, marginLeft: '-30px' }}>
                 <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={data} margin={{ top: 20, left: 0, right: 0, bottom: 2 }}>
+                    <LineChart data={translatedData} margin={{ top: 20, left: 0, right: 0, bottom: 2 }}>
                         <CartesianGrid vertical={false} stroke={theme.palette.divider} />
                         <XAxis dataKey="name" tick={axisStyle} tickLine={false} />
-                        <YAxis tick={yAxisStyle} tickCount={5} tickLine={false} domain={[0, 400]} ticks={[0, 100, 200, 300, 400]} />
+                        <YAxis tick={yAxisStyle} tickCount={5} tickLine={false} domain={[0, 600]} ticks={[0, 100, 200, 300, 400, 500, 600]} />
                         <Tooltip
                             contentStyle={{ fontFamily: theme.typography.fontFamily, fontSize: theme.typography.fontSize }}
                         />
@@ -158,4 +163,3 @@ export function Platforms() {
         </Card>
     );
 }
-

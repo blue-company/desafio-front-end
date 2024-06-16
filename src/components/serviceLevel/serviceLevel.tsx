@@ -8,7 +8,8 @@ import {
     ResponsiveContainer,
 } from 'recharts';
 import { Box, Card, Typography, useTheme } from '@mui/material';
-import { theme } from '@/themes/Theme';
+import { useTranslation } from 'react-i18next';
+
 
 interface DataPoint {
     expectativa: number;
@@ -27,6 +28,7 @@ const data: DataPoint[] = [
 
 export function ServiceLevel() {
     const theme = useTheme();
+    const { t } = useTranslation();
 
 
 
@@ -43,14 +45,14 @@ export function ServiceLevel() {
                 <div style={{ marginRight: '1rem', display: 'flex', flexDirection: "column", borderRight: "1px solid gray", paddingRight: "1rem" }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '12px', height: '12px', backgroundColor: theme.palette.blue?.main, borderRadius: '50%', marginRight: '5px' }}></div>
-                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>Epectativa</Typography>
+                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>{t('expectation')}</Typography>
                     </div>
                     <Typography variant="body2" style={{ color: theme.palette.text.primary }}>{expectativa}</Typography>
                 </div>
                 <div style={{ marginRight: '1rem', display: 'flex', flexDirection: "column" }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '12px', height: '12px', backgroundColor: theme.palette.green?.main, borderRadius: '50%', marginRight: '5px' }}></div>
-                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>Realidade</Typography>
+                        <Typography variant="body2" style={{ color: theme.palette.text.primary }}>{t('reality')}</Typography>
                     </div>
                     <Typography variant="body2" style={{ color: theme.palette.text.primary }}>{realidade}</Typography>
                 </div>
@@ -68,7 +70,7 @@ export function ServiceLevel() {
             overflow: 'hidden',
         }}>
             <Typography variant="h6" fontWeight="bold" color="text.primary" gutterBottom>
-                Nível de Serviço
+                {t('serviceLevel')}
             </Typography>
             <Box sx={{ flex: 1 }}>
                 <ResponsiveContainer width="100%" height="100%">

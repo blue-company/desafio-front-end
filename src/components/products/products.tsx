@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { Box, Card, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, LinearProgress, useTheme } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 interface Product {
     position: number;
@@ -10,10 +11,10 @@ interface Product {
 }
 
 const products: Product[] = [
-    { position: 1, name: 'Product A', leverage: 100, percentage: 75 },
-    { position: 2, name: 'Product B', leverage: 80, percentage: 60 },
-    { position: 3, name: 'Product C', leverage: 25, percentage: 50 },
-    { position: 4, name: 'Product D', leverage: 25, percentage: 40 },
+    { position: 1, name: 'BLUE START ENF SC', leverage: 100, percentage: 75 },
+    { position: 2, name: 'BLUE START ENF SO', leverage: 80, percentage: 60 },
+    { position: 3, name: 'BLUE START APT SO', leverage: 25, percentage: 50 },
+    { position: 4, name: 'BLUE START APT SC', leverage: 25, percentage: 40 },
 ];
 
 // Ordena os produtos pela porcentagem em ordem decrescente e pega os top 4
@@ -25,7 +26,7 @@ export function TopProducts() {
     // Cores diferentes para cada produto
     const colors = [theme.palette.blue?.main, theme.palette.green?.main, theme.palette.purple?.main, theme.palette.yellow?.main];
     const lightColors = [theme.palette.blue?.light, theme.palette.green?.light, theme.palette.purple?.light, theme.palette.yellow?.light];
-
+    const { t } = useTranslation();
     return (
         <Card sx={{
             padding: '2rem',
@@ -44,8 +45,8 @@ export function TopProducts() {
                         <TableHead>
                             <TableRow sx={{ height: '30px' }}>
                                 <TableCell sx={{ color: 'lightgrey', fontSize: '0.8rem', padding: '8px 8px' }}>#</TableCell>
-                                <TableCell sx={{ color: 'lightgrey', fontSize: '0.8rem', padding: '8px 8px' }}>Nome</TableCell>
-                                <TableCell sx={{ color: 'lightgrey', fontSize: '0.8rem', padding: '8px 8px' }}>Alavancagem</TableCell>
+                                <TableCell sx={{ color: 'lightgrey', fontSize: '0.8rem', padding: '8px 8px' }}>{t('productName')}</TableCell>
+                                <TableCell sx={{ color: 'lightgrey', fontSize: '0.8rem', padding: '8px 8px' }}>{t('productLeverage')}</TableCell>
                                 <TableCell sx={{ color: 'lightgrey', fontSize: '0.8rem', padding: '8px 8px' }}>%</TableCell>
                             </TableRow>
                         </TableHead>
