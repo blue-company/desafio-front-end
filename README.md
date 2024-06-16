@@ -1,55 +1,43 @@
-# Desafio Front-End
+# Desafio Blue Front-End
+Este desafio é uma aplicação front-end responsiva, projetada para criar uma interface a partir de uma imagem fornecida pela empresa. Utilizando tecnologias como React.js, Next.js, Tailwind CSS e ShadCn UI.
 
-Bem-vindo ao desafio front-end BLUE! Este desafio foi projetado para avaliar suas habilidades de desenvolvimento front-end, incluindo sua capacidade de escrever código limpo, organizado e responsivo, bem como aplicar princípios de design e desenvolvimento SOLID. 👨‍💻
+## Funcionalidades
 
-## Objetivo
+Para este desafio, foram implementadas algumas funcionalidades para melhorar a experiência do usuário. Isso inclui responsividade para garantir acesso fácil em qualquer dispositivo, um sistema de login para proteger dados dos usuários, múltiplas rotas para navegação, e também o dropdown em alguns botões.
 
-O objetivo deste desafio é criar uma aplicação front-end responsiva com base em uma imagem fornecida. O candidato deve utilizar tecnologias como React.js, Next.js, Tailwind CSS e Material-UI (Mui). Além disso, a aplicação deve ser testada unitariamente e ser hospedada em algum serviço de nuvem, como Vercel. ☁️
+ A aplicação apresenta gráficos interativos que melhoram a visualização de dados. Além disso, foi implementado teste unitário na página de Login para garantir a qualidade do código através da biblioteca Playwright.
 
-## Requisitos obrigatórios
+## 🔗 **Link Úteis:**  
+- 🌐 WebSite: [Clique Aqui](https://desafioblue.vercel.app)
+- 🖥️ Repositório: [Clique Aqui](https://github.com/siquara/desafio-front-end-blue)
 
-- Utilize React.js/Next.js com typescript para a criação da aplicação.
-- Utilize Tailwind CSS ou Material-UI (Mui) para estilização.
-- Aplique os princípios do SOLID durante o desenvolvimento, dando foco ao: S-Single Responsiblity Principle e D—Dependency Inversion Principle.
-- A aplicação deve seguir o layout fornecido na imagem em anexo.
-- Desenvolva uma versão mobile. 
+## 🔑 Login:
+- ✉️ Email: desafioblue@blue.com
+- 🔒 Senha: desafioblue
 
-## Requisitos desejados
-- Implemente testes unitários para garantir a robustez do código.
-- Torne os elementos da página interativos como dropdown e menu mobile.
-- Desenvolva outras rotas. 
+## 🚀 Instruções para Execução
 
-## Layout
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/siquara/desafio-front-end-blue
+   ```
 
-O layout da aplicação está disponível na imagem anexa. 🖼️
+2. **Instale as dependências:**
+   ```bash
+   cd desafio-front-end-blue
+   npm install
+   ```
 
-## Instruções para Entrega
+3. **Execute a aplicação:**
+   ```bash
+   npm run dev
+   ```
 
-1. Faça um fork deste repositório para o seu perfil do GitHub.
-2. Desenvolva a aplicação seguindo os requisitos descritos.
-3. Certifique-se de escrever código limpo, bem organizado e seguindo os princípios SOLID.
-4. Implemente testes unitários para as partes críticas da aplicação.
-5. Hospede a aplicação em algum serviço de nuvem, como Vercel.
-6. Crie um arquivo README.md detalhando como configurar, executar e testar a aplicação.
-7. Abra um pull request para este repositório com o link para o seu fork e todas as informações necessárias.
-
-## Critérios de Avaliação
-
-Os candidatos serão avaliados com base nos seguintes critérios:
-
-- Qualidade do código: organização, clareza e boas práticas de desenvolvimento.
-- Proatividade para novas implementações, propondo ideias que complementem o desafio.
-- Adesão aos princípios SOLID.
-- Qualidade e cobertura dos testes unitários.
-- Fidelidade ao layout fornecido.
-- Responsividade da aplicação em diferentes dispositivos.
-
-## Dúvidas e Feedback
-
-Se surgirem dúvidas durante o desenvolvimento ou se você tiver algum feedback sobre o desafio, sinta-se à vontade para entrar em contato conosco através dos comentários do pull request ou por email.
-
-Boa sorte e estamos ansiosos para ver o seu trabalho! 🚀
-
-### Emails para contado
-
-- dev@saudeblue.com
+4. **Acesse:**
+   ```
+   http://localhost:3000
+   ```
+5. **Para verificar o teste de Login Execute:**
+   ```bash
+   npx playwright test
+   ```
