@@ -1,5 +1,6 @@
 'use client';
 import { Button } from '@/components/ui/button';
+import { toast } from '@/components/ui/use-toast';
 import { GetAllDashboardResponse } from '@/service/dashboard/type';
 import { BarChartIcon, FileText, Tag, Upload, UserPlus } from 'lucide-react';
 import {
@@ -19,9 +20,17 @@ interface FirstSectionProps {
 }
 
 export function FirstSection({ data }: FirstSectionProps) {
+  function ExportActionButton() {
+    return toast({
+      variant: 'success',
+      title: 'Sucesso',
+      description: 'Em instantes seu download começará'
+    });
+  }
+
   function ExportButton() {
     return (
-      <Button className="gap-2" variant="outline">
+      <Button onClick={() => ExportActionButton()} className="gap-2" variant="outline">
         <Upload />
         Exportar
       </Button>
@@ -37,7 +46,7 @@ export function FirstSection({ data }: FirstSectionProps) {
         button={<ExportButton />}
       >
         <div className="grid grid-cols-2 lg:flex lg:flex-row gap-4 2xl:gap-0 2xl:justify-between">
-          <div className="flex flex-col gap-1 bg-[#FFE2E5] px-4 py-6 rounded-lg">
+          <div className="flex flex-col gap-1 bg-[#FFE2E5] px-4 py-6 rounded-lg transition duration-300 hover:scale-[1.1]">
             <div className="bg-[#FA5A7D] max-w-min p-2 rounded-full">
               <BarChartIcon
                 strokeWidth={3}
@@ -58,7 +67,7 @@ export function FirstSection({ data }: FirstSectionProps) {
               </span>
             </div>
           </div>
-          <div className="flex flex-col gap-1 bg-[#FFF4DE] px-4 py-6 rounded-lg">
+          <div className="flex flex-col gap-1 bg-[#FFF4DE] px-4 py-6 rounded-lg transition duration-300 hover:scale-[1.1]">
             <div className="bg-[#FF947A] max-w-min p-2 rounded-full">
               <FileText color="white" strokeWidth={3} size={18} />
             </div>
@@ -74,7 +83,7 @@ export function FirstSection({ data }: FirstSectionProps) {
               </span>
             </div>
           </div>
-          <div className="flex flex-col gap-1 bg-[#DCFCE7] px-4 py-6 rounded-lg">
+          <div className="flex flex-col gap-1 bg-[#DCFCE7] px-4 py-6 rounded-lg transition duration-300 hover:scale-[1.1]">
             <div className="bg-[#3CD856] max-w-min p-2 rounded-full">
               <Tag strokeWidth={3} color="white" size={18} />
             </div>
@@ -88,7 +97,7 @@ export function FirstSection({ data }: FirstSectionProps) {
               </span>
             </div>
           </div>
-          <div className="flex flex-col gap-1 bg-[#F3E8FF] px-4 py-6 rounded-lg">
+          <div className="flex flex-col gap-1 bg-[#F3E8FF] px-4 py-6 rounded-lg transition duration-300 hover:scale-[1.1]">
             <div className="bg-[#BF83FF] max-w-min p-2 rounded-full">
               <UserPlus strokeWidth={3} color="white" size={18} />
             </div>
