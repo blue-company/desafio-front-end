@@ -1,4 +1,6 @@
+'use client';
 import { Button } from '@/components/ui/button';
+import { GetAllDashboardResponse } from '@/service/dashboard/type';
 import { BarChartIcon, FileText, Tag, Upload, UserPlus } from 'lucide-react';
 import {
   CartesianGrid,
@@ -12,7 +14,11 @@ import {
 } from 'recharts';
 import { Card } from './card';
 
-export function FirstSection() {
+interface FirstSectionProps {
+  data: GetAllDashboardResponse;
+}
+
+export function FirstSection({ data }: FirstSectionProps) {
   function ExportButton() {
     return (
       <Button className="gap-2" variant="outline">
@@ -21,21 +27,6 @@ export function FirstSection() {
       </Button>
     );
   }
-
-  const data = [
-    { name: 'Jan', 'TD Consultoria': 320, 'RIKO Plataforma': 250, 'Blue Serviços': 260 },
-    { name: 'Feb', 'TD Consultoria': 350, 'RIKO Plataforma': 220, 'Blue Serviços': 380 },
-    { name: 'Mar', 'TD Consultoria': 280, 'RIKO Plataforma': 190, 'Blue Serviços': 240 },
-    { name: 'Apr', 'TD Consultoria': 240, 'RIKO Plataforma': 220, 'Blue Serviços': 180 },
-    { name: 'May', 'TD Consultoria': 290, 'RIKO Plataforma': 270, 'Blue Serviços': 220 },
-    { name: 'Jun', 'TD Consultoria': 330, 'RIKO Plataforma': 320, 'Blue Serviços': 380 },
-    { name: 'Jul', 'TD Consultoria': 300, 'RIKO Plataforma': 330, 'Blue Serviços': 270 },
-    { name: 'Aug', 'TD Consultoria': 250, 'RIKO Plataforma': 300, 'Blue Serviços': 250 },
-    { name: 'Sep', 'TD Consultoria': 230, 'RIKO Plataforma': 270, 'Blue Serviços': 290 },
-    { name: 'Oct', 'TD Consultoria': 260, 'RIKO Plataforma': 250, 'Blue Serviços': 310 },
-    { name: 'Nov', 'TD Consultoria': 280, 'RIKO Plataforma': 240, 'Blue Serviços': 270 },
-    { name: 'Dec', 'TD Consultoria': 250, 'RIKO Plataforma': 230, 'Blue Serviços': 260 }
-  ];
 
   return (
     <>
@@ -55,46 +46,62 @@ export function FirstSection() {
                 className="bg-white rounded-sm"
               />
             </div>
-            <span className="font-bold text-[#151D48] text-lg 2xl:text-xl">R$ 1,000</span>
+            <span className="font-bold text-[#151D48] text-lg 2xl:text-xl">
+              R${data.salesToday.salesAmount.amount}
+            </span>
             <div className="flex flex-col gap-2">
               <span className="font-medium text-sm 2xl:text-base text-[#425166]">
                 Total de vendas
               </span>
-              <span className="text-xs text-[#4079ED] font-semibold">+8% a mais que ontem</span>
+              <span className="text-xs text-[#4079ED] font-semibold">
+                +{data.salesToday.salesAmount.percentMoreYesterday}% a mais que ontem
+              </span>
             </div>
           </div>
           <div className="flex flex-col gap-1 bg-[#FFF4DE] px-4 py-6 rounded-lg">
             <div className="bg-[#FF947A] max-w-min p-2 rounded-full">
               <FileText color="white" strokeWidth={3} size={18} />
             </div>
-            <span className="font-bold text-[#151D48] text-lg 2xl:text-xl">300</span>
+            <span className="font-bold text-[#151D48] text-lg 2xl:text-xl">
+              {data.salesToday.totalNumberContracts.amount}
+            </span>
             <div className="flex flex-col gap-2">
               <span className="font-medium text-sm 2xl:text-base text-[#425166]">
                 Total de contratos
               </span>
-              <span className="text-xs text-[#4079ED] font-semibold">+5% a mais que ontem</span>
+              <span className="text-xs text-[#4079ED] font-semibold">
+                +{data.salesToday.totalNumberContracts.percentMoreYesterday}% a mais que ontem
+              </span>
             </div>
           </div>
           <div className="flex flex-col gap-1 bg-[#DCFCE7] px-4 py-6 rounded-lg">
             <div className="bg-[#3CD856] max-w-min p-2 rounded-full">
               <Tag strokeWidth={3} color="white" size={18} />
             </div>
-            <span className="font-bold text-[#151D48] text-lg 2xl:text-xl">5</span>
+            <span className="font-bold text-[#151D48] text-lg 2xl:text-xl">
+              {data.salesToday.deployed.amount}
+            </span>
             <div className="flex flex-col gap-2">
               <span className="font-medium text-sm 2xl:text-base text-[#425166]">Implantadas</span>
-              <span className="text-xs text-[#4079ED] font-semibold">+1,2% a mais que ontem</span>
+              <span className="text-xs text-[#4079ED] font-semibold">
+                +{data.salesToday.deployed.percentMoreYesterday}% a mais que ontem
+              </span>
             </div>
           </div>
           <div className="flex flex-col gap-1 bg-[#F3E8FF] px-4 py-6 rounded-lg">
             <div className="bg-[#BF83FF] max-w-min p-2 rounded-full">
               <UserPlus strokeWidth={3} color="white" size={18} />
             </div>
-            <span className="font-bold text-[#151D48] text-lg 2xl:text-xl">8</span>
+            <span className="font-bold text-[#151D48] text-lg 2xl:text-xl">
+              {data.salesToday.newContracts.amount}
+            </span>
             <div className="flex flex-col gap-2">
               <span className="font-medium text-sm 2xl:text-base text-[#425166]">
                 Novos contratos
               </span>
-              <span className="text-xs text-[#4079ED] font-semibold">0,5% a mais que ontem</span>
+              <span className="text-xs text-[#4079ED] font-semibold">
+                {data.salesToday.newContracts.percentMoreYesterday}% a mais que ontem
+              </span>
             </div>
           </div>
         </div>
@@ -103,7 +110,7 @@ export function FirstSection() {
         <div className="flex justify-center items-center">
           <div className="w-full h-[240px] 2xl:w-[550px] 2xl:h-[210px]">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={data}>
+              <LineChart data={data.platformData}>
                 <CartesianGrid horizontal={true} vertical={false} />
                 <XAxis dataKey="name" axisLine={{ strokeWidth: 0 }} tickLine={false} />
                 <YAxis

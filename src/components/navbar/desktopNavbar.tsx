@@ -75,9 +75,9 @@ export function DesktopNavbar({ languages, logout }: DesktopNavbarProps) {
         />
       </Command>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandInput placeholder="Digite para buscar..." />
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandEmpty>Sem resultados.</CommandEmpty>
           <CommandGroup heading="Suggestions">
             <CommandItem>
               <CalendarIcon className="mr-2 h-4 w-4" />
@@ -113,7 +113,7 @@ export function DesktopNavbar({ languages, logout }: DesktopNavbarProps) {
         </CommandList>
       </CommandDialog>
       <Select>
-        <SelectTrigger className="border-0 w-[180px] h-full">
+        <SelectTrigger title="Seletor de idioma" className="border-0 w-[180px] h-full">
           <SelectValue placeholder={<CustomSelectPlaceholder />} />
         </SelectTrigger>
         <SelectContent>
@@ -129,7 +129,7 @@ export function DesktopNavbar({ languages, logout }: DesktopNavbarProps) {
       </Select>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <button className="bg-[#FFFAF1] p-2 rounded-md">
+          <button title="Botão de notificações" className="bg-[#FFFAF1] p-2 rounded-md">
             <Bell size={18} color="#FFA412" />
           </button>
         </DropdownMenuTrigger>

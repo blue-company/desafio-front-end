@@ -51,6 +51,7 @@ export const columns: ColumnDef<ColumnsType>[] = [
       const backgroundClass = progressBackground[row.index % progressBackground.length];
       return (
         <Progress
+          title="Nível de alavancagem"
           indicatorColor={colorClass}
           className={`h-1 ${backgroundClass}`}
           value={row.original.leverage}

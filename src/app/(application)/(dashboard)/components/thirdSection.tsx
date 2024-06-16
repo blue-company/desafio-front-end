@@ -1,3 +1,4 @@
+'use client';
 import {
   Table,
   TableBody,
@@ -6,6 +7,7 @@ import {
   TableHeader,
   TableRow
 } from '@/components/ui/table';
+import { GetAllDashboardResponse } from '@/service/dashboard/type';
 import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { Circle } from 'lucide-react';
 import Image from 'next/image';
@@ -13,81 +15,13 @@ import { Bar, BarChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { Card } from './card';
 import { columns } from './columns';
 
-const data = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100
-  }
-];
+interface ThirdSectionProps {
+  data: GetAllDashboardResponse;
+}
 
-export function ThirdSection() {
-  const dataTable = [
-    {
-      id: 0o1,
-      productName: 'BLUE START ENF SC',
-      leverage: 80,
-      percent: 45
-    },
-    {
-      id: 0o2,
-      productName: 'BLUE START ENF CO',
-      leverage: 60,
-      percent: 29
-    },
-    {
-      id: 0o3,
-      productName: 'BLUE START APT CO',
-      leverage: 55,
-      percent: 18
-    },
-    {
-      id: 0o4,
-      productName: 'BLUE START APT SC',
-      leverage: 30,
-      percent: 25
-    }
-  ];
-
+export function ThirdSection({ data }: ThirdSectionProps) {
   const table = useReactTable({
-    data: dataTable,
+    data: data.topProducts,
     columns,
     getCoreRowModel: getCoreRowModel()
   });
@@ -146,10 +80,10 @@ export function ThirdSection() {
       <Card title="Nível de serviço">
         <div className="flex flex-col w-full h-[360px] 2xl:w-[300px] 2xl:h-[240px] gap-3">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={data} barCategoryGap={16}>
+            <BarChart data={data.serviceLevel} barCategoryGap={16}>
               <Tooltip />
-              <Bar dataKey="pv" stackId="a" fill="#00E096" radius={[1, 1, 0, 0]} />
-              <Bar dataKey="uv" stackId="a" fill="#0095FF" radius={[1, 1, 0, 0]} />
+              <Bar dataKey="reality" stackId="a" fill="#00E096" radius={[1, 1, 0, 0]} />
+              <Bar dataKey="expectation" stackId="a" fill="#0095FF" radius={[1, 1, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
           <div className="h-1 border-b border-gray-200" />

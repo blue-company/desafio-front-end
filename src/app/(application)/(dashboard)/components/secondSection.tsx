@@ -1,3 +1,5 @@
+'use client';
+import { GetAllDashboardResponse } from '@/service/dashboard/type';
 import { BriefcaseBusiness, GitCommitHorizontal, Ticket } from 'lucide-react';
 import {
   Area,
@@ -12,72 +14,17 @@ import {
   YAxis
 } from 'recharts';
 import { Card } from './card';
+interface SecondSectionProps {
+  data: GetAllDashboardResponse;
+}
 
-const teste = [
-  { day: 'Segunda', Aguardando: 14000, Implantadas: 13000 },
-  { day: 'Terça', Aguardando: 17500, Implantadas: 12000 },
-  { day: 'Quarta', Aguardando: 6000, Implantadas: 22500 },
-  { day: 'Quinta', Aguardando: 16000, Implantadas: 6500 },
-  { day: 'Sexta', Aguardando: 13000, Implantadas: 12000 },
-  { day: 'Sábado', Aguardando: 16500, Implantadas: 13500 },
-  { day: 'Domingo', Aguardando: 21000, Implantadas: 11000 }
-];
-
-const lifes = [
-  {
-    uv: 2000,
-    pv: 4300,
-    amt: 2400
-  },
-  {
-    uv: 2800,
-    pv: 3800,
-    amt: 2210
-  },
-  {
-    uv: 1500,
-    pv: 4000,
-    amt: 2210
-  },
-  {
-    uv: 1600,
-    pv: 3000,
-    amt: 2210
-  },
-  {
-    uv: 1900,
-    pv: 4000,
-    amt: 2210
-  },
-  {
-    uv: 1800,
-    pv: 2700,
-    amt: 2210
-  },
-  {
-    uv: 3000,
-    pv: 5000,
-    amt: 2210
-  }
-];
-
-const reality = [
-  { day: 'Jan', Aguardando: 10000, Implantadas: 7000 },
-  { day: 'Fev', Aguardando: 9000, Implantadas: 6000 },
-  { day: 'Mar', Aguardando: 11000, Implantadas: 5000 },
-  { day: 'Abr', Aguardando: 8300, Implantadas: 7000 },
-  { day: 'Mai', Aguardando: 15000, Implantadas: 8823 },
-  { day: 'Jun', Aguardando: 15000, Implantadas: 8823 },
-  { day: 'Jul', Aguardando: 15000, Implantadas: 8823 }
-];
-
-export function SecondSection() {
+export function SecondSection({ data }: SecondSectionProps) {
   return (
     <>
       <Card className="flex-grow" title="Rendimento total">
         <div className="h-[230px]">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={teste} barGap={4} barCategoryGap={38}>
+            <BarChart data={data.totalIncome} barGap={4} barCategoryGap={38}>
               <CartesianGrid horizontal={true} vertical={false} />
               <XAxis dataKey="day" tickLine={false} axisLine={{ strokeWidth: 0 }} />
               <YAxis
@@ -96,7 +43,7 @@ export function SecondSection() {
       <Card title="Vidas">
         <div className="flex flex-col w-full h-[250px] 2xl:w-[300px] 2xl:h-[160px] gap-3">
           <ResponsiveContainer width="100%" height="100%">
-            <AreaChart width={830} data={lifes}>
+            <AreaChart data={data.lives}>
               <defs>
                 <linearGradient id="lastMonth" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="10%" stopColor="#6698de" stopOpacity={0.8} />
@@ -110,7 +57,7 @@ export function SecondSection() {
               <Tooltip />
               <Area
                 type="monotone"
-                dataKey="uv"
+                dataKey="lastMonth"
                 name="Último mês"
                 stroke="#007ED7"
                 fillOpacity={1}
@@ -120,7 +67,7 @@ export function SecondSection() {
               />
               <Area
                 type="monotone"
-                dataKey="pv"
+                dataKey="thisMonth"
                 name="Este mês"
                 stroke="#13CB8D"
                 fillOpacity={1}
@@ -153,7 +100,7 @@ export function SecondSection() {
       <Card title="Realidade">
         <div className="flex w-full h-[350px] 2xl:w-[300px] 2xl:h-[250px] flex-col gap-2">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={reality} barGap={4} barCategoryGap={4}>
+            <BarChart data={data.reality} barGap={4} barCategoryGap={4}>
               <XAxis
                 dataKey="day"
                 tickLine={false}
@@ -165,7 +112,12 @@ export function SecondSection() {
                 }}
               />
               <Tooltip />
-              <Bar dataKey="Implantadas" name="Contratos finalizados" fill="#4AB58E" radius={3} />
+              <Bar
+                dataKey="contratosFinalizados"
+                name="Contratos finalizados"
+                fill="#4AB58E"
+                radius={3}
+              />
               <Bar dataKey="Aguardando" name="Aguardando" fill="#FFCF00" radius={3} />
             </BarChart>
           </ResponsiveContainer>
