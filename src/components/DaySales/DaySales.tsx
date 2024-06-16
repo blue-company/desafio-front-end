@@ -18,7 +18,7 @@ export function DaySales() {
           Vendas Hoje
           <CardDescription>Resumo de vendas</CardDescription>
         </CardTitle>
-        <Button variant="outline" className="w-28">
+        <Button variant="outline" className="w-32 flex gap-2">
           <Upload className="w-4" />
           Exportar
         </Button>

@@ -1,4 +1,4 @@
 export interface LifesProps {
-    esteMes: number;
-    ultimoMes: number;
+  esteMes: number;
+  ultimoMes: number;
 }

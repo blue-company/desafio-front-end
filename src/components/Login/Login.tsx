@@ -20,6 +20,7 @@ import logoBlue from "../assets/Logo/logoBlue.svg";
 import Image from "next/image";
 import { Lock, Mail } from "lucide-react";
 import { signIn } from "next-auth/react";
+import { useState } from "react";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Email inválido" }),
@@ -38,22 +39,27 @@ export function Login() {
   });
   const router = useRouter();
   const { toast } = useToast();
+  const [load, setLoad] = useState(false);
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoad(true);
     const token = await signIn("credentials", {
       email: values.email,
       password: values.password,
       callbackUrl: "/dashboard",
       redirect: false,
     });
-    if(token?.status === 401){
+    if (token?.status === 401) {
       toast({
         variant: "destructive",
         title: "Atenção",
         description: `Usuário ou senha inválidos`,
       });
+      setLoad(false);
       return;
-    } else{
+    } else {
       router.replace("/dashboard");
+      setLoad(false);
     }
   }
 
@@ -110,6 +116,7 @@ export function Login() {
               type="submit"
               className="bg-primary-foreground hover:opacity-90 text-white w-full mt-2"
               name="Entrar"
+              disabled={load}
             >
               Entrar
             </Button>
