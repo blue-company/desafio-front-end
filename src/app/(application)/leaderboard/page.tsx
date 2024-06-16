@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function LeaderboardPage() {
   return (
-    <div>
+    <div className="h-screen">
       <h1>Leaderboard</h1>
     </div>
   );
