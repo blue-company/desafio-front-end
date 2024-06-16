@@ -1,20 +1,16 @@
-import { theme } from "@/themes/theme";
-import { Button, ThemeProvider } from "@mui/material";
+import { Grid, GlobalStyles } from "@mui/material";
+
+import '../app/globals.css';
+import { Dashboard } from "@/components/dashboard/dashboard";
+
 
 
 export default function Home() {
+
+
   return (
-    <div style={{ height: "100vh" }}>
-      <ThemeProvider theme={theme}>
-
-        <Button
-          variant="contained"
-          color="primary"
-
-        >
-          Primary
-        </Button>
-      </ThemeProvider>
-    </div>
+    <>
+      <Dashboard />
+    </>
   );
 }
