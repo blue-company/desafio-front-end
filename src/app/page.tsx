@@ -13,7 +13,6 @@ export default function Home() {
     <Box sx={{ display: 'flex' }}>
       <SideMenu />
       <Box
-        component="main"
         sx={{
           flexGrow: 1,
         }}

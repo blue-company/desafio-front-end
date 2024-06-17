@@ -41,24 +41,26 @@ export default function SideCard() {
                 </Typography>
 
                 <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
-                    <Link href="https://www.saudeblue.com/" target="_blank">
-                        <Button
-                            component="a"
-                            variant="contained"
-                            sx={{
-                                backgroundColor: theme.palette.primary.contrastText,
-                                color: theme.palette.primary.main,
-                                textTransform: "none",
-                                fontWeight: "bold",
-                                '&:hover': {
-                                    backgroundColor: theme.palette.primary.main,
-                                    color: theme.palette.primary.contrastText,
-                                }
-                            }}
-                        >
-                            {t('KnowMoreButton')}
-                        </Button>
-                    </Link>
+
+                    <Button
+                        href="https://www.saudeblue.com/"
+                        target="_blank"
+                        component="a"
+                        variant="contained"
+                        sx={{
+                            backgroundColor: theme.palette.primary.contrastText,
+                            color: theme.palette.primary.main,
+                            textTransform: "none",
+                            fontWeight: "bold",
+                            '&:hover': {
+                                backgroundColor: theme.palette.primary.main,
+                                color: theme.palette.primary.contrastText,
+                            }
+                        }}
+                    >
+                        {t('KnowMoreButton')}
+                    </Button>
+
 
                 </Box>
             </CardContent>
