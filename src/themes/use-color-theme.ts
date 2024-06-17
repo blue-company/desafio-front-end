@@ -1,3 +1,4 @@
+"use client"
 import { createTheme, PaletteMode, ThemeProvider } from "@mui/material";
 import React, { useEffect } from "react";
 import { getDesignTokens } from "./Theme";
