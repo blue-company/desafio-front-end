@@ -1,55 +1,68 @@
-# Desafio Front-End
+<h1 align='center' >
 
-Bem-vindo ao desafio front-end BLUE! Este desafio foi projetado para avaliar suas habilidades de desenvolvimento front-end, incluindo sua capacidade de escrever código limpo, organizado e responsivo, bem como aplicar princípios de design e desenvolvimento SOLID. 👨‍💻
+Projeto Blue Dashboard 📊
 
-## Objetivo
+<h1/>
 
-O objetivo deste desafio é criar uma aplicação front-end responsiva com base em uma imagem fornecida. O candidato deve utilizar tecnologias como React.js, Next.js, Tailwind CSS e Material-UI (Mui). Além disso, a aplicação deve ser testada unitariamente e ser hospedada em algum serviço de nuvem, como Vercel. ☁️
+## (📱Caso esteja pelo celular é so clicar no link abaixo📱)
 
-## Requisitos obrigatórios
 
-- Utilize React.js/Next.js com typescript para a criação da aplicação.
-- Utilize Tailwind CSS ou Material-UI (Mui) para estilização.
-- Aplique os princípios do SOLID durante o desenvolvimento, dando foco ao: S-Single Responsiblity Principle e D—Dependency Inversion Principle.
-- A aplicação deve seguir o layout fornecido na imagem em anexo.
-- Desenvolva uma versão mobile. 
 
-## Requisitos desejados
-- Implemente testes unitários para garantir a robustez do código.
-- Torne os elementos da página interativos como dropdown e menu mobile.
-- Desenvolva outras rotas. 
+https://github.com/JoaoKeuwe/desafio-front-end/assets/91097315/19c0d46d-b3d1-4523-8b75-3c304d07a2b1
 
-## Layout
 
-O layout da aplicação está disponível na imagem anexa. 🖼️
+## Sobre o Projeto
 
-## Instruções para Entrega
+-O projeto é um dashboard com diversos gráficos e telas de leadrboard e profile<br>
 
-1. Faça um fork deste repositório para o seu perfil do GitHub.
-2. Desenvolva a aplicação seguindo os requisitos descritos.
-3. Certifique-se de escrever código limpo, bem organizado e seguindo os princípios SOLID.
-4. Implemente testes unitários para as partes críticas da aplicação.
-5. Hospede a aplicação em algum serviço de nuvem, como Vercel.
-6. Crie um arquivo README.md detalhando como configurar, executar e testar a aplicação.
-7. Abra um pull request para este repositório com o link para o seu fork e todas as informações necessárias.
+## O que foi passado no desafio:
 
-## Critérios de Avaliação
+- O objetivo deste desafio é criar uma aplicação front-end responsiva com base em uma imagem fornecida. O candidato deve utilizar tecnologias como React.js, Next.js, Tailwind CSS e Material-UI (Mui). 
 
-Os candidatos serão avaliados com base nos seguintes critérios:
+## Tecnologias utilizadas :
+- [NextJs](https://nextjs.org/)
+- [ReactJs](https://react.dev/)  
+- [Material UI](https://mui.com/)
+- [React Charts](https://react-charts.tanstack.com/)  
+- [Google charts | Icons](https://www.react-google-charts.com/)
+- [Jest](https://jestjs.io/pt-BR/)
 
-- Qualidade do código: organização, clareza e boas práticas de desenvolvimento.
-- Proatividade para novas implementações, propondo ideias que complementem o desafio.
-- Adesão aos princípios SOLID.
-- Qualidade e cobertura dos testes unitários.
-- Fidelidade ao layout fornecido.
-- Responsividade da aplicação em diferentes dispositivos.
 
-## Dúvidas e Feedback
+# Sobre o que foi desenvolvido no projeto:
+👨🏾‍💻 Foram utilizadas metodologias que são aplicadas no mercado de trabalho, principalmente na organização das pastas e o nome de cada uma delas, ja sendo feito pensando em atualizações futuras, com a pesquisa orientada a pastas e não só a arquivos, pois em uma grande aplicação muitos nomes de arquivos podem se repetir.
+ 
+📲 Projeto totalmente responsivo, tanto para celulares e tablets, quanto para o desktop !
 
-Se surgirem dúvidas durante o desenvolvimento ou se você tiver algum feedback sobre o desafio, sinta-se à vontade para entrar em contato conosco através dos comentários do pull request ou por email.
+🔥 Foram feitos diversos commits pensando em mostrar a trajetória do projeto desde seu inicio, com pequenos e descritivos commits.
 
-Boa sorte e estamos ansiosos para ver o seu trabalho! 🚀
+🚩 Foi também utilizada a API fornecida pela empresa para que pudesse ser feito o CRUD, busca e filtro.
 
-### Emails para contado
+🧪 Também foram realizados testes para uma melhor eficiencia de codigo
 
-- dev@saudeblue.com
+
+## Guia de instalação do projeto para a sua máquina !
+
+```bash
+ # Clonar o repositório
+ $ git clone git@github.com:JoaoKeuwe/desafio-front-end.git
+
+ # Entrar no diretório(pasta) da aplicação
+ $ cd desafio-front-end
+
+ # Instalar todas as dependencias de desenvolvimento do projeto (necessita ter o Node(npm) instalado)
+ $ npm install
+
+ # Comando para executar o projeto
+ $ npm run dev
+ 
+ # Caso não abra direto em seu navegador digitar no campo de busca 
+ $ http://localhost:3000/
+
+ # Comando caso queira executar os testes
+ $ npm test
+
+```
+<br>
+
+## Deploy do projeto ⬇️
+Acesse: [Blue Dashboard](https://desafio-front-end-flame.vercel.app/) 👨🏾‍💻
