@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 
 test('Translation Test', async ({ page }) => {
-    await page.goto('http://localhost:3000');
+    await page.goto('http://desafiofrontendblue.vercel.app/');
 
 
     const initialTextElement = await page.getByRole('heading', { name: 'Vendas Hoje' });

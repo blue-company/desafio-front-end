@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('Verificar modo escuro', async ({ page }) => {
 
-    await page.goto('http://localhost:3000');
+    await page.goto('http://desafiofrontendblue.vercel.app/');
 
 
     const initialThemeColor = await page.$eval('header', el => {
