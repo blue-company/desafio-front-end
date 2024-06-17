@@ -80,7 +80,13 @@ function Profile() {
         </Grid>
       </Grid>
 
-      <Grid container xl={10} display="flex" justifyContent="center" sx={{ marginTop: 5 }}>
+      <Grid
+        container
+        xl={10}
+        display="flex"
+        justifyContent="center"
+        sx={{ marginTop: 5 }}
+      >
         <GenericCard title="Vendas no mês" chart={<ProfileChart />} />
       </Grid>
     </Grid>
