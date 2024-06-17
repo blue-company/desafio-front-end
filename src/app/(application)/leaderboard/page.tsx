@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { DataTable } from './components/dataTable';
 
 export const metadata: Metadata = {
   title: 'Leaderboard'
@@ -6,8 +7,8 @@ export const metadata: Metadata = {
 
 export default function LeaderboardPage() {
   return (
-    <div className="h-screen">
-      <h1>Leaderboard</h1>
-    </div>
+    <main className="p-4">
+      <DataTable />
+    </main>
   );
 }
