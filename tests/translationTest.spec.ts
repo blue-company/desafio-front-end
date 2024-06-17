@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 
+
 test('Translation Test', async ({ page }) => {
     await page.goto('http://localhost:3000');
 
@@ -10,7 +11,7 @@ test('Translation Test', async ({ page }) => {
 
     await page.click('#language-selector');
 
-    await page.waitForSelector('li[data-value="en"]', { state: 'visible' });
+    await page.waitForSelector('li[data-value="en"]', { state: 'visible', timeout: 5000 })
     await page.click('li[data-value="en"]');
 
     const englishTextElement = await page.getByRole('heading', { name: 'Sales Today' });
@@ -27,4 +28,4 @@ test('Translation Test', async ({ page }) => {
     const spanishTextElement = await page.getByRole('heading', { name: 'Ventas Hoy' });
     const spanishText = await spanishTextElement.textContent();
     expect(spanishText).toBe('Ventas Hoy');
-});
+})

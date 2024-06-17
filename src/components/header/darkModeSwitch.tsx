@@ -59,6 +59,7 @@ export function DarkModeSwitch() {
 
   return (
     <ThemeSwitch
+      id="dark-mode-switch"
       sx={{ m: 1 }}
       checked={mode === "dark"}
       onChange={toggleColorMode}

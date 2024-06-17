@@ -37,6 +37,7 @@ export function AccountMenu() {
             <ListItemButton onClick={handleClick}>
                 <ListItemAvatar>
                     <Avatar
+                        id="avatar"
                         src={avatarImg.src}
                         sx={{
                             width: isSmallScreen ? 48 : 60,
