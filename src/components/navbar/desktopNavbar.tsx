@@ -190,6 +190,7 @@ export function DesktopNavbar({ languages, logout }: DesktopNavbarProps) {
               <AlertDialogFooter>
                 <AlertDialogCancel>Cancelar</AlertDialogCancel>
                 <AlertDialogAction
+                  aria-label="Sair da conta"
                   className="bg-red-500 hover:bg-red-500/80"
                   onClick={() => logout()}
                 >
