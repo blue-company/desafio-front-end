@@ -8,6 +8,7 @@ import {
 import { salesTodayData } from "~/mock/sales-today";
 import { content, item, title, subTitle, paragraph } from "./style";
 import { Button } from "~/components/ui/button";
+import { Upload } from "lucide-react";
 
 type CardSalesProps = {
   className?: string;
@@ -22,7 +23,10 @@ export function CardSales({ className }: CardSalesProps) {
           <CardDescription>Resumo de vendas</CardDescription>
         </div>
 
-        <Button variant="outline">Exportar</Button>
+        <Button variant="outline">
+          <Upload className="h-4 w-4" />
+          Exportar
+        </Button>
       </CardHeader>
       <CardContent className={content()}>
         {salesTodayData.map((itemCard) => {

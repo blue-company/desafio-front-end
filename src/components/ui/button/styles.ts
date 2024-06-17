@@ -7,7 +7,7 @@ export const ButtonStyles = tv({
       default: "bg-primary text-primary-foreground hover:bg-primary/90 ",
       secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90",
       outline:
-        "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        "border border-gray-400 bg-background hover:bg-accent hover:text-accent-foreground flex items-center gap-2",
     },
     size: {
       default: "h-10 px-4 py-2",
