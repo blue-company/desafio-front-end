@@ -1,55 +1,109 @@
+<img src="./.github/projeto.png">
+
 # Desafio Front-End
 
-Bem-vindo ao desafio front-end BLUE! Este desafio foi projetado para avaliar suas habilidades de desenvolvimento front-end, incluindo sua capacidade de escrever código limpo, organizado e responsivo, bem como aplicar princípios de design e desenvolvimento SOLID. 👨‍💻
+Esta é uma aplicação front-end composta por uma tela de login e um dashboard. Após o login, o usuário é redirecionado para o dashboard principal da aplicação. A aplicação está hospedada na Vercel e pode ser acessada [aqui](https://desafio-front-end-dusky.vercel.app/).
 
-## Objetivo
+## Login de Acesso
 
-O objetivo deste desafio é criar uma aplicação front-end responsiva com base em uma imagem fornecida. O candidato deve utilizar tecnologias como React.js, Next.js, Tailwind CSS e Material-UI (Mui). Além disso, a aplicação deve ser testada unitariamente e ser hospedada em algum serviço de nuvem, como Vercel. ☁️
+Para entrar na aplicação, utilize as seguintes credenciais:
 
-## Requisitos obrigatórios
+- **Username:** ADMIN
+- **Password:** 12345678
 
-- Utilize React.js/Next.js com typescript para a criação da aplicação.
-- Utilize Tailwind CSS ou Material-UI (Mui) para estilização.
-- Aplique os princípios do SOLID durante o desenvolvimento, dando foco ao: S-Single Responsiblity Principle e D—Dependency Inversion Principle.
-- A aplicação deve seguir o layout fornecido na imagem em anexo.
-- Desenvolva uma versão mobile. 
+## Stack Utilizada
 
-## Requisitos desejados
-- Implemente testes unitários para garantir a robustez do código.
-- Torne os elementos da página interativos como dropdown e menu mobile.
-- Desenvolva outras rotas. 
+A aplicação foi construída utilizando as seguintes tecnologias e bibliotecas:
 
-## Layout
+- **Next.js**: 14.2.3
+- **React**: 18
+- **React-DOM**: 18
+- **Hono**
+- **TailwindCSS**
+- **React Hook Form**
+- **TanStack React Query**
+- **TanStack React Table**
+- **Recharts**
+- **Zod**
+- **Radix UI**
+- **Vitest** para testes
 
-O layout da aplicação está disponível na imagem anexa. 🖼️
+## Scripts Disponíveis
 
-## Instruções para Entrega
+- `dev`: Inicia a aplicação em modo de desenvolvimento.
+- `build`: Compila a aplicação para produção.
+- `start`: Inicia a aplicação em modo de produção.
+- `lint`: Executa o ESLint para análise de código.
+- `prepare`: Instala o Husky para pre-commit hooks.
+- `commit`: Utiliza o Commitizen para mensagens de commit.
+- `test`: Executa os testes utilizando o Vitest.
 
-1. Faça um fork deste repositório para o seu perfil do GitHub.
-2. Desenvolva a aplicação seguindo os requisitos descritos.
-3. Certifique-se de escrever código limpo, bem organizado e seguindo os princípios SOLID.
-4. Implemente testes unitários para as partes críticas da aplicação.
-5. Hospede a aplicação em algum serviço de nuvem, como Vercel.
-6. Crie um arquivo README.md detalhando como configurar, executar e testar a aplicação.
-7. Abra um pull request para este repositório com o link para o seu fork e todas as informações necessárias.
+## Configuração
 
-## Critérios de Avaliação
+### Pré-requisitos
 
-Os candidatos serão avaliados com base nos seguintes critérios:
+- Node.js (versão 14 ou superior)
+- PNPM (preferencialmente)
 
-- Qualidade do código: organização, clareza e boas práticas de desenvolvimento.
-- Proatividade para novas implementações, propondo ideias que complementem o desafio.
-- Adesão aos princípios SOLID.
-- Qualidade e cobertura dos testes unitários.
-- Fidelidade ao layout fornecido.
-- Responsividade da aplicação em diferentes dispositivos.
+### Instalação
 
-## Dúvidas e Feedback
+1. Clone o repositório:
 
-Se surgirem dúvidas durante o desenvolvimento ou se você tiver algum feedback sobre o desafio, sinta-se à vontade para entrar em contato conosco através dos comentários do pull request ou por email.
+   ```sh
+   git clone https://github.com/seu-usuario/desafio-front-end.git
+   ```
 
-Boa sorte e estamos ansiosos para ver o seu trabalho! 🚀
+2. Navegue até o diretório do projeto:
 
-### Emails para contado
+   ```sh
+   cd desafio-front-end
+   ```
 
-- dev@saudeblue.com
+3. Instale as dependências:
+
+   ```sh
+   pnpm install
+   ```
+
+## Variáveis de Ambiente
+
+Crie um arquivo .env.local na raiz do projeto e adicione as seguintes variáveis de ambiente:
+
+```sh
+NEXT_PUBLIC_BASE_URL="http://localhost:3000/"
+NEXT_PUBLIC_SECRET_KEY='blue_company-secret'
+```
+
+### Executando a Aplicação
+
+Para iniciar a aplicação em modo de desenvolvimento, utilize o seguinte comando:
+
+```sh
+pnpm dev
+```
+
+A aplicação estará disponível em http://localhost:3000.
+
+### Executando Testes
+
+Para rodar os testes, utilize o comando:
+
+```sh
+pnpm test
+```
+
+### Commitizen
+
+Para fazer commits utilizando o Commitizen, utilize:
+
+```sh
+pnpm commit
+```
+
+## Contribuição
+
+Contribuições são bem-vindas! Por favor, siga as diretrizes de commit utilizando o Commitizen e assegure-se de que o código está devidamente lintado e testado antes de abrir um Pull Request.
+
+## Deploy
+
+A aplicação está configurada para ser facilmente implantada na Vercel. Após configurar o projeto na Vercel, qualquer push para o branch principal (main) acionará um novo deploy automático.
