@@ -9,13 +9,14 @@ import {
 
 export default function Leaderboard() {
   return (
-    <div className="bg-background rounded-md">
+    <div className="bg-background rounded-md grid">
       <Table>
         <TableHeader>
           <TableRow>
             <TableHead>Nome</TableHead>
             <TableHead>Cargo</TableHead>
             <TableHead>Tempo trabalhado</TableHead>
+            <TableHead>Desempenho</TableHead>
             <TableHead>Desempenho</TableHead>
           </TableRow>
         </TableHeader>
