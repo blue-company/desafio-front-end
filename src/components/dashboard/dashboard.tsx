@@ -21,7 +21,7 @@ export function Dashboard() {
             <Box sx={{ height: "calc(100vh - 100px)", overflow: "auto", bgcolor: "background.default", }}>
                 <Typography variant="h1" color="text.primary" fontWeight={700}
                     sx={{
-                        height: { lg: "200px" },
+                        height: { xl: "200px" },
                         backgroundColor: {
                             xs: "background.default",
                             lg: "transparent"
@@ -43,7 +43,7 @@ export function Dashboard() {
                             lg: "left"
                         },
                         position: {
-                            lg: "absolute"
+                            xl: "absolute"
                         },
                         fontSize: "3rem"
 
@@ -80,10 +80,10 @@ export function Dashboard() {
                     <Grid item xs={12} md={12} lg={6} xl={3} sx={{ height: { xl: "380px", sm: "588px", xs: "360px" }, paddingTop: "1rem" }}>
                         <Reality />
                     </Grid>
-                    <Grid item xs={12} md={12} lg={6} xl={5} sx={{ height: { xl: "412px", sm: "620px", xs: "360px" }, paddingTop: "1rem", paddingBottom: "2rem" }}>
+                    <Grid item xs={12} md={12} lg={6} xl={5} sx={{ height: { xl: "412px", sm: "620px", xs: "360px" }, paddingTop: "1rem", paddingBottom: { xl: "2rem" } }}>
                         <TopProducts />
                     </Grid>
-                    <Grid item xs={12} md={12} lg={6} xl={4} sx={{ height: { xl: "412px", sm: "588px", xs: "360px" }, paddingTop: "1rem", paddingBottom: "2rem" }}>
+                    <Grid item xs={12} md={12} lg={6} xl={4} sx={{ height: { xl: "412px", sm: "588px", xs: "360px" }, paddingTop: "1rem", paddingBottom: { lg: "2rem" } }}>
                         <SalesMap />
                     </Grid>
                     <Grid item xs={12} md={12} lg={6} xl={3} sx={{ height: { xl: "412px", sm: "588px", xs: "360px" }, paddingTop: "1rem", paddingBottom: "2rem" }}>

@@ -53,9 +53,9 @@ export function TopProducts() {
                         <TableBody>
                             {sortedProducts.map((product, index) => (
                                 <TableRow key={product.position} sx={{ height: '45px' }}>
-                                    <TableCell sx={{ padding: '12px 12px' }}>{index + 1}</TableCell>
-                                    <TableCell sx={{ padding: '12px 12px' }}>{product.name}</TableCell>
-                                    <TableCell sx={{ padding: '12px 12px' }}>
+                                    <TableCell sx={{ padding: { md: '12px 12px' } }}>{index + 1}</TableCell>
+                                    <TableCell sx={{ padding: { md: '12px 12px' } }}>{product.name}</TableCell>
+                                    <TableCell sx={{ padding: { md: '12px 12px' } }}>
                                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                             <Box sx={{ width: '100%', mr: 1 }}>
                                                 <LinearProgress
@@ -71,7 +71,7 @@ export function TopProducts() {
                                             </Box>
                                         </Box>
                                     </TableCell>
-                                    <TableCell sx={{ padding: '12px 12px' }}>
+                                    <TableCell sx={{ padding: { md: '12px 12px' } }}>
                                         <Box sx={{
                                             color: colors[index],
                                             fontWeight: 'bold',

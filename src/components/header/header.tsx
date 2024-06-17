@@ -21,7 +21,7 @@ export default function Header() {
 
         <ThemeProvider theme={theme}>
 
-            <Box sx={{
+            <Box component={'header'} sx={{
                 height: { lg: "100px" },
                 display: "flex",
                 gap: "1rem",

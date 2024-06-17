@@ -74,7 +74,7 @@ export function ServiceLevel() {
             </Typography>
             <Box sx={{ flex: 1 }}>
                 <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={data} margin={{ top: 20, left: 0, right: 0, bottom: 10 }} barSize={20}>
+                    <BarChart data={data} margin={{ top: 20, left: 0, right: 0, bottom: 10 }} barSize={40}>
 
                         <Tooltip
                             contentStyle={{ fontFamily: theme.typography.fontFamily, fontSize: theme.typography.fontSize }}
