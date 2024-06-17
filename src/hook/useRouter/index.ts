@@ -9,6 +9,12 @@ export function useRouter() {
     push(page);
   }
 
+  function getTitlePage() {
+    if (pathname === "/") return "Dashboard";
+
+    return pathname.replace("/", "");
+  }
+
   function isActive(path: string): boolean {
     return path === pathname;
   }
@@ -16,5 +22,6 @@ export function useRouter() {
   return {
     handleChangePage,
     isActive,
+    getTitlePage,
   };
 }
