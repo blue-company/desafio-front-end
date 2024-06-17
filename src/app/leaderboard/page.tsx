@@ -17,7 +17,6 @@ export default function Leaderboard() {
             <TableHead>Cargo</TableHead>
             <TableHead>Tempo trabalhado</TableHead>
             <TableHead>Desempenho</TableHead>
-            <TableHead>Desempenho</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
