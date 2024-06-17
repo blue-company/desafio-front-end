@@ -17,7 +17,7 @@ i18n.use(initReactI18next).init({
             ...esTranslations
         }
     },
-    lng: localStorage.getItem('selectedLanguage') || "pt",
+    lng: "pt",
     fallbackLng: "en",
     interpolation: {
         escapeValue: false

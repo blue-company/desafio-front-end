@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useEffect } from 'react';
 import { MenuItem, Select, FormControl, useMediaQuery, Box, Typography, SelectChangeEvent } from '@mui/material';
 import { ArrowDropDown as ArrowDropDownIcon } from '@mui/icons-material';
@@ -12,24 +11,25 @@ const languages = [
 ];
 
 export function LanguageSelector() {
-    // State to hold the selected language
     const [selectedLanguage, setSelectedLanguage] = useState(() => {
-        // Check localStorage for saved language, default to 'en' if none found
-        const savedLanguage = localStorage.getItem('selectedLanguage');
-        return savedLanguage || 'pt';
+
+        if (typeof window !== 'undefined') {
+            const savedLanguage = localStorage.getItem('selectedLanguage');
+            return savedLanguage || 'pt';
+        } else {
+            return 'pt';
+        }
     });
 
     useEffect(() => {
-        // Save selectedLanguage to localStorage whenever it changes
-        localStorage.setItem('selectedLanguage', selectedLanguage);
-        // Also update i18n language immediately when selectedLanguage changes
-        i18n.changeLanguage(selectedLanguage);
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('selectedLanguage', selectedLanguage);
+            i18n.changeLanguage(selectedLanguage);
+        }
     }, [selectedLanguage]);
 
-    // Media query to determine screen size
     const isLargeScreen = useMediaQuery(createTheme().breakpoints.up('lg'));
 
-    // Handle language change
     const handleChange = (event: SelectChangeEvent<string>) => {
         const selectedLangCode = event.target.value;
         setSelectedLanguage(selectedLangCode);
@@ -59,7 +59,7 @@ export function LanguageSelector() {
             >
                 {languages.map((language) => (
                     <MenuItem key={language.code} value={language.code}>
-                        {isLargeScreen ? (
+                        {isLargeScreen && (
                             <Box sx={{
                                 display: 'flex',
                                 alignItems: 'center',
@@ -75,7 +75,8 @@ export function LanguageSelector() {
                                 </Box>
                                 <Typography sx={{ fontWeight: "700", marginLeft: "1rem", textAlign: "center" }}>{language.label}</Typography>
                             </Box>
-                        ) : (
+                        )}
+                        {!isLargeScreen && (
                             <Box sx={{
                                 width: "30px",
                                 height: "30px",
