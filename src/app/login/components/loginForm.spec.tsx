@@ -1,10 +1,22 @@
 import { render } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
-import { beforeAll, describe, expect, it, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { LoginForm } from './loginForm';
 
-beforeAll(() => {
-  vi.mock('next/navigation');
+const { useRouter, mockedRouterPush } = vi.hoisted(() => {
+  const mockedRouterPush = vi.fn();
+  return {
+    useRouter: () => ({ push: mockedRouterPush }),
+    mockedRouterPush
+  };
+});
+
+vi.mock('next/navigation', async () => {
+  const actual = await vi.importActual('next/navigation');
+  return {
+    ...actual,
+    useRouter
+  };
 });
 
 describe('LoginForm', () => {
@@ -26,8 +38,6 @@ describe('LoginForm', () => {
 
     await userEvent.click(loginButton);
 
-    const toast = getByText('Login feito com sucesso');
-
     expect(login).toHaveBeenCalledOnce();
 
     expect(login).toHaveBeenCalledWith({
@@ -35,6 +45,6 @@ describe('LoginForm', () => {
       password: '12345678'
     });
 
-    expect(toast).toBeVisible();
+    expect(mockedRouterPush).toHaveBeenCalledWith('/');
   });
 });
