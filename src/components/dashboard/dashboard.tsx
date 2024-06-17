@@ -19,7 +19,7 @@ export function Dashboard() {
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{ height: "calc(100vh - 100px)", overflow: "auto", bgcolor: "background.default", }}>
-                <Typography variant="h3" color="text.primary" fontWeight={700}
+                <Typography variant="h1" color="text.primary" fontWeight={700}
                     sx={{
                         height: { lg: "200px" },
                         backgroundColor: {
@@ -45,6 +45,7 @@ export function Dashboard() {
                         position: {
                             lg: "absolute"
                         },
+                        fontSize: "3rem"
 
                     }}>Dashboard</Typography>
                 <Grid container spacing={2} sx={{

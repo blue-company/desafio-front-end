@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import background from "@/assets/card-bg.svg";
 import { Box, Card, CardContent, Link, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
-import logo from "@/assets/LogoWhite.svg";
+import logo from "@/assets/logoWhite.svg";
 import { useTranslation } from 'react-i18next';
 
 
@@ -25,7 +25,7 @@ export default function SideCard() {
             maxWidth: "240px",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between", // Ajuste o espaçamento entre os itens
+            justifyContent: "space-between",
         }}>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
                 <Image src={logo} alt="Logo" />

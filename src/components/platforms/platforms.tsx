@@ -79,7 +79,7 @@ export function Platforms() {
 
     const renderLegend = () => {
         return (
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem', marginLeft: "30px" }}>
                 <div style={{ marginRight: '1rem', display: 'flex', flexDirection: "column" }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '12px', height: '12px', backgroundColor: theme.palette.purple?.main, borderRadius: '50%', marginRight: '5px' }}></div>
