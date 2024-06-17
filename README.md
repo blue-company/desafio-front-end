@@ -18,5 +18,5 @@ npm install
 npm run dev
 ```
 ## Links importantes
- link da aplicação: https://desafio-front-end-ivory.vercel.app/
- link do meu linkedin: https://www.linkedin.com/in/caio-teixeira-de-araujo/
+- link da aplicação: https://desafio-front-end-ivory.vercel.app/
+- link do meu linkedin: https://www.linkedin.com/in/caio-teixeira-de-araujo/
