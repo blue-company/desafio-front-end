@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function LeaderboardPage() {
   return (
-    <main className="p-4">
+    <main className="min-h-screen p-4">
       <DataTable />
     </main>
   );
