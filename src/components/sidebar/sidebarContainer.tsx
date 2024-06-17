@@ -10,9 +10,5 @@ interface SidebarProps {
 }
 
 export function SidebarContainer({ routes }: SidebarProps) {
-  return (
-    <>
-      <DesktopSidebar routes={routes} />
-    </>
-  );
+  return <DesktopSidebar routes={routes} />;
 }

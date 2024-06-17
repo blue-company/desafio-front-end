@@ -134,7 +134,7 @@ export function DesktopNavbar({ languages, logout }: DesktopNavbarProps) {
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <span className="px-2">Sem notificações por agora...</span>
+          <span className="px-2 text-sm">Sem notificações por agora...</span>
         </DropdownMenuContent>
       </DropdownMenu>
       <DropdownMenu>

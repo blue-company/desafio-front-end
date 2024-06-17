@@ -11,8 +11,8 @@ const Hero = dynamic(() => import('./components/hero').then((mod) => mod.Hero), 
 
 export default function DashboardPage() {
   return (
-    <div className="p-4">
+    <main className="p-4">
       <Hero />
-    </div>
+    </main>
   );
 }
