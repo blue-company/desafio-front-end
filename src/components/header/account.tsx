@@ -13,6 +13,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import avatarImg from "@/assets/avatar.svg";
 import { DarkModeSwitch } from './darkModeSwitch';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '@emotion/react';
+
 
 export function AccountMenu() {
     const [anchorEl, setAnchorEl] = useState<EventTarget & HTMLButtonElement | null>(null);
@@ -31,7 +33,7 @@ export function AccountMenu() {
     };
 
     const { t } = useTranslation();
-
+    const theme = useTheme();
     return (
         <>
             <ListItemButton onClick={handleClick}>
@@ -55,7 +57,7 @@ export function AccountMenu() {
                         sx={{ cursor: 'pointer', marginLeft: "16px" }}
                     />
                 )}
-                <KeyboardArrowDownOutlinedIcon />
+                <KeyboardArrowDownOutlinedIcon sx={{ color: "text.primary" }} />
             </ListItemButton>
 
             <Menu

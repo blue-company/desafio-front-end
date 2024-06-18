@@ -22,6 +22,7 @@ const data: DataPoint[] = [
     { expectativa: 50, realidade: 10 },
     { expectativa: 110, realidade: 70 },
     { expectativa: 100, realidade: 50 },
+    { expectativa: 120, realidade: 45 },
 ];
 
 
@@ -74,7 +75,7 @@ export function ServiceLevel() {
             </Typography>
             <Box sx={{ flex: 1 }}>
                 <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={data} margin={{ top: 20, left: 0, right: 0, bottom: 10 }} barSize={40}>
+                    <BarChart data={data} margin={{ top: 20, left: 20, right: 20, bottom: 10 }} barSize={20}>
 
                         <Tooltip
                             contentStyle={{ fontFamily: theme.typography.fontFamily, fontSize: theme.typography.fontSize }}
@@ -86,9 +87,9 @@ export function ServiceLevel() {
                                 fontSize: theme.typography.fontSize,
                             }}
                         />
-
-                        <Bar dataKey="expectativa" name="Expectativa" stackId="x" fill={theme.palette.blue?.main} />
                         <Bar dataKey="realidade" name="Realidade" stackId="x" fill={theme.palette.green?.main} />
+                        <Bar dataKey="expectativa" name="Expectativa" stackId="x" fill={theme.palette.blue?.main} />
+
 
                     </BarChart>
                 </ResponsiveContainer>
